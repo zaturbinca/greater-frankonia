@@ -30,7 +30,7 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Staggered animation delays - Removed !important */
+        /* Staggered animation delays */
         .delay-1 { transition-delay: 0.1s; }
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
@@ -71,24 +71,21 @@
             width: 100%;
         }
 
-        /* Button hover effect - FIXED TRANSITION */
+        /* Button hover effect - REMOVED PULSE, ALIGNED TRANSFORM */
         .btn-primary-glow {
             background: linear-gradient(90deg, #2dd4bf, #14b8a6);
-            /* Ensure transition applies to all properties smoothly */
-            transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+            transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease; /* Keep transition */
             box-shadow: 0 4px 15px rgba(45, 212, 191, 0.2);
-            animation: pulse-glow 2.5s infinite ease-in-out;
+            /* Removed animation: pulse-glow */
         }
-         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 4px 15px rgba(45, 212, 191, 0.2); transform: scale(1); }
-            50% { box-shadow: 0 8px 25px rgba(45, 212, 191, 0.4); transform: scale(1.03); }
-        }
+        /* Removed @keyframes pulse-glow */
         .btn-primary-glow:hover {
-            /* Removed !important, rely on specificity and transition */
+            /* Matched transform to secondary button */
             transform: scale(1.05) translateY(-2px);
+            /* Keep distinct shadow but ensure it changes */
             box-shadow: 0 8px 25px rgba(45, 212, 191, 0.4);
             filter: brightness(1.1);
-            animation-play-state: paused;
+            /* Removed animation-play-state: paused; */
         }
         .btn-secondary-glow {
              background-color: rgba(55, 65, 81, 0.5);
@@ -102,7 +99,7 @@
             box-shadow: 0 6px 20px rgba(107, 114, 128, 0.2);
         }
 
-        /* Futuristic Glassmorphism Effect (Smoother Blur) */
+        /* Futuristic Glassmorphism Effect */
         .glass-effect {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(18px);
@@ -138,13 +135,15 @@
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
         }
 
-        /* Section Title Styling & Hover */
+        /* Section Title Styling & Hover - UPDATED HOVER */
         .section-title {
             @apply text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-center tracking-tight;
+            /* Ensure transform is included in transition */
             transition: transform 0.3s ease-out, filter 0.3s ease-out;
         }
         .section-title:hover {
-             transform: scale(1.02);
+             /* Added translateY for upward movement */
+             transform: translateY(-3px) scale(1.03);
              filter: brightness(1.15);
         }
         .section-subtitle {
@@ -190,7 +189,6 @@
 
         .rank-list li {
             @apply py-2 px-4 rounded-md;
-             /* Explicitly define transition properties for smoothness */
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
         }
         .rank-list li:nth-child(odd) {
@@ -202,7 +200,7 @@
              transform: translateX(6px);
         }
         .rank-list.grid {
-            @apply gap-y-2; /* Tailwind class for gap */
+            @apply gap-y-2;
         }
          .rank-list.space-y-2 > * + * {
              margin-top: 0.75rem;
@@ -235,6 +233,8 @@
         .map-container {
             @apply rounded-lg overflow-hidden shadow-xl border border-gray-700/50 relative;
              transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+             /* Added top margin to prevent overlap */
+             margin-top: 1rem; /* Adjust value as needed (1rem = 16px) */
         }
          .map-container:hover {
              transform: translateY(-6px) scale(1.03);
@@ -283,7 +283,7 @@
     </header>
 
     <main>
-        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 py-24 relative overflow-hidden">
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 pt-24 pb-16 relative overflow-hidden"> {/* Changed pb-24 to pb-16 */}
              <div class="absolute inset-0 opacity-5 z-0" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22%3E%3Cg fill-rule=%22evenodd%22%3E%3Cg fill=%22%239CA3AF%22 fill-opacity=%220.1%22%3E%3Cpath d=%22M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
             <div class="z-10 max-w-4xl">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 leading-tight animate-on-scroll text-shadow-lg">
@@ -331,7 +331,7 @@
                             <li><span class="font-semibold text-teal-400">Setting:</span> Industrialized Rhineland, 1946</li>
                         </ul>
                     </div>
-                    <div class="map-container animate-on-scroll delay-4">
+                    <div class="map-container animate-on-scroll delay-4 mt-4">
                          <img src="https://media.discordapp.net/attachments/1355218661409030226/1355557480721158274/map.png?ex=67fd2348&is=67fbd1c8&hm=06c81f32821c2cbb5d2a7ac8488c73180d7e812640ff6ea9016b5087686d5060&=&format=webp&quality=lossless&width=872&height=959"
                               alt="Map of Frankonia Territory" class="w-full h-auto object-cover"
                               onerror="this.src='https://placehold.co/872x959/1f2937/e5e7eb?text=Map+Not+Available'; this.alt='Map loading error'">
@@ -357,7 +357,7 @@
                 </p>
 
                 <div x-data="{ activeTab: 'military' }" class="w-full max-w-4xl mx-auto animate-on-scroll delay-3">
-                    <div class="flex justify-center border-b border-gray-700 mb-8 flex-wrap">
+                    <div class="flex justify-center border-b border-gray-700 mb-8 flex-wrap gap-x-4">
                         <button @click="activeTab = 'military'" :class="{ 'active': activeTab === 'military' }" class="tab-button">
                             <i class="fas fa-shield-halved mr-2"></i> Military
                         </button>
@@ -403,7 +403,7 @@
                                 <li>Private First Class</li>
                                 <li>Private</li>
                                 <li>Enlist</li>
-                            </ul>
+                             </ul>
                         </div>
                         <div x-show="activeTab === 'government'"
                              x-transition:enter="alpine-enter"
@@ -414,7 +414,7 @@
                              x-transition:leave-end="alpine-leave-done"
                              class="tab-content">
                              <h3 class="text-xl font-semibold mb-4 text-white animate-on-scroll delay-4">Government Ranks</h3>
-                              <p class="text-sm text-gray-400 mb-6 animate-on-scroll delay-5">Civil administration rank progression. <a href="https://docs.google.com/document/d/17wLo0RG4eTRrbeoDa3Jp-RSZMGQOx3chF9hstovAWSM/edit?tab=t.0#heading=h.m2i18814hptf" target="_blank" class="text-teal-400 hover:underline">Detailed Structure <i class="fas fa-external-link-alt text-xs ml-1"></i></a></p>
+                             <p class="text-sm text-gray-400 mb-6 animate-on-scroll delay-5">Civil administration rank progression. <a href="https://docs.google.com/document/d/17wLo0RG4eTRrbeoDa3Jp-RSZMGQOx3chF9hstovAWSM/edit?tab=t.0#heading=h.m2i18814hptf" target="_blank" class="text-teal-400 hover:underline">Detailed Structure <i class="fas fa-external-link-alt text-xs ml-1"></i></a></p>
                              <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 text-gray-300 animate-on-scroll delay-6">
                                 <li>Chancellor</li>
                                 <li>Vice Chancellor</li>
@@ -431,7 +431,7 @@
                                 <li>Assessor</li>
                                 <li>Senior Clerk</li>
                                 <li>Clerk</li>
-                            </ul>
+                             </ul>
                         </div>
                         <div x-show="activeTab === 'main'"
                              x-transition:enter="alpine-enter"
@@ -442,7 +442,7 @@
                              x-transition:leave-end="alpine-leave-done"
                              class="tab-content">
                              <h3 class="text-xl font-semibold mb-4 text-white animate-on-scroll delay-4">Main Group Ranks</h3>
-                              <p class="text-sm text-gray-400 mb-6 animate-on-scroll delay-5">Overall roles within the Roblox group.</p>
+                             <p class="text-sm text-gray-400 mb-6 animate-on-scroll delay-5">Overall roles within the Roblox group.</p>
                              <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 text-gray-300 animate-on-scroll delay-6">
                                 <li>Holder</li>
                                 <li>Emperor</li>
@@ -458,7 +458,7 @@
                                 <li>Civilian</li>
                                 <li>Blacklisted</li>
                                 <li>Immigrant</li>
-                            </ul>
+                             </ul>
                         </div>
                         <div x-show="activeTab === 'command'"
                              x-transition:enter="alpine-enter"
@@ -469,7 +469,7 @@
                              x-transition:leave-end="alpine-leave-done"
                              class="tab-content">
                              <h3 class="text-xl font-semibold mb-4 text-white animate-on-scroll delay-4">Chain of Command (Rheinhold Royal Family)</h3>
-                              <p class="text-sm text-gray-400 mb-6 animate-on-scroll delay-5">Current leadership structure.</p>
+                             <p class="text-sm text-gray-400 mb-6 animate-on-scroll delay-5">Current leadership structure.</p>
                              <ul class="rank-list space-y-3 text-gray-300 animate-on-scroll delay-6">
                                 <li><span class="font-semibold text-yellow-400 w-36 inline-block">Emperor:</span> Triple9</li>
                                 <li><span class="font-semibold text-yellow-500 w-36 inline-block">Crowned Prince:</span> Zg47</li>
@@ -477,7 +477,7 @@
                                 <li><span class="font-semibold text-blue-400 w-36 inline-block">Chancellor:</span> VACANT</li>
                                 <li><span class="font-semibold text-blue-500 w-36 inline-block">Vice Chancellor:</span> VACANT</li>
                                 <li><span class="font-semibold text-green-400 w-36 inline-block">Grand Marshal:</span> Zakariya</li>
-                            </ul>
+                             </ul>
                         </div>
                     </div>
                 </div>
@@ -493,7 +493,7 @@
                 <p class="section-subtitle animate-on-scroll delay-2">
                     Specialized units form the Empire's might. Each regiment is distinguished by its role and uniform.
                 </p>
-                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-16">
                     <div class="regiment-card animate-on-scroll delay-3">
                         <div class="regiment-color-swatch" style="background-color: #1a3a1a;"></div>
                         <i class="fas fa-users fa-2x text-teal-400 mb-3 regiment-icon"></i>
@@ -591,16 +591,15 @@
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.15 // Slightly higher threshold
+            threshold: 0.15
         };
 
         const observerCallback = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    // observer.unobserve(entry.target); // Optional: Unobserve after first animation
+                    // observer.unobserve(entry.target);
                 } else {
-                    // Optional: Re-hide if element scrolls out of view
                     // if (entry.target.classList.contains('is-visible')) {
                     //     entry.target.classList.remove('is-visible');
                     // }
@@ -644,7 +643,7 @@
                 if(targetElement) {
                     const headerOffset = document.getElementById('main-header').offsetHeight;
                     const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 10; // Small offset
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 10;
 
                     window.scrollTo({
                         top: offsetPosition,
@@ -659,7 +658,7 @@
             console.log('Alpine.js Initialized.');
         });
 
-        console.log("Frankonia Website Initialized (v4 - Fixes).");
+        console.log("Frankonia Website Initialized (v5 - Layout & Animation Fixes).");
 
     </script>
 
