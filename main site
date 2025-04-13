@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greater Frankonia - Roblox Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Set base font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark background */
+            color: #e5e7eb; /* Light text */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* --- Animation Classes --- */
+
+        /* Initial state for elements to be animated (hidden and shifted) */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        /* Final state for animated elements (visible and in position) */
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animation delays */
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+        /* --- Hover Effects --- */
+        .hover-lift {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1); /* Subtle cyan glow */
+        }
+
+        .nav-link-hover {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2dd4bf; /* Teal accent */
+            transition: width 0.3s ease-out;
+        }
+        .nav-link-hover:hover {
+            color: #e5e7eb; /* Lighter on hover */
+        }
+        .nav-link-hover:hover::after {
+            width: 100%;
+        }
+
+        /* Button hover effect */
+        .btn-hover-glow {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .btn-hover-glow:hover {
+            background-color: #14b8a6; /* Darker teal */
+            box-shadow: 0 0 15px rgba(45, 212, 191, 0.5); /* Teal glow */
+            transform: scale(1.03);
+        }
+
+        /* Futuristic Glassmorphism Effect (Optional - Apply to cards/sections) */
+        .glass-effect {
+            background: rgba(31, 41, 55, 0.6); /* Semi-transparent dark gray */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+        }
+
+        /* Animated background gradient (Subtle) */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gradient-bg {
+            background: linear-gradient(-45deg, #111827, #1f2937, #047857, #1f2937); /* Dark blue-gray to dark green */
+            background-size: 400% 400%;
+            animation: gradientAnimation 25s ease infinite;
+        }
+
+        /* Header Styling */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            transition: background-color 0.3s ease;
+        }
+        header.scrolled {
+            background-color: rgba(17, 24, 39, 0.8); /* Darker semi-transparent bg on scroll */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+    </style>
+</head>
+<body class="animated-gradient-bg">
+
+    <header id="main-header" class="py-4 px-6 md:px-12 glass-effect">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl md:text-3xl font-extrabold tracking-tight animate-on-scroll">
+                <span class="text-teal-400">Greater</span> Frankonia
+            </div>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="#home" class="text-gray-400 nav-link-hover animate-on-scroll delay-100">Home</a>
+                <a href="#about" class="text-gray-400 nav-link-hover animate-on-scroll delay-200">About Us</a>
+                <a href="#divisions" class="text-gray-400 nav-link-hover animate-on-scroll delay-300">Divisions</a>
+                <a href="#join" class="text-gray-400 nav-link-hover animate-on-scroll delay-400">Join Us</a>
+            </nav>
+            <button class="md:hidden text-gray-300 animate-on-scroll delay-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 pt-20 pb-16 relative overflow-hidden">
+             <div class="absolute inset-0 opacity-10 z-0">
+                 </div>
+            <div class="z-10 max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight animate-on-scroll">
+                    <span class="text-teal-400 block">Forge the Future.</span> Command the Battlefield.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto animate-on-scroll delay-100">
+                    Greater Frankonia stands as a premier Roblox WW2 simulation group, dedicated to strategic gameplay, community, and historical immersion with a futuristic edge.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 animate-on-scroll delay-200">
+                    <a href="#join" class="bg-teal-500 text-white font-semibold py-3 px-8 rounded-lg shadow-lg btn-hover-glow text-lg">
+                        Enlist Today
+                    </a>
+                    <a href="#about" class="bg-gray-700/50 border border-gray-600 text-gray-200 font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-600/70 hover:border-gray-500 transition duration-300 text-lg hover-lift">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-32 px-6 md:px-12">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-on-scroll">
+                    Who We Are: <span class="text-teal-400">Greater Frankonia</span>
+                </h2>
+                <div class="w-20 h-1 bg-teal-500 mx-auto mb-10 animate-on-scroll delay-100"></div>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed animate-on-scroll delay-200">
+                    Founded on principles of discipline, strategy, and camaraderie, Greater Frankonia offers an unparalleled WW2 experience within Roblox. We blend historical inspiration with modern tactical gameplay, fostering a skilled and dedicated community. Our advanced training programs and coordinated operations set us apart.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed animate-on-scroll delay-300">
+                    We strive for excellence in every campaign, valuing teamwork and individual skill. Join us to be part of a group that pushes the boundaries of Roblox military simulation.
+                </p>
+                 <div class="mt-12 animate-on-scroll delay-400">
+                    <img src="https://placehold.co/600x300/1f2937/9ca3af?text=Frankonia+Emblem+Concept" alt="Placeholder Image" class="rounded-lg shadow-xl mx-auto glass-effect hover-lift" onerror="this.src='https://placehold.co/600x300/1f2937/e5e7eb?text=Image+Error'; this.alt='Error loading image'">
+                 </div>
+            </div>
+        </section>
+
+        <section id="divisions" class="py-20 md:py-32 px-6 md:px-12 bg-gray-800/30">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 animate-on-scroll">
+                    Our <span class="text-teal-400">Elite Divisions</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-effect p-6 rounded-xl shadow-lg hover-lift animate-on-scroll delay-100">
+                        <div class="text-teal-400 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-9-5.747h18" /></svg> </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-white">Infantry Corps</h3>
+                        <p class="text-gray-300 leading-relaxed">The backbone of Frankonia. Masters of ground combat, urban warfare, and holding the line.</p>
+                    </div>
+                    <div class="glass-effect p-6 rounded-xl shadow-lg hover-lift animate-on-scroll delay-200">
+                         <div class="text-teal-400 mb-3">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg> </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-white">Armored Division</h3>
+                        <p class="text-gray-300 leading-relaxed">Spearheading the assault. Experts in tank warfare, mechanized assaults, and breaking enemy formations.</p>
+                    </div>
+                    <div class="glass-effect p-6 rounded-xl shadow-lg hover-lift animate-on-scroll delay-300">
+                         <div class="text-teal-400 mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg> </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-white">Luftwaffe Command</h3>
+                        <p class="text-gray-300 leading-relaxed">Dominating the skies. Skilled pilots providing air superiority, close air support, and reconnaissance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="py-20 md:py-32 px-6 md:px-12 text-center">
+            <div class="container mx-auto max-w-3xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-on-scroll">
+                    Ready to <span class="text-teal-400">Answer the Call?</span>
+                </h2>
+                 <div class="w-20 h-1 bg-teal-500 mx-auto mb-10 animate-on-scroll delay-100"></div>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed animate-on-scroll delay-200">
+                    Become part of Greater Frankonia and experience Roblox WW2 simulation like never before. We seek dedicated and active members ready to contribute to our success.
+                </p>
+                <div class="animate-on-scroll delay-300">
+                    <a href="#" target="_blank" class="bg-teal-500 text-white font-semibold py-3 px-10 rounded-lg shadow-lg btn-hover-glow text-lg inline-block">
+                        Join Our Roblox Group
+                    </a>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 px-6 md:px-12 bg-gray-900/50 border-t border-gray-700/50">
+        <div class="container mx-auto text-center text-gray-400">
+            <p class="animate-on-scroll">&copy; 2025 Greater Frankonia. All Rights Reserved.</p>
+            <p class="text-sm mt-2 animate-on-scroll delay-100">A Fictional Roblox Group Simulation.</p>
+            </div>
+    </footer>
+
+    <script>
+        // --- Intersection Observer for Scroll Animations ---
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: Unobserve after animation to save resources
+                    // observer.unobserve(entry.target);
+                } else {
+                    // Optional: Remove class if you want animation to repeat on scroll up
+                    // entry.target.classList.remove('is-visible');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Observe all elements with the class 'animate-on-scroll'
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+
+        // --- Header Background Change on Scroll ---
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Add class after scrolling down 50px
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // --- Smooth Scrolling for Nav Links ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
