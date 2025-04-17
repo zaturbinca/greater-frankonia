@@ -17,7 +17,7 @@
     <!-- Popper.js (for Tooltips) -->
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- <<< CHECK THIS PATH -->
 
     <!-- Favicon (Example - replace with actual favicon links) -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -51,7 +51,8 @@
                     <a href="#lore" class="nav-link-hover animate-on-scroll delay-2">Lore</a>
                     <a href="#structure" class="nav-link-hover animate-on-scroll delay-3">Structure</a>
                     <a href="#regiments" class="nav-link-hover animate-on-scroll delay-4">Regiments</a>
-                    <a href="#join" class="nav-link-hover animate-on-scroll delay-5">Join Us</a>
+                    <a href="#discord-status" class="nav-link-hover animate-on-scroll delay-5">Discord</a> <!-- Added Discord Link -->
+                    <a href="#join" class="nav-link-hover animate-on-scroll delay-6">Join Us</a> <!-- Adjusted delay -->
                 </nav>
 
                 <!-- Mobile Menu Button -->
@@ -82,6 +83,7 @@
                  <a href="#lore" @click="mobileMenuOpen = false" class="mobile-nav-link block">Lore</a>
                  <a href="#structure" @click="mobileMenuOpen = false" class="mobile-nav-link block">Structure</a>
                  <a href="#regiments" @click="mobileMenuOpen = false" class="mobile-nav-link block">Regiments</a>
+                 <a href="#discord-status" @click="mobileMenuOpen = false" class="mobile-nav-link block">Discord Status</a> <!-- Added Discord Link -->
                  <a href="#join" @click="mobileMenuOpen = false" class="mobile-nav-link block">Join Us</a>
                  <hr class="border-gray-600 my-4">
                  <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-roblox w-5 mr-2"></i> Roblox Group</a>
@@ -321,10 +323,73 @@
                 </div>
             </section>
 
+            <!-- START: Discord Status Section -->
+            <section id="discord-status" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24">
+                <div class="container mx-auto max-w-4xl">
+                    <h2 class="section-title animate-on-scroll">
+                        Server <span class="text-teal-400">Status</span>
+                    </h2>
+                    <div class="section-divider animate-on-scroll delay-1"></div>
+                    <p class="section-subtitle animate-on-scroll delay-2">
+                        See who's online and join our community on Discord.
+                    </p>
+
+                    <!-- Discord Widget Container -->
+                    <div id="discord-widget-container" class="glass-effect p-6 md:p-8 animate-on-scroll delay-3 relative min-h-[300px] text-left"> <!-- Added text-left -->
+                        <!-- Loader -->
+                        <div id="discord-loader" class="absolute inset-0 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm z-10 rounded-xl"> <!-- Adjusted loader bg -->
+                            <div class="w-12 h-12 border-4 border-t-teal-400 border-gray-600 rounded-full animate-spin"></div>
+                        </div>
+
+                        <!-- Error Message Area -->
+                        <div id="discord-error-message" role="alert" aria-live="assertive" class="hidden absolute inset-x-4 top-4 bg-red-900/80 border border-red-700 text-red-200 px-4 py-3 rounded-md z-20 text-center">
+                            <!-- Error content added by JS -->
+                        </div>
+
+                        <!-- Widget Content (populated by JS) -->
+                        <div id="discord-widget-content" class="opacity-0 transition-opacity duration-500 ease-in-out">
+                            <!-- Header -->
+                            <div class="flex items-center gap-4 mb-6 border-b border-gray-700/50 pb-4"> <!-- Adjusted border -->
+                                <img id="discord-server-icon" src="" alt="Server Icon" class="w-16 h-16 rounded-full object-cover bg-slate-700 flex-shrink-0 border-2 border-gray-600/50"> <!-- Adjusted border -->
+                                <div>
+                                    <h3 id="discord-server-name" class="text-2xl font-semibold text-white">Loading Server...</h3>
+                                    <div class="text-sm text-gray-400 flex items-center gap-2 mt-1">
+                                        <span class="discord-status-dot discord-online inline-block w-2 h-2 rounded-full"></span> <!-- Added size/display -->
+                                        Online: <span id="discord-online-count" class="font-medium text-gray-200">--</span> <!-- Added font weight -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Member List -->
+                            <h4 class="text-sm font-semibold uppercase text-gray-400 mb-3 tracking-wider">Online Members</h4>
+                            <ul id="discord-member-list" class="max-h-60 overflow-y-auto space-y-1 pr-2 discord-member-scrollbar"> <!-- Reduced space-y -->
+                                <!-- Placeholder -->
+                                <li id="discord-member-placeholder" class="text-gray-500 italic py-4 text-center">Loading members...</li>
+                                <!-- Member items will be added here by JS -->
+                            </ul>
+
+                            <!-- Action Buttons -->
+                            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8 pt-6 border-t border-gray-700/50"> <!-- Adjusted border -->
+                                <a href="#" id="discord-join-link" class="btn btn-primary-glow hidden" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-discord mr-2"></i> Join Discord
+                                </a>
+                                <button id="discord-copy-link-button" class="btn btn-secondary-glow hidden">
+                                    <i class="fas fa-copy mr-2"></i> Copy Invite
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Widget Content -->
+                    </div>
+                    <!-- End Discord Widget Container -->
+                     <p class="text-center text-gray-500 mt-4 text-xs animate-on-scroll delay-4">Live status provided by the official Discord Widget API.</p>
+                </div>
+            </section>
+            <!-- END: Discord Status Section -->
+
+
             <!-- Join Us Section -->
             <section id="join" class="section-padding text-center relative overflow-hidden join-section flex flex-col justify-center">
-                <div class="absolute inset-0 opacity-[0.02] z-0 join-pattern"></div>
-                <div class="container mx-auto max-w-3xl relative z-10">
+                 <div class="container mx-auto max-w-3xl relative z-10">
                     <h2 class="section-title animate-on-scroll">
                         <span class="text-teal-400">Enlist</span> in the Empire
                     </h2>
@@ -336,8 +401,9 @@
                         <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="btn btn-primary-glow">
                             <i class="fab fa-roblox mr-2"></i> Join Roblox Group
                         </a>
-                        <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-glow">
-                            <i class="fab fa-discord mr-2"></i> Join Discord Server
+                        <!-- Link to Discord section instead of external link -->
+                        <a href="#discord-status" class="btn btn-secondary-glow">
+                            <i class="fab fa-discord mr-2"></i> View Discord Status
                         </a>
                     </div>
                 </div>
@@ -372,6 +438,6 @@
     </div> <!-- End Alpine x-data wrapper -->
 
     <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> <!-- <<< CHECK THIS PATH -->
 </body>
 </html>
