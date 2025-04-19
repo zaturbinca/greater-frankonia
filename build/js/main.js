@@ -89,9 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Basic Tooltip Implementation (Requires Popper.js) ---
+    // NOTE: The regiments_page.html has its own, more specific tooltip script.
+    // This script block in main.js is primarily for index.html or other pages
+    // that might use a simpler [data-tooltip] attribute.
     if (typeof Popper !== 'undefined') {
         const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-tooltip]'));
         const tooltipElement = document.getElementById('tooltip');
+        // Check if tooltipElement exists before querying its children
         const tooltipContent = tooltipElement ? tooltipElement.querySelector('.tooltip-custom') : null; // Get the content element
         const tooltipArrow = tooltipElement ? tooltipElement.querySelector('.tooltip-arrow') : null;
 
@@ -149,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 hideEvents.forEach(event => tooltipTriggerEl.addEventListener(event, hide));
             });
         } else {
-             console.warn("Tooltip elements/Popper.js not fully set up.");
+             console.warn("Tooltip elements/Popper.js not fully set up for [data-tooltip].");
         }
     } else {
         console.warn("Popper.js not found. Tooltips will not function.");
@@ -179,16 +183,21 @@ document.addEventListener('DOMContentLoaded', () => {
         let inviteLink = null;
 
         function displayDiscordError(message) {
-            serverNameEl.textContent = 'Error Loading';
-            onlineCountEl.textContent = 'N/A';
+            if (serverNameEl) serverNameEl.textContent = 'Error Loading';
+            if (onlineCountEl) onlineCountEl.textContent = 'N/A';
             if (memberPlaceholderEl) {
                  memberPlaceholderEl.textContent = 'Could not load members.';
-                 memberListEl.innerHTML = '';
-                 memberListEl.appendChild(memberPlaceholderEl);
+                 if (memberListEl) {
+                    memberListEl.innerHTML = '';
+                    memberListEl.appendChild(memberPlaceholderEl);
+                 }
             }
 
-            errorMessageEl.textContent = message;
-            errorMessageEl.classList.remove('hidden');
+            if (errorMessageEl) {
+                errorMessageEl.textContent = message;
+                errorMessageEl.classList.remove('hidden');
+            }
+
 
             if(loader) loader.classList.add('hidden');
             if(widgetContent) widgetContent.classList.add('opacity-100', 'loaded'); // Show content area even with error
@@ -255,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         async function fetchDiscordData() {
             if (!loader || !widgetContent) {
                 console.error("Discord widget elements not found.");
-                return; // Stop if essential elements are missing
+                return; // Stop if essential elements is missing
             }
             try {
                 const response = await fetch(apiUrl);
@@ -353,9 +362,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchDiscordData();
 
     } // End of check for discordSection existence
-
-    // --- END: Discord Widget Integration Logic ---
-
 
     // --- Alpine.js Initialization Check ---
     document.addEventListener('alpine:init', () => {
