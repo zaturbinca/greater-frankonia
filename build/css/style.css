@@ -353,6 +353,7 @@ header#main-header.scrolled {
 }
 
 /* New wrapper for title decorations - SCOPED to #regiments-list */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 #regiments-list .section-title-wrapper {
     display: flex;
     align-items: center;
@@ -418,6 +419,7 @@ header#main-header.scrolled {
 }
 
 /* --- Rank Tabs Styling --- */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 .tab-button {
     padding: var(--spacing-3) var(--spacing-5); /* py-3 px-5 */
     font-size: theme('fontSize.base'); /* text-base */
@@ -531,6 +533,7 @@ header#main-header.scrolled {
 }
 
 /* --- Map container --- */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 .map-container {
     border-radius: var(--border-radius-lg);
     overflow: hidden;
@@ -788,6 +791,7 @@ footer {
 
 
 /* --- START: Regiment Detail Card Styles (Regiments List Page - FANCY + Scroll) --- */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 
 .regiment-detail-card.fancy {
     padding: 0; /* Remove base padding */
@@ -1267,6 +1271,7 @@ body::after {
 }
 
 /* --- Added specific hover effect for the battlefield glass block --- */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 #lore .lore-battlefield-block {
     transition: var(--transition-transform), var(--transition-shadow), border-color 0.3s ease;
 }
@@ -1278,6 +1283,7 @@ body::after {
 }
 
 /* --- Added hover effect for lore list items --- */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 .lore-list li {
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
@@ -1288,6 +1294,7 @@ body::after {
 }
 
 /* --- Added subtle animation/hover for the bear icon --- */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 .lore-bear-icon {
     transition: transform 0.3s ease-in-out, color 0.3s ease;
     display: inline-block; /* Needed for transform */
@@ -1311,18 +1318,21 @@ header#main-header.scrolled.glass-effect:hover {
 }
 
 /* Override specific glass effects if needed, e.g., battlefield block */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 #lore .lore-battlefield-block.glass-effect:hover {
      box-shadow: inset 0 0 var(--spacing-2) rgba(45, 212, 191, 0.1),
                  0 var(--spacing-2) var(--spacing-6) rgba(45, 212, 191, 0.2); /* Keep specific battlefield shadow */
 }
 
 /* Override specific glass effects if needed, e.g., map container */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 .map-container.glass-effect:hover {
      box-shadow: inset 0 0 var(--spacing-2) rgba(45, 212, 191, 0.1),
                  0 var(--spacing-3) var(--spacing-6) var(--color-shadow-lift), 0 0 var(--spacing-4) var(--color-shadow-lift-accent); /* Keep specific map shadow */
 }
 
 /* --- START: Map Modal Styles --- */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 .map-modal-overlay {
     position: fixed;
     inset: 0; /* Cover the whole viewport */
@@ -1390,6 +1400,7 @@ header#main-header.scrolled.glass-effect:hover {
 /* --- END: Visual Enhancements (Added) --- */
 
 /* --- START: Lore Page Specific Enhancements (Added) --- */
+/* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
 
 /* Style for inline icons within lore text */
 #lore .lore-history-text .tooltip-trigger i.fas {
@@ -1521,3 +1532,182 @@ header#main-header.scrolled.glass-effect:hover {
 
 
 /* --- END: Lore Page Specific Enhancements (Added) --- */
+
+/* --- START: Styles Added for New Sections (Index.html only) --- */
+
+/* Gallery Item Placeholder Styling */
+.gallery-item {
+    /* Inherits glass-effect and hover-lift-glow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.gallery-item .w-full.h-48 {
+    /* Placeholder div styling */
+    border: 1px dashed rgba(255, 255, 255, 0.1); /* Subtle dashed border */
+    transition: border-color 0.3s ease;
+}
+
+.gallery-item:hover .w-full.h-48 {
+    border-color: var(--color-primary-light); /* Highlight border on hover */
+}
+
+.gallery-item h3 {
+    /* Inherits text-lg, font-semibold, text-white, mb-1 */
+    transition: color 0.3s ease;
+}
+
+.gallery-item:hover h3 {
+    color: var(--color-primary-light); /* Highlight title on hover */
+}
+
+/* Testimonial Card Styling */
+.testimonial-card {
+    /* Inherits glass-effect and hover-lift-glow */
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card .fa-quote-left {
+    /* Inherits text-teal-400, mb-4, text-3xl */
+    opacity: 0.8; /* Slightly muted icon */
+}
+
+.testimonial-card p.italic {
+    /* Inherits text-gray-300, italic, mb-4 */
+    flex-grow: 1; /* Allow quote to take up space */
+}
+
+.testimonial-card .flex.items-center {
+    /* Container for avatar and name/rank */
+    margin-top: auto; /* Push to the bottom */
+}
+
+.testimonial-card img {
+    /* Inherits w-10, h-10, rounded-full, object-cover, mr-4, border-2 */
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover img {
+    transform: scale(1.1); /* Subtle scale on avatar hover */
+}
+
+.testimonial-card .font-semibold {
+    /* Inherits font-semibold, text-white */
+    transition: color 0.3s ease;
+}
+
+.testimonial-card:hover .font-semibold {
+    color: var(--color-primary-light); /* Highlight name on hover */
+}
+
+
+/* AI Tool Form Styling */
+#ai-recommendation-form select {
+    /* Inherits w-full, px-4, py-2, bg-slate-700, border, border-gray-600, rounded-md, text-gray-200, focus styles */
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2220%22 height%3D%2220%22 fill%3D%22%239CA3AF%22 viewBox%3D%220 0 20 20%22%3E%3Cpath d%3D%22M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z%22 clip-rule%3D%22evenodd%22 fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right var(--spacing-3) center; /* Position arrow */
+    background-size: 0.75rem; /* Size arrow */
+    padding-right: var(--spacing-10); /* Make space for arrow */
+    cursor: pointer;
+}
+
+#ai-recommendation-form label i.fas {
+    /* Inherits mr-2, text-teal-400 */
+    vertical-align: middle;
+}
+
+/* AI Tool Result Styling */
+#ai-recommendation-result {
+    /* Inherits mt-8, p-6, bg-slate-800/70, border, border-gray-700, rounded-md, hidden, animate-on-scroll, delay-4 */
+    /* Add specific styles for the result box */
+    border-left: 4px solid var(--color-primary); /* Accent border */
+    box-shadow: 0 0 var(--spacing-4) rgba(45, 212, 191, 0.2); /* Subtle glow */
+}
+
+#ai-recommendation-result h4 i.fas {
+    /* Inherits mr-3, text-teal-400 */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+#ai-recommendation-result #recommended-regiment-name {
+    /* Inherits text-xl, font-bold, text-teal-300, mb-2 */
+    word-break: break-word; /* Ensure long names wrap */
+}
+
+#ai-recommendation-result #recommended-regiment-description {
+    /* Inherits text-gray-300, text-sm, italic */
+    word-break: break-word; /* Ensure long descriptions wrap */
+}
+
+/* --- END: Styles Added for New Sections (Index.html only) --- */
+
+
+/* Ensure consistent spacing between sections */
+/* This is handled by the mb-16 md:mb-24 classes on each section */
+
+
+/* Ensure consistent padding within containers */
+/* This is handled by the px-4 md:px-10 on header, px-6 md:px-12 on sections/footer, and container mx-auto */
+
+
+/* Ensure consistent grid gaps */
+/* This is handled by gap-6, gap-8, gap-12 classes on grid containers */
+
+
+/* Ensure Font Awesome icons are consistently sized and aligned */
+/* General icon sizing is handled by Tailwind classes like fa-lg, fa-3x.
+   Alignment is handled by flexbox (items-center) or vertical-align: middle.
+   Specific icon colors are set where needed (e.g., text-teal-400). */
+
+
+/* Ensure focus states are visible and consistent */
+/* Focus states are handled by Tailwind's focus: classes and custom :focus rules on buttons/links */
+
+
+/* Ensure reduced motion preference is respected */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    .animate-on-scroll.is-visible {
+         transition: none !important;
+         transform: none !important;
+         opacity: 1 !important;
+    }
+    .animate-on-scroll.delay-1, .animate-on-scroll.delay-2, .animate-on-scroll.delay-3,
+    .animate-on-scroll.delay-4, .animate-on-scroll.delay-5, .animate-on-scroll.delay-6,
+    .animate-on-scroll.delay-7, .animate-on-scroll.delay-8, .animate-on-scroll.delay-9,
+    .animate-on-scroll.delay-10, .animate-on-scroll.delay-11, .animate-on-scroll.delay-12 {
+        transition-delay: 0s !important;
+    }
+
+    /* Disable specific animations */
+    body::before { animation: none !important; }
+    .animated-subtle-gradient-bg { animation: none !important; background-size: cover !important; } /* Stop gradient animation */
+    @keyframes pulse-restricted { animation: none !important; } /* Stop pulse animation */
+    @keyframes pulse-text-glow-restricted { animation: none !important; } /* Stop text glow pulse */
+    @keyframes expandFadeIn { animation: none !important; } /* Stop expand animation */
+    @keyframes subtlePulse { animation: none !important; } /* Stop subtle pulse */
+
+    /* Ensure elements are visible immediately */
+    .animate-on-scroll { opacity: 1; transform: translateY(0); }
+    .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* Remove hover transforms/shadows if desired, but keeping subtle ones is often okay */
+    /* .hover-lift-glow:hover { transform: none !important; box-shadow: none !important; } */
+    /* .section-title:hover { transform: none !important; filter: none !important; text-shadow: none !important; } */
+    /* .section-divider:hover { transform: none !important; box-shadow: none !important; } */
+    /* .footer-link:hover { transform: none !important; } */
+    /* .header-logo-link:hover img { transform: none !important; } */
+    /* .gallery-item:hover .w-full.h-48 { border-color: rgba(255, 255, 255, 0.1) !important; } */
+    /* .gallery-item:hover h3 { color: white !important; } */
+    /* .testimonial-card:hover img { transform: none !important; } */
+    /* .testimonial-card:hover .font-semibold { color: white !important; } */
+}
