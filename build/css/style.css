@@ -21,6 +21,8 @@
     --color-restricted: #ef4444; /* red-500 */
     --color-restricted-bg: rgba(239, 68, 68, 0.1); /* red-500/10 */
     --color-restricted-glow: rgba(239, 68, 68, 0.4); /* red-500/40 */
+    --color-active-glow: rgba(16, 185, 129, 0.4); /* green-500/40 */
+    --color-hereditary-glow: rgba(245, 158, 11, 0.4); /* amber-500/40 */
 
 
     --font-primary: 'Inter', sans-serif;
@@ -102,67 +104,6 @@ body::before {
     pointer-events: none; /* Allow clicks to pass through */
     animation: backgroundPan 60s linear infinite; /* Apply the pan animation */
 }
-
-/* --- Accessibility: Reduced Motion --- */
-/* Disable transitions and animations for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-    /* Ensure elements that start hidden/transformed appear instantly */
-    .animate-on-scroll {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        transition: none !important;
-    }
-    .animate-on-scroll.is-visible {
-         opacity: 1 !important;
-         transform: translateY(0) !important;
-         transition: none !important;
-    }
-    /* Specific overrides for key animations/transitions */
-    .animated-subtle-gradient-bg { animation: none !important; background-size: auto !important; }
-    body::before { animation: none !important; } /* Disable the new pattern animation */
-    .animate-spin { animation: none !important; }
-    .restricted-pulse { animation: none !important; } /* Keep this for the original restricted-access element if needed */
-    .pulse-text-glow-restricted { animation: none !important; } /* Disable new text glow animation */
-    .hover-lift-glow:hover { transform: none !important; box-shadow: none !important; filter: none !important; }
-    .regiment-detail-card.fancy:hover { transform: none !important; box-shadow: none !important; border-color: inherit !important; } /* Revert border-color on hover */
-    .regiment-detail-card.fancy:hover .regiment-detail-icon { transform: none !important; }
-    .section-title:hover { transform: none !important; filter: none !important; }
-    .section-divider:hover { transform: none !important; }
-    .footer-link:hover { transform: none !important; }
-    .see-more-button i { transition: none !important; }
-    .tab-button { transition: none !important; }
-    .tab-content { transition: none !important; }
-    .mobile-nav-link { transition: none !important; }
-    .nav-link-hover { transition: none !important; }
-    .nav-link-hover::after { transition: none !important; }
-    .btn { transition: none !important; }
-    .btn:hover:not(:disabled) { transform: none !important; box-shadow: none !important; filter: none !important; }
-    .btn:focus { box-shadow: none !important; }
-    .glass-effect { transition: none !important; }
-    header#main-header { transition: none !important; }
-    header#main-header.scrolled { box-shadow: none !important; }
-    .map-container:hover { transform: none !important; box-shadow: none !important; }
-    .rank-list li { transition: none !important; }
-    .rank-list li:hover { transform: none !important; }
-    .tooltip-custom { transition: none !important; } /* Tooltip opacity transition */
-    .header-logo-link:hover img { transform: none !important; transition: none !important; }
-    .header-logo-link img { transition: none !important; }
-    /* Specific overrides for regiment card description transition */
-    .regiment-description-wrapper { transition: none !important; }
-    .regiment-description-wrapper::after { transition: none !important; }
-    /* New elements */
-    .regiments-section-bg { animation: none !important; } /* This was the old pattern, keep disabled */
-    .section-title-decoration { transition: none !important; }
-}
-
 
 /* --- Enhanced Animation Classes --- */
 /* Removed !important from transitions here as they are handled by the reduced motion query */
@@ -285,7 +226,7 @@ body::before {
 }
 /* Smaller button variant */
 .btn.btn-sm {
-    padding: var(--spacing-2) var(--spacing-4); /* py-2 px-4 */
+    padding: var(--spacing-2) var(--spacing-2); /* py-2 px-2 - Reduced horizontal padding */
     font-size: theme('fontSize.sm'); /* text-sm */
     border-radius: var(--border-radius-md); /* rounded-md */
 }
@@ -298,8 +239,8 @@ body::before {
 }
 .btn-primary-glow:hover:not(:disabled),
 .btn-primary-glow:focus:not(:disabled) {
-    transform: scale(1.05) translateY(calc(-1 * var(--spacing-0_5))); /* Use variable, slight lift */
-    box-shadow: 0 var(--spacing-2) var(--spacing-6) rgba(45, 212, 191, 0.4); /* Enhanced shadow */
+    transform: scale(1.06) translateY(calc(-1 * var(--spacing-1))); /* Slightly more lift */
+    box-shadow: 0 var(--spacing-3) var(--spacing-8) rgba(45, 212, 191, 0.5); /* Stronger shadow */
     filter: brightness(1.1);
 }
 
@@ -310,10 +251,10 @@ body::before {
 }
 .btn-secondary-glow:hover:not(:disabled),
 .btn-secondary-glow:focus:not(:disabled) {
-    transform: scale(1.05) translateY(calc(-1 * var(--spacing-0_5))); /* Use variable, slight lift */
+    transform: scale(1.06) translateY(calc(-1 * var(--spacing-1))); /* Slightly more lift */
     background-color: rgba(75, 85, 99, 0.7); /* gray-600 with opacity */
     border-color: var(--color-secondary-light);
-    box-shadow: 0 var(--spacing-1_5) var(--spacing-5) var(--color-shadow-secondary); /* Use variables */
+    box-shadow: 0 var(--spacing-2) var(--spacing-6) var(--color-shadow-secondary); /* Stronger shadow */
 }
 
 /* --- Glassmorphism Effect --- */
@@ -323,7 +264,7 @@ body::before {
     -webkit-backdrop-filter: blur(18px);
     border: 1px solid var(--color-glass-border);
     border-radius: var(--border-radius-xl);
-    transition: background-color 0.4s ease, border-color 0.4s ease;
+    transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added transform and box-shadow */
 }
 
 /* --- Enhanced Animated Background (Gradient) --- */
@@ -400,7 +341,7 @@ header#main-header.scrolled {
     margin-bottom: var(--spacing-4); /* mb-4 */
     text-align: center; /* This is the centering */
     letter-spacing: theme('letterSpacing.tight');
-    transition: transform 0.3s ease-out, filter 0.3s ease-out;
+    transition: transform 0.3s ease-out, filter 0.3s ease-out, text-shadow 0.3s ease-out; /* Added text-shadow transition */
 }
 @media (min-width: 768px) { .section-title { font-size: theme('fontSize.4xl'); } } /* md:text-4xl */
 @media (min-width: 1024px) { .section-title { font-size: theme('fontSize.5xl'); } } /* lg:text-5xl */
@@ -408,6 +349,7 @@ header#main-header.scrolled {
 .section-title:hover {
     transform: translateY(calc(-1 * var(--spacing-0_5))) scale(1.01); /* Subtle lift and scale */
     filter: brightness(1.15);
+    text-shadow: 0 0 var(--spacing-2) var(--color-primary-light), 0 0 var(--spacing-4) var(--color-primary); /* Add text glow */
 }
 
 /* New wrapper for title decorations - SCOPED to #regiments-list */
@@ -463,7 +405,7 @@ header#main-header.scrolled {
     margin-bottom: var(--spacing-10); /* mb-10 */
     background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
     border-radius: 2px;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Added box-shadow transition */
 }
 @media (min-width: 768px) {
     .section-divider {
@@ -472,6 +414,7 @@ header#main-header.scrolled {
 }
 .section-divider:hover {
     transform: scaleX(1.1); /* Slightly less aggressive scale */
+    box-shadow: 0 0 var(--spacing-4) var(--color-primary); /* Add glow to divider */
 }
 
 /* --- Rank Tabs Styling --- */
@@ -594,12 +537,14 @@ header#main-header.scrolled {
     box-shadow: 0 var(--spacing-2_5) var(--spacing-4) rgba(0, 0, 0, 0.1), 0 var(--spacing-1) var(--spacing-1_5) rgba(0, 0, 0, 0.05); /* shadow-xl, use variables */
     border: 1px solid rgba(75, 85, 99, 0.5); /* border-gray-700/50 */
     position: relative;
-    transition: var(--transition-transform), var(--transition-shadow);
+    transition: var(--transition-transform), var(--transition-shadow), border-color 0.3s ease; /* Added border-color transition */
     margin-top: var(--spacing-4); /* Added top margin, use variable */
+    cursor: pointer; /* Indicate clickable */
 }
 .map-container:hover {
     transform: translateY(calc(-1 * var(--spacing-1_5))) scale(1.02); /* Use variable */
     box-shadow: 0 var(--spacing-3) var(--spacing-6) var(--color-shadow-lift), 0 0 var(--spacing-4) var(--color-shadow-lift-accent); /* Use variables */
+    border-color: var(--color-primary); /* Highlight border on hover */
 }
 .map-container img {
     display: block;
@@ -863,6 +808,14 @@ footer {
     border-color: var(--color-primary); /* Highlight border on hover */
 }
 
+/* Add specific styling for the restricted card layout */
+.regiment-detail-card.fancy.restricted-card-layout {
+    border-color: rgba(239, 68, 68, 0.4); /* Use restricted color with opacity */
+    box-shadow: 0 var(--spacing-1) var(--spacing-4) rgba(0,0,0,0.1), /* Keep subtle dark shadow */
+                0 0 var(--spacing-4) rgba(239, 68, 68, 0.3); /* Add subtle red glow */
+}
+
+
 /* Color swatch at the top */
 .regiment-detail-card.fancy .regiment-color-swatch {
     width: 100%; /* Take full width */
@@ -938,6 +891,14 @@ footer {
     min-width: 0; /* Prevent text overflow issues in flex */
 }
 
+/* Target the flex container holding the name and type badge */
+.regiment-detail-card.fancy .regiment-detail-text-area > .flex:first-child {
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center; /* Vertically center items */
+    gap: var(--spacing-3); /* Add space between the name and the badge */
+    /* Keep mb-2 from HTML classes */
+}
+
 /* Regiment Name */
 .regiment-detail-card.fancy .regiment-detail-name {
     font-size: theme('fontSize.xl'); /* text-xl */
@@ -961,7 +922,7 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     flex-shrink: 0; /* Prevent shrinking */
-    align-self: flex-start; /* Align badge to top */
+    /* align-self: flex-start; /* REMOVED - align-items: center on parent handles vertical alignment */
     border: 1px solid transparent; /* Base border */
     transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-out; /* Add transition for glow and slight lift */
 }
@@ -1065,6 +1026,7 @@ footer {
     border-radius: var(--border-radius-sm);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    transition: box-shadow 0.3s ease-in-out; /* Add transition for glow */
 }
 .regiment-detail-status-badge::before {
     content: ''; display: inline-block; width: var(--spacing-1_5); height: var(--spacing-1_5); border-radius: 50%; /* 7px */
@@ -1077,6 +1039,14 @@ footer {
 .regiment-detail-status-badge.classified::before { background-color: var(--color-restricted); }
 .regiment-detail-status-badge.hereditary { background-color: rgba(217, 119, 6, 0.15); color: #fcd34d; } /* Amber */
 .regiment-detail-status-badge.hereditary::before { background-color: #d97706; }
+
+/* --- Status Badge Hover Glow Effects --- */
+.regiment-detail-status-badge.active:hover {
+    box-shadow: 0 0 var(--spacing-2) var(--color-active-glow); /* Green glow on hover */
+}
+.regiment-detail-status-badge.hereditary:hover {
+    box-shadow: 0 0 var(--spacing-2) var(--color-hereditary-glow); /* Amber glow on hover */
+}
 
 
 /* Restricted Access Styling */
@@ -1115,7 +1085,9 @@ footer {
     /* Ensure it's above other content */
     z-index: 2; /* Higher than default content */
     /* Inherit glass effect background/border */
-    background: var(--color-glass-bg);
+    background: var(--color-glass-bg); /* Base glass background */
+    /* Add a subtle red tint overlay */
+    background-image: radial-gradient(circle at center, rgba(239, 68, 68, 0.1) 0%, transparent 70%); /* Subtle red radial gradient */
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border: 1px solid var(--color-glass-border);
@@ -1123,6 +1095,9 @@ footer {
     /* Add padding */
     padding: var(--spacing-6); /* Add padding similar to .regiment-detail-content */
     box-sizing: border-box; /* Include padding in the element's total width and height */
+    /* Add a subtle noise/static pattern */
+    /* background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="3" height="3"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="4" stitchTiles="stitch"/%3E%3E%3Cfilter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity=".05"/%3E%3C/svg%3E'), radial-gradient(circle at center, rgba(239, 68, 68, 0.1) 0%, transparent 70%); */ /* Optional: Add noise pattern */
+    /* background-size: 3px 3px, cover; */
 }
 
 /* Apply the new text glow pulse animation to the unauthorized message when it has the pulse class */
@@ -1163,9 +1138,8 @@ footer {
 
 /* --- Regiment Card Footer Spacing --- */
 /* Target the footer div within the fancy regiment card */
-.regiment-detail-card.fancy .regiment-detail-text-area > .flex {
-    /* Revert to justify-between to keep elements on one line */
-    justify-content: space-between; /* This is the default for Tailwind's flex justify-between */
+.regiment-detail-card.fancy .regiment-detail-text-area > .flex:last-child { /* Changed selector to target the last flex child */
+    justify-content: flex-start; /* Align items to the start of the flex container */
     /* Remove gap and flex-wrap */
     /* gap: 0; */ /* Removed this override */
     flex-wrap: nowrap; /* Prevent wrapping */
@@ -1190,3 +1164,360 @@ footer {
 
 
 /* --- END: Regiment Detail Card Styles --- */
+
+/* --- START: Visual Enhancements (Added) --- */
+
+/* Subtle Radial Gradient Overlay on Body */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2; /* Below the pattern but above the base background */
+    background: radial-gradient(circle at center, rgba(45, 212, 191, 0.05) 0%, transparent 60%); /* Subtle teal glow from center */
+    pointer-events: none;
+}
+
+/* Enhanced Section Title Hover */
+/* Already added in the main .section-title:hover rule */
+
+
+/* Enhanced Section Divider Hover */
+/* Already added in the main .section-divider:hover rule */
+
+
+/* Enhanced Regiment Card Hover (Inner Border Glow) */
+/* These styles are specific to .regiment-detail-card.fancy and are outside the scope */
+
+
+/* Subtle Texture for Restricted Card Background */
+/* These styles are specific to .regiment-detail-card.fancy.restricted-card-layout and are outside the scope */
+
+
+/* Enhanced Restricted Card Pulse Animation (Border/Shadow) */
+/* These styles are specific to .regiment-detail-card.fancy.restricted-card-layout and are outside the scope */
+
+
+/* Enhanced Button Hover Effects */
+/* These styles are general .btn styles and are within scope */
+.btn-primary-glow:hover:not(:disabled),
+.btn-primary-glow:focus:not(:disabled) {
+    /* Existing styles are good, maybe slightly increase scale or shadow */
+    transform: scale(1.06) translateY(calc(-1 * var(--spacing-1))); /* Slightly more lift */
+    box-shadow: 0 var(--spacing-3) var(--spacing-8) rgba(45, 212, 191, 0.5); /* Stronger shadow */
+}
+
+.btn-secondary-glow:hover:not(:disabled),
+.btn-secondary-glow:focus:not(:disabled) {
+    /* Existing styles are good, maybe slightly increase scale or shadow */
+    transform: scale(1.06) translateY(calc(-1 * var(--spacing-1))); /* Slightly more lift */
+    background-color: rgba(75, 85, 99, 0.7); /* gray-600 with opacity */
+    border-color: var(--color-secondary-light);
+    box-shadow: 0 var(--spacing-2) var(--spacing-6) var(--color-shadow-secondary); /* Stronger shadow */
+}
+
+/* Subtle Shine Effect on Hover for Cards and Buttons */
+/* Add a pseudo-element for the shine */
+/* Applying to .btn is within scope, applying to .regiment-detail-card.fancy is NOT */
+.btn::after { /* Removed .regiment-detail-card.fancy::after */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 50%; /* Width of the shine */
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* White shine with opacity */
+    transform: skewX(-20deg); /* Angle the shine */
+    pointer-events: none;
+    transition: none; /* Disable default transitions */
+    z-index: 3; /* Above content */
+}
+
+/* Animation for the shine effect */
+@keyframes shine {
+    0% { left: -100%; }
+    60% { left: 150%; } /* Move across */
+    100% { left: 150%; }
+}
+
+.btn:hover:not(:disabled)::after { /* Removed .regiment-detail-card.fancy:hover::after */
+    animation: shine 1.5s ease-in-out; /* Apply animation on hover */
+}
+
+/* Ensure shine is clipped by card/button shape */
+/* Applying to .btn is within scope, applying to .regiment-detail-card.fancy is NOT */
+.btn { /* Removed .regiment-detail-card.fancy */
+    position: relative; /* Needed for absolute positioning of ::after */
+    overflow: hidden; /* Clip the shine */
+    z-index: 0; /* Ensure z-index context */
+}
+
+/* Adjust z-index for unauthorized message to be above shine */
+/* This rule is specific to regiment cards and is outside the scope */
+/* .unauthorized-message {
+    z-index: 4;
+} */
+
+
+/* Ensure reduced motion disables shine animation */
+@media (prefers-reduced-motion: reduce) {
+    .btn:hover:not(:disabled)::after { /* Removed .regiment-detail-card.fancy:hover::after */
+        animation: none !important;
+        display: none !important; /* Hide the pseudo-element */
+    }
+}
+
+/* --- Added specific hover effect for the battlefield glass block --- */
+#lore .lore-battlefield-block {
+    transition: var(--transition-transform), var(--transition-shadow), border-color 0.3s ease;
+}
+
+#lore .lore-battlefield-block:hover {
+    transform: translateY(calc(-1 * var(--spacing-1))); /* Subtle lift */
+    box-shadow: 0 var(--spacing-2) var(--spacing-6) rgba(45, 212, 191, 0.2); /* Subtle teal shadow */
+    border-color: var(--color-primary-light); /* Highlight border */
+}
+
+/* --- Added hover effect for lore list items --- */
+.lore-list li {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lore-list li:hover {
+    background-color: rgba(45, 212, 191, 0.08); /* Subtle teal background */
+    transform: translateX(var(--spacing-1)); /* Slight indent */
+}
+
+/* --- Added subtle animation/hover for the bear icon --- */
+.lore-bear-icon {
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
+    display: inline-block; /* Needed for transform */
+}
+
+.lore-list li:hover .lore-bear-icon {
+    transform: scale(1.2) rotate(5deg); /* Slightly larger and rotated */
+    color: white; /* Make icon white on hover */
+}
+
+/* --- Added subtle inner shadow to glass effect elements on hover --- */
+.glass-effect:hover {
+    box-shadow: inset 0 0 var(--spacing-2) rgba(45, 212, 191, 0.1), /* Subtle inner teal glow */
+                0 var(--spacing-1) var(--spacing-6) rgba(0, 0, 0, 0.4); /* Keep outer shadow */
+}
+
+/* Override specific glass effects if needed, e.g., header */
+header#main-header.scrolled.glass-effect:hover {
+     box-shadow: inset 0 0 var(--spacing-2) rgba(45, 212, 191, 0.1),
+                 0 var(--spacing-1) var(--spacing-6) rgba(0, 0, 0, 0.6); /* Slightly stronger outer shadow on scrolled header */
+}
+
+/* Override specific glass effects if needed, e.g., battlefield block */
+#lore .lore-battlefield-block.glass-effect:hover {
+     box-shadow: inset 0 0 var(--spacing-2) rgba(45, 212, 191, 0.1),
+                 0 var(--spacing-2) var(--spacing-6) rgba(45, 212, 191, 0.2); /* Keep specific battlefield shadow */
+}
+
+/* Override specific glass effects if needed, e.g., map container */
+.map-container.glass-effect:hover {
+     box-shadow: inset 0 0 var(--spacing-2) rgba(45, 212, 191, 0.1),
+                 0 var(--spacing-3) var(--spacing-6) var(--color-shadow-lift), 0 0 var(--spacing-4) var(--color-shadow-lift-accent); /* Keep specific map shadow */
+}
+
+/* --- START: Map Modal Styles --- */
+.map-modal-overlay {
+    position: fixed;
+    inset: 0; /* Cover the whole viewport */
+    background-color: rgba(0, 0, 0, 0.85); /* Dark semi-transparent background */
+    z-index: 1000; /* Ensure it's above everything else */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-4); /* Add some padding */
+}
+
+.map-modal-content {
+    position: relative;
+    max-width: 95%; /* Max width relative to viewport */
+    max-height: 95vh; /* Max height relative to viewport height */
+    overflow: hidden; /* Hide anything outside the bounds */
+    border-radius: var(--border-radius-lg); /* Match map container border */
+    box-shadow: 0 var(--spacing-4) var(--spacing-16) rgba(0, 0, 0, 0.6); /* Larger shadow */
+    background-color: var(--color-background); /* Fallback background */
+    display: flex; /* Use flex to center image */
+    justify-content: center;
+    align-items: center;
+}
+
+.map-modal-content img {
+    display: block;
+    max-width: 100%; /* Ensure image fits within content box */
+    max-height: 100%; /* Ensure image fits within content box */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.map-modal-close {
+    position: absolute;
+    top: var(--spacing-3); /* Position from top */
+    right: var(--spacing-3); /* Position from right */
+    z-index: 10; /* Ensure it's above the image */
+    background-color: rgba(30, 41, 59, 0.8); /* slate-800 with opacity */
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-full);
+    width: var(--spacing-8); /* Size of the button */
+    height: var(--spacing-8); /* Size of the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: theme('fontSize.lg'); /* Icon size */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(5px); /* Blur behind the button */
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.map-modal-close:hover {
+    background-color: rgba(45, 212, 191, 0.9); /* Teal on hover */
+    transform: rotate(90deg); /* Rotate on hover */
+}
+
+.map-modal-close:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.5); /* Focus ring */
+}
+
+/* --- END: Map Modal Styles --- */
+
+/* --- END: Visual Enhancements (Added) --- */
+
+/* --- START: Lore Page Specific Enhancements (Added) --- */
+
+/* Style for inline icons within lore text */
+#lore .lore-history-text .tooltip-trigger i.fas {
+    font-size: 0.8em; /* Slightly smaller than surrounding text */
+    vertical-align: middle; /* Align with text baseline */
+    margin-left: var(--spacing-0_5); /* Small space after text */
+    margin-right: var(--spacing-0_5); /* Small space before icon */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect for inline icons */
+#lore .lore-history-text .tooltip-trigger:hover i.fas {
+    color: var(--color-primary-light); /* Highlight color on hover */
+    transform: scale(1.1); /* Subtle scale */
+}
+
+/* Style for the question mark icons in the key points list */
+#lore .lore-list li .tooltip-trigger i.fas.fa-question-circle {
+    font-size: 0.7em; /* Make question mark smaller */
+    vertical-align: middle;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect for question mark icons */
+#lore .lore-list li .tooltip-trigger:hover i.fas.fa-question-circle {
+    color: white; /* Make question mark white on hover */
+    transform: scale(1.2); /* Slightly larger scale */
+}
+
+/* Style for the thematic icons at the start of lore list items */
+#lore .lore-list li > span:first-child i.fas {
+    font-size: 1em; /* Keep original size */
+    vertical-align: middle;
+    opacity: 0.8; /* Slightly muted */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for thematic icons */
+#lore .lore-list li:hover > span:first-child i.fas {
+    opacity: 1; /* Full opacity on list item hover */
+    transform: scale(1.1); /* Subtle scale on list item hover */
+}
+
+
+/* Animation for the subtle separator */
+@keyframes expandFadeIn {
+    0% { width: 0; opacity: 0; }
+    50% { width: var(--spacing-24); opacity: 1; } /* Expand to full width */
+    100% { width: var(--spacing-24); opacity: 1; }
+}
+
+#lore .w-24.h-0\.5.bg-gray-700\/50 {
+    /* Base styles are already applied by Tailwind classes */
+    /* Add animation on visibility */
+    animation: none; /* Default state */
+}
+
+#lore .w-24.h-0\.5.bg-gray-700\/50.is-visible {
+     animation: expandFadeIn 1.5s ease-out forwards; /* Apply animation when visible */
+}
+
+
+/* Subtle hover effect for placeholder sections */
+#lore .glass-effect.animate-on-scroll:hover {
+    /* Inherits general glass-effect hover */
+    /* Add a specific subtle border color change */
+    border-color: rgba(45, 212, 191, 0.3); /* Subtle teal border on hover */
+}
+
+/* Animation for the placeholder section titles */
+#lore .glass-effect h4 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#lore .glass-effect:hover h4 {
+    color: white; /* Make title white on hover */
+    transform: translateX(var(--spacing-1)); /* Subtle slide effect */
+}
+
+/* Animation for the placeholder section icons */
+#lore .glass-effect h4 i.fas {
+     transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#lore .glass-effect:hover h4 i.fas {
+    color: var(--color-primary-light); /* Highlight icon color on hover */
+    transform: rotate(5deg) scale(1.1); /* Subtle rotate and scale */
+}
+
+
+/* Ensure tooltip triggers have pointer cursor */
+.tooltip-trigger {
+    cursor: help;
+    /* Add a subtle underline or border on hover if desired, but color change is enough */
+    /* text-decoration: underline dotted rgba(255,255,255,0.3); */
+    /* text-underline-offset: 2px; */
+    transition: color 0.2s ease;
+}
+
+.tooltip-trigger:hover {
+    color: white; /* Highlight text on hover */
+}
+
+
+/* Refine the bear icon animation */
+#lore .lore-list li:hover .lore-bear-icon {
+    transform: scale(1.3) rotate(10deg); /* Slightly more pronounced */
+    color: white; /* Make icon white on hover */
+}
+
+
+/* Add a subtle pulse animation to the main lore article on load */
+@keyframes subtlePulse {
+    0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.1); }
+    50% { box-shadow: 0 0 var(--spacing-4) var(--color-primary-light); }
+    100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.1); }
+}
+
+#lore article.animate-on-scroll.is-visible {
+    /* Inherits animate-on-scroll transition */
+    /* Add a subtle initial pulse */
+    animation: subtlePulse 3s ease-out 1s 1; /* Animation name, duration, timing, delay, iterations, fill-mode */
+}
+
+/* Ensure the map container also gets a subtle initial pulse */
+#lore figure.map-container.animate-on-scroll.is-visible {
+     animation: subtlePulse 3s ease-out 1.2s 1; /* Slightly delayed pulse */
+}
+
+
+/* --- END: Lore Page Specific Enhancements (Added) --- */
