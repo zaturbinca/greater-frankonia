@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Germanic Empire of Frankonia - Roblox Group</title>
+    <title>The Germanic Empire of Frankonia - Roblox Group Simulation</title>
+    <meta name="description" content="Join the Germanic Empire of Frankonia, an alternate history WW1/WW2 Roblox military simulation group. Experience disciplined gameplay, rank progression, and a strong community. Enlist today!">
+    <meta name="keywords" content="Roblox, military simulation, WW1, WW2, alternate history, Frankonia, Germanic Empire, roleplay, group, community, disciplined, training, enlist">
+    <meta name="author" content="The Germanic Empire of Frankonia">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -30,12 +34,12 @@
     <div x-data="{ mobileMenuOpen: false }" class="relative">
 
         <!-- Header -->
-        <header id="main-header" class="py-3 px-4 md:px-10 glass-effect sticky top-0 z-50 transition-all duration-500 ease-in-out">
+        <header id="main-header" class="py-3 px-4 md:px-10 glass-effect sticky top-0 z-50 transition-all duration-500 ease-in-out" role="banner">
             <div class="container mx-auto flex justify-between items-center">
                 <!-- Logo & Title -->
-                <a href="#home" class="flex items-center gap-3 animate-on-scroll focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-background rounded-md">
+                <a href="#home" class="flex items-center gap-3 animate-on-scroll focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-background rounded-md header-logo-link" aria-label="Home - The Germanic Empire of Frankonia">
                     <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=6804f410&is=6803a290&hm=e30dac6a7aa6f3cb1e6365427b7f6287ce239fa1212cc1c40a32f09b2fee52e6&=&format=webp&quality=lossless&width=960&height=960"
-                         alt="Frankonia Logo" class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border-2 border-teal-400/50"
+                         alt="Frankonia Empire Logo" class="h-10 w-10 md:h-12 w-12 rounded-full object-cover border-2 border-teal-400/50"
                          onerror="this.style.display='none'">
                     <span class="text-xl md:text-2xl font-bold tracking-tight text-white hidden sm:inline">
                         The Germanic Empire of <span class="text-teal-400">Frankonia</span>
@@ -46,24 +50,24 @@
                 </a>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-5 lg:space-x-7">
-                    <a href="#home" class="nav-link-hover animate-on-scroll delay-1">Home</a>
-                    <a href="#lore" class="nav-link-hover animate-on-scroll delay-2">Lore</a>
-                    <a href="#structure" class="nav-link-hover animate-on-scroll delay-3">Structure</a>
-                    <!-- Removed direct link to #regiments section -->
-                    <a href="regiments_page.html" class="nav-link-hover animate-on-scroll delay-4">Regiments List</a> <!-- Adjusted delay -->
-                    <a href="#discord-status" class="nav-link-hover animate-on-scroll delay-5">Discord</a> <!-- Adjusted delay -->
-                    <a href="#join" class="nav-link-hover animate-on-scroll delay-6">Join Us</a> <!-- Adjusted delay -->
+                <nav class="hidden md:flex space-x-5 lg:space-x-7" role="navigation" aria-label="Main navigation">
+                    <a href="#home" class="nav-link-hover animate-on-scroll delay-1 active" aria-current="page">Home</a>
+                    <a href="lore_page.html" class="nav-link-hover animate-on-scroll delay-2">Lore</a>
+                    <a href="structure_page.html" class="nav-link-hover animate-on-scroll delay-3">Structure</a>
+                    <a href="regiments_page.html" class="nav-link-hover animate-on-scroll delay-4">Regiments List</a>
+                    <a href="#discord-status" class="nav-link-hover animate-on-scroll delay-5">Discord</a>
+                    <a href="#join" class="nav-link-hover animate-on-scroll delay-6">Join Us</a>
                 </nav>
 
                 <!-- Mobile Menu Button -->
                 <button @click="mobileMenuOpen = !mobileMenuOpen"
                         class="md:hidden text-gray-300 hover:text-white transition duration-200 animate-on-scroll delay-1 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
                         aria-controls="mobile-menu"
-                        :aria-expanded="mobileMenuOpen.toString()">
-                    <span class="sr-only">Open main menu</span>
-                    <i class="fas fa-bars fa-lg" x-show="!mobileMenuOpen"></i>
-                    <i class="fas fa-times fa-lg" x-show="mobileMenuOpen"></i>
+                        :aria-expanded="mobileMenuOpen.toString()"
+                        aria-label="Toggle mobile menu">
+                    <span class="sr-only" x-text="mobileMenuOpen ? 'Close main menu' : 'Open main menu'">Open main menu</span>
+                    <i class="fas fa-bars fa-lg" x-show="!mobileMenuOpen" aria-hidden="true"></i>
+                    <i class="fas fa-times fa-lg" x-show="mobileMenuOpen" aria-hidden="true"></i>
                 </button>
             </div>
         </header>
@@ -78,30 +82,31 @@
              x-transition:leave-end="-translate-x-full"
              class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-800/95 backdrop-blur-md shadow-lg md:hidden overflow-y-auto"
              id="mobile-menu"
-             @click.away="mobileMenuOpen = false">
+             @click.away="mobileMenuOpen = false"
+             role="navigation"
+             aria-label="Mobile navigation">
             <div class="pt-20 pb-6 px-4 space-y-4">
-                 <a href="#home" @click="mobileMenuOpen = false" class="mobile-nav-link block">Home</a>
-                 <a href="#lore" @click="mobileMenuOpen = false" class="mobile-nav-link block">Lore</a>
-                 <a href="#structure" @click="mobileMenuOpen = false" class="mobile-nav-link block">Structure</a>
-                 <!-- Removed direct link to #regiments section -->
+                 <a href="#home" @click="mobileMenuOpen = false" class="mobile-nav-link block active" aria-current="page">Home</a>
+                 <a href="lore_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Lore</a>
+                 <a href="structure_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Structure</a>
                  <a href="regiments_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Regiments List</a>
                  <a href="#discord-status" @click="mobileMenuOpen = false" class="mobile-nav-link block">Discord Status</a>
                  <a href="#join" @click="mobileMenuOpen = false" class="mobile-nav-link block">Join Us</a>
                  <hr class="border-gray-600 my-4">
-                 <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-roblox w-5 mr-2"></i> Roblox Group</a>
-                 <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-discord w-5 mr-2"></i> Discord Server</a>
+                 <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-roblox w-5 mr-2" aria-hidden="true"></i> Roblox Group</a>
+                 <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-discord w-5 mr-2" aria-hidden="true"></i> Discord Server</a>
             </div>
         </div>
         <!-- Overlay for Mobile Menu -->
-        <div x-show="mobileMenuOpen" x-transition.opacity.duration.300ms class="fixed inset-0 bg-black/50 z-30 md:hidden" @click="mobileMenuOpen = false"></div>
+        <div x-show="mobileMenuOpen" x-transition.opacity.duration.300ms class="fixed inset-0 bg-black/50 z-30 md:hidden" @click="mobileMenuOpen = false" aria-hidden="true"></div>
 
 
-        <main>
+        <main id="main-content">
             <!-- Hero Section -->
-            <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 pt-24 pb-16 relative overflow-hidden hero-section mb-16 md:mb-24">
-                <div class="absolute inset-0 opacity-5 z-0 hero-pattern"></div>
+            <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 pt-24 pb-16 relative overflow-hidden hero-section mb-16 md:mb-24" aria-labelledby="hero-heading">
+                <div class="absolute inset-0 opacity-5 z-0 hero-pattern" aria-hidden="true"></div>
                 <div class="z-10 max-w-4xl">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 leading-tight animate-on-scroll text-shadow-lg">
+                    <h1 id="hero-heading" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 leading-tight animate-on-scroll text-shadow-lg">
                         <span class="text-teal-300 block">Germanic Empire</span> of Frankonia
                     </h1>
                     <p class="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto animate-on-scroll delay-1 motto">
@@ -112,180 +117,91 @@
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center gap-4 animate-on-scroll delay-3">
                         <a href="#join" class="btn btn-primary-glow">
-                            Enlist Today <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                            Enlist Today <i class="fas fa-chevron-right ml-2 text-sm" aria-hidden="true"></i>
                         </a>
-                        <a href="#lore" class="btn btn-secondary-glow">
+                        <a href="lore_page.html" class="btn btn-secondary-glow">
                             Discover Our Lore
                         </a>
                     </div>
                 </div>
             </section>
 
-            <!-- Lore Section -->
-            <section id="lore" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24">
-                <div class="container mx-auto max-w-5xl">
-                    <h2 class="section-title animate-on-scroll">
-                        The Frankonian <span class="text-teal-400">Saga</span>
-                    </h2>
-                    <div class="section-divider animate-on-scroll delay-1"></div>
-                    <p class="section-subtitle animate-on-scroll delay-2">
-                        Our history diverges. Our destiny is forged in steel and strategy. Understand the world of Frankonia.
-                    </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-20 items-center">
-                        <div class="animate-on-scroll delay-3">
-                            <h3 class="text-2xl font-semibold mb-4 text-teal-300">Alternate History: 1946</h3>
-                            <p class="text-gray-300 mb-4 leading-relaxed">
-                                Imagine a world where WW1 ended differently. No Treaty of Versailles, only an armistice and minor territorial shifts. Germany, unburdened by restrictions, experiences a massive industrial boom, especially in the Rhineland.
-                            </p>
-                            <p class="text-gray-300 mb-4 leading-relaxed">
-                                By 1935, the prosperous region of Frankonia declares independence, sparking a civil war that rages into the late 1940s. Our timeline is set in 1946, amidst this conflict, centered in the conquered Rhineland territories.
-                            </p>
-                            <ul class="text-gray-300 space-y-2 mt-4 list-disc list-inside marker:text-teal-400">
-                                <li><span class="font-semibold text-teal-400">Ideology:</span> Monarchy</li>
-                                <li><span class="font-semibold text-teal-400">National Animal:</span> Bear <i class="fas fa-paw ml-1 text-sm"></i></li>
-                                <li><span class="font-semibold text-teal-400">Setting:</span> Industrialized Rhineland, 1946</li>
-                            </ul>
-                        </div>
-                        <figure class="map-container animate-on-scroll delay-4 mt-4 md:mt-0">
-                            <img src="https://media.discordapp.net/attachments/1356331685750378737/1363145322657746994/input_file_7.png?ex=6804f782&is=6803a602&hm=3c02b6079a97bab3c08bae562ce3db585824730484f8322df4950ea61e167838&=&format=webp&quality=lossless&width=872&height=959"
-                                 alt="Map of Frankonia Territory in the Rhineland"
-                                 class="w-full h-auto object-cover"
-                                 loading="lazy"
-                                 onerror="this.src='https://media.discordapp.net/attachments/1356331685750378737/1361693614006079658/input_file_7.png?ex=6801a9c0&is=68005840&hm=bccda264f2282bc9053ef34b6b0e77cf7c3b0d19a123a6d106c22b20878bca1c&=&format=webp&quality=lossless&width=676&height=744'; this.alt='Map loading error - Placeholder image shown'">
-                            <!-- Optional: Add <figcaption> here -->
-                        </figure>
-                    </div>
-                    <div class="mt-24 animate-on-scroll delay-5 text-center glass-effect p-6 md:p-8">
-                        <h4 class="text-xl font-semibold mb-3 text-teal-300">The Battlefield</h4>
-                        <p class="text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                           Operations center around a massive, fortified base within the Rhineland district. Outside lies an industrial city for civilians, and further out, a small town serves as the rebel spawn. The heart of the base contains the HQ and government buildings, marked by a replica of the Brandenburg Gate.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Structure Section -->
-            <section id="structure" class="section-padding mb-16 md:mb-24">
+            <!-- Why Join Us Section -->
+            <section id="why-join" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24" aria-labelledby="why-join-heading">
                 <div class="container mx-auto max-w-6xl">
-                    <h2 class="section-title animate-on-scroll">
-                        Imperial <span class="text-teal-400">Structure</span>
+                    <h2 id="why-join-heading" class="section-title animate-on-scroll">
+                        Why <span class="text-teal-400">Join Us?</span>
                     </h2>
-                    <div class="section-divider animate-on-scroll delay-1"></div>
+                    <div class="section-divider animate-on-scroll delay-1" aria-hidden="true"></div>
                     <p class="section-subtitle animate-on-scroll delay-2">
-                        Order and hierarchy define Frankonia. Explore our military, government, and command structure.
+                        Experience a unique and rewarding community within the Germanic Empire of Frankonia.
                     </p>
 
-                    <div x-data="{ activeTab: 'military' }" class="w-full max-w-4xl mx-auto animate-on-scroll delay-3 mb-16">
-                        <div class="flex justify-center border-b border-gray-700 mb-8 flex-wrap gap-x-2 sm:gap-x-4">
-                            <button @click="activeTab = 'military'" :class="{ 'active': activeTab === 'military' }" class="tab-button">
-                                <i class="fas fa-shield-halved mr-2 opacity-80"></i> Military
-                            </button>
-                            <button @click="activeTab = 'government'" :class="{ 'active': activeTab === 'government' }" class="tab-button">
-                                <i class="fas fa-landmark mr-2 opacity-80"></i> Government
-                            </button>
-                            <button @click="activeTab = 'main'" :class="{ 'active': activeTab === 'main' }" class="tab-button">
-                                <i class="fas fa-users mr-2 opacity-80"></i> Main Group
-                            </button>
-                            <button @click="activeTab = 'command'" :class="{ 'active': activeTab === 'command' }" class="tab-button">
-                                <i class="fas fa-crown mr-2 opacity-80"></i> Command
-                            </button>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-12">
+                        <!-- Box 1: Strong Community -->
+                        <div class="glass-effect p-6 md:p-8 text-center animate-on-scroll delay-3 hover-lift-glow">
+                            <div class="text-teal-400 mb-4" aria-hidden="true">
+                                <i class="fas fa-users fa-3x"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">Strong Community</h3>
+                            <p class="text-gray-300">
+                                Join our active and dedicated community of players who share a passion for disciplined roleplay and strategic gameplay.
+                            </p>
                         </div>
 
-                        <div class="tab-content-wrapper">
-                            <!-- Military Tab -->
-                            <div x-show="activeTab === 'military'"
-                                 x-transition:enter="alpine-enter" x-transition:enter-start="alpine-enter" x-transition:enter-end="alpine-enter-done"
-                                 x-transition:leave="alpine-leave" x-transition:leave-start="alpine-leave" x-transition:leave-end="alpine-leave-done"
-                                 class="tab-content">
-                                <h3 class="tab-title animate-on-scroll delay-4">Military Ranks</h3>
-                                <p class="tab-description animate-on-scroll delay-5">Armed Forces rank progression. <a href="https://docs.google.com/document/d/17wLo0RG4eTRrbeoDa3Jp-RSZMGQOx3chF9hstovAWSM/edit?tab=t.0#heading=h.m2i18814hptf" target="_blank" rel="noopener noreferrer" class="tab-link">Detailed Structure <i class="fas fa-external-link-alt text-xs ml-1"></i></a></p>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300 animate-on-scroll delay-6">
-                                   <li>Grand Marshal</li> <li>Field Marshal</li> <li>Lieutenant General</li>
-                                   <li>Major General</li> <li>Brigadier General</li> <li>Colonel</li>
-                                   <li>Lieutenant Colonel</li> <li>Major</li> <li>Captain</li>
-                                   <li>First Lieutenant</li> <li>Second Lieutenant</li> <li>Sergeant Major</li>
-                                   <li>Sergeant First Class</li> <li>Sergeant</li> <li>Corporal</li>
-                                   <li>Lance Corporal</li> <li>Private First Class</li> <li>Private</li>
-                                   <li>Enlist</li>
-                                </ul>
+                        <!-- Box 2: Rank Progression -->
+                        <div class="glass-effect p-6 md:p-8 text-center animate-on-scroll delay-4 hover-lift-glow">
+                            <div class="text-teal-400 mb-4" aria-hidden="true">
+                                <i class="fas fa-ranking-star fa-3x"></i>
                             </div>
-                            <!-- Government Tab -->
-                            <div x-show="activeTab === 'government'"
-                                 x-transition:enter="alpine-enter" x-transition:enter-start="alpine-enter" x-transition:enter-end="alpine-enter-done"
-                                 x-transition:leave="alpine-leave" x-transition:leave-start="alpine-leave" x-transition:leave-end="alpine-leave-done"
-                                 class="tab-content">
-                                <h3 class="tab-title animate-on-scroll delay-4">Government Ranks</h3>
-                                <p class="tab-description animate-on-scroll delay-5">Civil administration rank progression. <a href="https://docs.google.com/document/d/17wLo0RG4eTRrbeoDa3Jp-RSZMGQOx3chF9hstovAWSM/edit?tab=t.0#heading=h.m2i18814hptf" target="_blank" rel="noopener noreferrer" class="tab-link">Detailed Structure <i class="fas fa-external-link-alt text-xs ml-1"></i></a></p>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300 animate-on-scroll delay-6">
-                                    <li>Chancellor</li> <li>Vice Chancellor</li> <li>Director</li>
-                                    <li>Deputy Director</li> <li>Secretary of State</li> <li>Undersecretary of State</li>
-                                    <li>Chief Councilor</li> <li>Senior Councilor</li> <li>Councilor</li>
-                                    <li>Chief Registrar</li> <li>Registrar</li> <li>Chief Assessor</li>
-                                    <li>Assessor</li> <li>Senior Clerk</li> <li>Clerk</li>
-                                </ul>
+                            <h3 class="text-xl font-semibold text-white mb-3">Rank Progression</h3>
+                            <p class="text-gray-300">
+                                Experience a clear and structured path to advancement through dedication, skill, and loyalty within our ranks.
+                            </p>
+                        </div>
+
+                        <!-- Box 3: Elite Training -->
+                        <div class="glass-effect p-6 md:p-8 text-center animate-on-scroll delay-5 hover-lift-glow">
+                            <div class="text-teal-400 mb-4" aria-hidden="true">
+                                <i class="fas fa-dumbbell fa-3x"></i>
                             </div>
-                            <!-- Main Group Tab -->
-                            <div x-show="activeTab === 'main'"
-                                 x-transition:enter="alpine-enter" x-transition:enter-start="alpine-enter" x-transition:enter-end="alpine-enter-done"
-                                 x-transition:leave="alpine-leave" x-transition:leave-start="alpine-leave" x-transition:leave-end="alpine-leave-done"
-                                 class="tab-content">
-                                <h3 class="tab-title animate-on-scroll delay-4">Main Group Ranks</h3>
-                                <p class="tab-description animate-on-scroll delay-5">Overall roles within the Roblox group.</p>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300 animate-on-scroll delay-6">
-                                    <li>Holder</li> <li>Emperor</li> <li>Crowned Prince</li>
-                                    <li>Royal Advisor</li> <li>Chancellor</li> <li>Vice Chancellor</li>
-                                    <li>Grand Marshal</li> <li>IA (Internal Administration)</li> <li>High Command</li>
-                                    <li>Government</li> <li>Armed Forces</li> <li>Civilian</li>
-                                    <li>Blacklisted</li> <li>Immigrant</li>
-                                </ul>
-                            </div>
-                            <!-- Command Tab -->
-                            <div x-show="activeTab === 'command'"
-                                 x-transition:enter="alpine-enter" x-transition:enter-start="alpine-enter" x-transition:enter-end="alpine-enter-done"
-                                 x-transition:leave="alpine-leave" x-transition:leave-start="alpine-leave" x-transition:leave-end="alpine-leave-done"
-                                 class="tab-content">
-                                <h3 class="tab-title animate-on-scroll delay-4">Chain of Command (Rheinhold Royal Family)</h3>
-                                <p class="tab-description animate-on-scroll delay-5">Current leadership structure.</p>
-                                <ul class="rank-list space-y-3 text-gray-300 animate-on-scroll delay-6 command-list">
-                                    <li><span class="rank-label text-yellow-400">Emperor:</span> Triple9</li>
-                                    <li><span class="rank-label text-yellow-500">Crowned Prince:</span> Zg47</li>
-                                    <li><span class="rank-label text-yellow-600">Royal Advisor:</span> Lists</li>
-                                    <li><span class="rank-label text-blue-400">Chancellor:</span> <span class="italic text-gray-500">VACANT</span></li>
-                                    <li><span class="rank-label text-blue-500">Vice Chancellor:</span> <span class="italic text-gray-500">VACANT</span></li>
-                                    <li><span class="rank-label text-green-400">Grand Marshal:</span> Zakariya</li>
-                                </ul>
-                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">Elite Training</h3>
+                            <p class="text-gray-300">
+                                Receive top-tier training from experienced personnel, honing your skills for effective military simulation and roleplay.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Regiments Section - REMOVED VISUAL DISPLAY -->
-            <!-- The section ID #regiments is kept for potential internal linking if needed, but content is removed -->
-            <section id="regiments" class="hidden"></section>
+            <!-- Lore Section - REMOVED FROM INDEX -->
+            <!-- Structure Section - REMOVED FROM INDEX -->
+            <!-- Regiments Section - REMOVED FROM INDEX -->
+            <section id="lore" class="hidden" aria-hidden="true"></section>
+            <section id="structure" class="hidden" aria-hidden="true"></section>
+            <section id="regiments" class="hidden" aria-hidden="true"></section>
 
 
             <!-- START: Discord Status Section -->
-            <section id="discord-status" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24">
+            <section id="discord-status" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24" aria-labelledby="discord-status-heading">
                 <div class="container mx-auto max-w-4xl">
-                    <h2 class="section-title animate-on-scroll">
+                    <h2 id="discord-status-heading" class="section-title animate-on-scroll">
                         Server <span class="text-teal-400">Status</span>
                     </h2>
-                    <div class="section-divider animate-on-scroll delay-1"></div>
+                    <div class="section-divider animate-on-scroll delay-1" aria-hidden="true"></div>
                     <p class="section-subtitle animate-on-scroll delay-2">
                         See who's online and join our community on Discord.
                     </p>
 
                     <!-- Discord Widget Container -->
-                    <div id="discord-widget-container" class="glass-effect p-6 md:p-8 animate-on-scroll delay-3 relative min-h-[300px] text-left"> <!-- Added text-left -->
+                    <div id="discord-widget-container" class="glass-effect p-6 md:p-8 animate-on-scroll delay-3 relative min-h-[300px] text-left" role="region" aria-live="polite" aria-atomic="false"> <!-- Added role, aria-live, aria-atomic -->
                         <!-- Loader -->
-                        <div id="discord-loader" class="absolute inset-0 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm z-10 rounded-xl"> <!-- Adjusted loader bg -->
-                            <div class="w-12 h-12 border-4 border-t-teal-400 border-gray-600 rounded-full animate-spin"></div>
+                        <div id="discord-loader" class="absolute inset-0 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm z-10 rounded-xl" aria-label="Loading Discord server status"> <!-- Adjusted loader bg, added aria-label -->
+                            <div class="w-12 h-12 border-4 border-t-teal-400 border-gray-600 rounded-full animate-spin" aria-hidden="true"></div>
                         </div>
 
                         <!-- Error Message Area -->
-                        <div id="discord-error-message" role="alert" aria-live="assertive" class="hidden absolute inset-x-4 top-4 bg-red-900/80 border border-red-700 text-red-200 px-4 py-3 rounded-md z-20 text-center">
+                        <div id="discord-error-message" role="alert" aria-live="assertive" aria-atomic="true" class="hidden absolute inset-x-4 top-4 bg-red-900/80 border border-red-700 text-red-200 px-4 py-3 rounded-md z-20 text-center">
                             <!-- Error content added by JS -->
                         </div>
 
@@ -293,11 +209,11 @@
                         <div id="discord-widget-content" class="opacity-0 transition-opacity duration-500 ease-in-out">
                             <!-- Header -->
                             <div class="flex items-center gap-4 mb-6 border-b border-gray-700/50 pb-4"> <!-- Adjusted border -->
-                                <img id="discord-server-icon" src="" alt="Server Icon" class="w-16 h-16 rounded-full object-cover bg-slate-700 flex-shrink-0 border-2 border-gray-600/50"> <!-- Adjusted border -->
+                                <img id="discord-server-icon" src="" alt="Discord Server Icon" class="w-16 h-16 rounded-full object-cover bg-slate-700 flex-shrink-0 border-2 border-gray-600/50"> <!-- Adjusted border, added alt -->
                                 <div>
                                     <h3 id="discord-server-name" class="text-2xl font-semibold text-white">Loading Server...</h3>
                                     <div class="text-sm text-gray-400 flex items-center gap-2 mt-1">
-                                        <span class="discord-status-dot discord-online inline-block w-2 h-2 rounded-full"></span> <!-- Added size/display -->
+                                        <span class="discord-status-dot discord-online inline-block w-2 h-2 rounded-full" aria-hidden="true"></span> <!-- Added size/display, aria-hidden -->
                                         Online: <span id="discord-online-count" class="font-medium text-gray-200">--</span> <!-- Added font weight -->
                                     </div>
                                 </div>
@@ -305,7 +221,7 @@
 
                             <!-- Member List -->
                             <h4 class="text-sm font-semibold uppercase text-gray-400 mb-3 tracking-wider">Online Members</h4>
-                            <ul id="discord-member-list" class="max-h-60 overflow-y-auto space-y-1 pr-2 discord-member-scrollbar"> <!-- Reduced space-y -->
+                            <ul id="discord-member-list" class="max-h-60 overflow-y-auto space-y-1 pr-2 discord-member-scrollbar" role="list"> <!-- Reduced space-y, added role -->
                                 <!-- Placeholder -->
                                 <li id="discord-member-placeholder" class="text-gray-500 italic py-4 text-center">Loading members...</li>
                                 <!-- Member items will be added here by JS -->
@@ -313,11 +229,13 @@
 
                             <!-- Action Buttons -->
                             <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8 pt-6 border-t border-gray-700/50"> <!-- Adjusted border -->
-                                <a href="#" id="discord-join-link" class="btn btn-primary-glow hidden" target="_blank" rel="noopener noreferrer">
-                                    <i class="fab fa-discord mr-2"></i> Join Discord
+                                <a href="#" id="discord-join-link" class="btn btn-primary-glow hidden" target="_blank" rel="noopener noreferrer"
+                                   data-tooltip-target="tooltip" data-tooltip-text="Click to join our Discord server!" aria-describedby="tooltip"> <!-- Added tooltip, aria-describedby -->
+                                    <i class="fab fa-discord mr-2" aria-hidden="true"></i> Join Discord
                                 </a>
-                                <button id="discord-copy-link-button" class="btn btn-secondary-glow hidden">
-                                    <i class="fas fa-copy mr-2"></i> Copy Invite
+                                <button id="discord-copy-link-button" class="btn btn-secondary-glow hidden"
+                                        data-tooltip-target="tooltip" data-tooltip-text="Click to copy the Discord invite link!" aria-describedby="tooltip"> <!-- Added tooltip, aria-describedby -->
+                                    <i class="fas fa-copy mr-2" aria-hidden="true"></i> Copy Invite
                                 </button>
                             </div>
                         </div>
@@ -331,22 +249,22 @@
 
 
             <!-- Join Us Section -->
-            <section id="join" class="section-padding text-center relative overflow-hidden join-section flex flex-col justify-center">
+            <section id="join" class="section-padding text-center relative overflow-hidden join-section flex flex-col justify-center" aria-labelledby="join-heading">
                  <div class="container mx-auto max-w-3xl relative z-10">
-                    <h2 class="section-title animate-on-scroll">
+                    <h2 id="join-heading" class="section-title animate-on-scroll">
                         <span class="text-teal-400">Enlist</span> in the Empire
                     </h2>
-                    <div class="section-divider animate-on-scroll delay-1"></div>
+                    <div class="section-divider animate-on-scroll delay-1" aria-hidden="true"></div>
                     <p class="text-lg text-gray-300 mb-10 leading-relaxed animate-on-scroll delay-2">
                         Become part of Frankonia's disciplined forces. We seek dedicated members ready to uphold our values and contribute to victory. Answer the call.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-5 animate-on-scroll delay-3 mt-12">
                         <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="btn btn-primary-glow">
-                            <i class="fab fa-roblox mr-2"></i> Join Roblox Group
+                            <i class="fab fa-roblox mr-2" aria-hidden="true"></i> Join Roblox Group
                         </a>
                         <!-- Link to Discord section instead of external link -->
                         <a href="#discord-status" class="btn btn-secondary-glow">
-                            <i class="fab fa-discord mr-2"></i> View Discord Status
+                            <i class="fab fa-discord mr-2" aria-hidden="true"></i> View Discord Status
                         </a>
                     </div>
                 </div>
@@ -354,26 +272,26 @@
         </main>
 
         <!-- Footer -->
-        <footer class="py-10 px-6 md:px-12 bg-slate-900/70 border-t border-gray-700/50">
+        <footer class="py-10 px-6 md:px-12 bg-slate-900/70 border-t border-gray-700/50" role="contentinfo">
             <div class="container mx-auto text-center text-gray-400">
                 <div class="mb-4 animate-on-scroll">
                     <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=6804f410&is=6803a290&hm=e30dac6a7aa6f3cb1e6365427b7f6287ce239fa1212cc1c40a32f09b2fee52e6&=&format=webp&quality=lossless&width=960&height=960"
-                         alt="Frankonia Logo Small" class="h-12 w-12 mx-auto rounded-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.style.display='none'">
+                         alt="Frankonia Empire Logo Small" class="h-12 w-12 mx-auto rounded-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-300"
+                         onerror="this.style.display='none'" loading="lazy"> <!-- Added loading="lazy" -->
                 </div>
-                <p class="animate-on-scroll delay-1 motto text-gray-500 text-sm">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p>
+                <p class="mt-3 animate-on-scroll delay-1 motto text-gray-500 text-sm">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p>
                 <p class="mt-3 animate-on-scroll delay-2 text-sm">© <span id="current-year"></span> The Germanic Empire of Frankonia. All Rights Reserved.</p>
                 <p class="text-xs mt-1 animate-on-scroll delay-3 text-gray-500">A Fictional Roblox Group Simulation.</p>
                 <div class="mt-5 space-x-6 animate-on-scroll delay-4">
-                    <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Roblox Group"><i class="fab fa-roblox"></i></a>
-                    <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Discord Server"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Roblox Group Link"><i class="fab fa-roblox" aria-hidden="true"></i></a> <!-- Added aria-label, aria-hidden -->
+                    <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Discord Server Link"><i class="fab fa-discord" aria-hidden="true"></i></a> <!-- Added aria-label, aria-hidden -->
                     <!-- Add other links if needed -->
                 </div>
             </div>
         </footer>
 
         <!-- Tooltip Element (Hidden by default) -->
-        <div id="tooltip" class="fixed hidden z-[60] px-3 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-md shadow-sm opacity-0 transition-opacity duration-200 tooltip-custom" role="tooltip">
+        <div id="tooltip" class="fixed hidden z-[60] px-3 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-md shadow-sm opacity-0 transition-opacity duration-200 tooltip-custom" role="tooltip" aria-hidden="true">
             Tooltip text
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
