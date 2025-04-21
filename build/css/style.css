@@ -943,6 +943,19 @@ footer {
 .regiment-detail-type-badge.covert { background-color: rgba(75, 85, 99, 0.3); color: #d1d5db; border-color: rgba(107, 114, 128, 0.5); }
 .regiment-detail-type-badge.leadership { background-color: rgba(245, 158, 11, 0.2); color: #fde68a; border-color: rgba(245, 158, 11, 0.4); }
 
+/* --- START: Added styles for new tags --- */
+.regiment-detail-type-badge.armed-forces {
+    background-color: rgba(75, 85, 99, 0.25); /* gray-700 base */
+    color: #e5e7eb; /* gray-200 */
+    border-color: rgba(75, 85, 99, 0.5); /* gray-700/50 */
+}
+.regiment-detail-type-badge.independent {
+    background-color: rgba(37, 99, 235, 0.2); /* blue-600 base */
+    color: #bfdbfe; /* blue-200 */
+    border-color: rgba(37, 99, 235, 0.4); /* blue-600/40 */
+}
+/* --- END: Added styles for new tags --- */
+
 
 /* Description Wrapper for Scroll/Truncate */
 .regiment-description-wrapper {
