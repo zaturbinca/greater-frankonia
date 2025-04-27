@@ -4,37 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lore - The Germanic Empire of Frankonia</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Georgia&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Popper.js (for Tooltips) -->
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css"> <!-- <<< CHECK THIS PATH -->
-
-    <!-- Favicon (Example - replace with actual favicon links) -->
-    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="stylesheet" href="css/style.css"> <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 </head>
 <body class="animated-subtle-gradient-bg">
 
-    <div x-data="{ mobileMenuOpen: false, showMapModal: false, mapModalSrc: '' }" class="relative"> <!-- Added showMapModal and mapModalSrc -->
-
-        <!-- Header -->
-        <header id="main-header" class="py-3 px-4 md:px-10 glass-effect sticky top-0 z-50 transition-all duration-500 ease-in-out">
+    <div x-data="{ mobileMenuOpen: false, showMapModal: false, mapModalSrc: '' }" class="relative"> <header id="main-header" class="py-3 px-4 md:px-10 glass-effect sticky top-0 z-50 transition-all duration-500 ease-in-out">
             <div class="container mx-auto flex justify-between items-center">
-                <!-- Logo & Title -->
                 <a href="index.html#home" class="flex items-center gap-3 animate-on-scroll focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-background rounded-md header-logo-link">
-                    <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=6804f410&is=6803a290&hm=e30dac6a7aa6f3cb1e6365427b7f6287ce239fa1212cc1c40a32f09b2fee52e6&=&format=webp&quality=lossless&width=960&height=960"
+                    <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=680f8010&is=680e2e90&hm=2fba1af6f0d320a42f8eec48433f71c90e3914f642ccbd956c20fb66b2878908&=&format=webp&quality=lossless&width=960&height=960"
                          alt="Frankonia Logo" class="h-10 w-10 md:h-12 w-12 rounded-full object-cover border-2 border-teal-400/50"
                          onerror="this.style.display='none'">
                     <span class="text-xl md:text-2xl font-bold tracking-tight text-white hidden sm:inline">
@@ -45,7 +32,6 @@
                     </span>
                 </a>
 
-                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-5 lg:space-x-7">
                     <a href="index.html#home" class="nav-link-hover animate-on-scroll delay-1">Home</a>
                     <a href="lore_page.html" class="nav-link-hover animate-on-scroll delay-2 active">Lore</a>
@@ -58,7 +44,6 @@
                     <a href="index.html#join" class="nav-link-hover animate-on-scroll delay-9">Join Us</a>
                 </nav>
 
-                <!-- Mobile Menu Button -->
                 <button @click="mobileMenuOpen = !mobileMenuOpen"
                         class="md:hidden text-gray-300 hover:text-white transition duration-200 animate-on-scroll delay-1 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
                         aria-controls="mobile-menu"
@@ -70,7 +55,6 @@
             </div>
         </header>
 
-        <!-- Mobile Menu -->
         <div x-show="mobileMenuOpen"
              x-transition:enter="transition ease-out duration-300 transform"
              x-transition:enter-start="-translate-x-full"
@@ -96,14 +80,11 @@
                  <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-discord w-5 mr-2"></i> Discord Server</a>
             </div>
         </div>
-        <!-- Overlay for Mobile Menu -->
         <div x-show="mobileMenuOpen" x-transition.opacity.duration.300ms class="fixed inset-0 bg-black/50 z-30 md:hidden" @click="mobileMenuOpen = false"></div>
 
 
         <main>
-            <!-- Lore Section -->
-            <section id="lore" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 pt-28 md:pt-36"> <!-- Adjusted padding-top -->
-                <div class="container mx-auto max-w-5xl">
+            <section id="lore" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 pt-28 md:pt-36"> <div class="container mx-auto max-w-5xl">
                     <h2 class="section-title animate-on-scroll">
                         The Frankonian <span class="text-teal-400">Saga</span>
                     </h2>
@@ -112,13 +93,11 @@
                         Our history diverges. Our destiny is forged in steel and strategy. Understand the world of Frankonia.
                     </p>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-20 items-start"> <!-- Changed items-center to items-start -->
-                        <article class="animate-on-scroll delay-3"> <!-- Used <article> for the lore text -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-20 items-start"> <article class="animate-on-scroll delay-3">
                             <h3 class="text-2xl font-semibold mb-4 text-teal-300 flex items-center gap-3">
                                 <i class="fas fa-history text-teal-400"></i> Alternate History: <span class="text-white">1946</span>
                             </h3>
-                            <div class="text-gray-300 space-y-4 leading-relaxed lore-history-text"> <!-- Added lore-history-text class -->
-                                <p>
+                            <div class="text-gray-300 space-y-4 leading-relaxed lore-history-text"> <p>
                                     Following the Great War, Germany, having not surrendered despite the loss of Alsace-Lorraine, negotiated an <span class="tooltip-trigger font-semibold text-white cursor-help" data-tooltip-target="tooltip-armistice">armistice</span>
                                     <span class="tooltip-trigger ml-1 text-gray-400 hover:text-white transition-colors cursor-help" data-tooltip-target="tooltip-armistice"><i class="fas fa-handshake text-sm"></i></span>
                                     devoid of punitive restrictions. The sole concession was a territorial adjustment, reshaping Germany to its modern-day borders. Crucially, the <span class="tooltip-trigger font-semibold text-white cursor-help" data-tooltip-target="tooltip-versailles">Treaty of Versailles</span>
@@ -140,8 +119,7 @@
                                 </p>
                             </div>
 
-                            <!-- Subtle Separator -->
-                            <div class="w-24 h-0.5 bg-gray-700/50 mx-auto my-8 animate-on-scroll delay-4"></div>
+                            <div class="w-24 h-0.5 bg-gray-700/50 mx-auto my-8"></div>
 
                             <h4 class="text-xl font-semibold mb-3 text-teal-300 flex items-center gap-2">
                                 <i class="fas fa-info-circle text-teal-400 text-lg"></i> Key Lore Points
@@ -186,23 +164,19 @@
                             </ul>
                         </article>
                         <figure class="map-container animate-on-scroll delay-4 mt-4 md:mt-0 cursor-pointer glass-effect"
-                                @click="showMapModal = true; mapModalSrc = $event.target.src"> <!-- Added glass-effect class -->
-                            <img src="https://media.discordapp.net/attachments/1356331685750378737/1363145322657746994/input_file_7.png?ex=6804f782&is=6803a602&hm=3c02b6079a97bab3c08bae562ce3db585824730484f8322df4950ea61e167838&=&format=webp&quality=lossless&width=872&height=959"
+                                @click="showMapModal = true; mapModalSrc = $event.target.src"> <img src="https://media.discordapp.net/attachments/1356331685750378737/1363145322657746994/input_file_7.png?ex=680f8382&is=680e3202&hm=7fea506077f9c2ecfd2ff0e9f9713a4d84fe4bb1542d35e5759d86665db4cec2&=&format=webp&quality=lossless&width=872&height=959"
                                  alt="Map of Frankonia Territory in the Rhineland"
                                  class="w-full h-auto object-cover"
                                  loading="lazy"
-                                 onerror="this.src='https://media.discordapp.net/attachments/1356331685750378737/1361693614006079658/input_file_7.png?ex=6801a9c0&is=68005840&hm=bccda264f2282bc9053ef34b6b0e77cf7c3b0d19a123a6d106c22b20878bca1c&=&format=webp&quality=lossless&width=676&height=744'; this.alt='Map loading error - Placeholder image shown'">
-                            <figcaption class="text-center text-gray-400 text-sm mt-2">Current Operational Map: Rhineland District</figcaption> <!-- Added figcaption -->
-                        </figure>
+                                 onerror="this.src='https://media.discordapp.net/attachments/1356331685750378737/1363145322657746994/input_file_7.png?ex=680d8942&is=680c37c2&hm=eb196d854352b6b18fb0cd6671981ade1fa8328104ad8e663908c43e7784306d&=&format=webp&quality=lossless&width=676&height=744'; this.alt='Map loading error - Placeholder image shown'">
+                            <figcaption class="text-center text-gray-400 text-sm mt-2">Current Operational Map: Rhineland District</figcaption> </figure>
                     </div>
 
-                    <!-- Battlefield Description -->
                     <div class="mt-24 animate-on-scroll delay-5 text-center glass-effect p-6 md:p-8 lore-battlefield-block">
                         <h4 class="text-xl font-semibold mb-3 text-teal-300 flex items-center justify-center gap-2">
                             <i class="fas fa-map-marked-alt text-teal-400"></i> The Battlefield Layout
                         </h4>
-                        <div class="text-gray-300 leading-relaxed max-w-3xl mx-auto text-left space-y-3"> <!-- Added text-left and space-y-3 -->
-                           <p>
+                        <div class="text-gray-300 leading-relaxed max-w-3xl mx-auto text-left space-y-3"> <p>
                                The primary operational zone is a designated district within the contested Rhineland region. Its layout is strategically designed for defense and control:
                            </p>
                            <ul class="list-disc list-inside marker:text-teal-400 space-y-2">
@@ -237,7 +211,6 @@
                         </div>
                     </div>
 
-                    <!-- Placeholder Section: Key Figures -->
                     <div class="mt-24 animate-on-scroll delay-6 text-center glass-effect p-6 md:p-8">
                          <h4 class="text-xl font-semibold mb-3 text-teal-300 flex items-center justify-center gap-2">
                              <i class="fas fa-users text-teal-400"></i> Key Figures <span class="text-gray-500 text-base ml-2">(Coming Soon)</span>
@@ -247,8 +220,7 @@
                          </p>
                     </div>
 
-                     <!-- Placeholder Section: Major Events -->
-                    <div class="mt-12 animate-on-scroll delay-7 text-center glass-effect p-6 md:p-8">
+                     <div class="mt-12 animate-on-scroll delay-7 text-center glass-effect p-6 md:p-8">
                          <h4 class="text-xl font-semibold mb-3 text-teal-300 flex items-center justify-center gap-2">
                              <i class="fas fa-scroll text-teal-400"></i> Major Historical Events <span class="text-gray-500 text-base ml-2">(Coming Soon)</span>
                          </h4>
@@ -262,11 +234,10 @@
             </section>
         </main>
 
-        <!-- Footer -->
         <footer class="py-10 px-6 md:px-12 bg-slate-900/70 border-t border-gray-700/50">
             <div class="container mx-auto text-center text-gray-400">
                 <div class="mb-4 animate-on-scroll">
-                    <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=6804f410&is=6803a290&hm=e30dac6a7aa6f3cb1e6365427b7f6287ce239fa1212cc1c40a32f09b2fee52e6&=&format=webp&quality=lossless&width=960&height=960"
+                    <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=680f8010&is=680e2e90&hm=2fba1af6f0d320a42f8eec48433f71c90e3914f642ccbd956c20fb66b2878908&=&format=webp&quality=lossless&width=960&height=960"
                          alt="Frankonia Logo Small" class="h-12 w-12 mx-auto rounded-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-300"
                          onerror="this.style.display='none'">
                 </div>
@@ -276,19 +247,15 @@
                 <div class="mt-5 space-x-6 animate-on-scroll delay-4">
                     <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Roblox Group"><i class="fab fa-roblox"></i></a>
                     <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Discord Server"><i class="fab fa-discord"></i></a>
-                    <!-- Add other links if needed -->
-                </div>
+                    </div>
             </div>
         </footer>
 
-        <!-- Tooltip Element (Hidden by default) - This is the generic one -->
         <div id="tooltip" class="fixed hidden z-[60] px-3 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-md shadow-sm opacity-0 transition-opacity duration-200 tooltip-custom" role="tooltip">
             Tooltip text
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
 
-        <!-- Specific Tooltip Definitions (Hidden) -->
-        <!-- Ensure these match the data-tooltip-target attributes -->
         <div id="tooltip-armistice" role="tooltip" class="tooltip-custom">
             A formal agreement of warring parties to stop fighting. Unlike a surrender, it doesn't imply defeat.
             <div class="tooltip-arrow" data-popper-arrow></div>
@@ -319,7 +286,6 @@
         </div>
 
 
-        <!-- Map Modal -->
         <div x-show="showMapModal"
              x-transition:enter="transition ease-out duration-300"
              x-transition:enter-start="opacity-0"
@@ -338,11 +304,7 @@
             </div>
         </div>
 
-    </div> <!-- End Alpine x-data wrapper -->
-
-    <!-- Custom JavaScript -->
-    <script src="js/main.js"></script> <!-- <<< CHECK THIS PATH -->
-    <script>
+    </div> <script src="js/main.js"></script> <script>
         // Basic script to initialize tooltips if main.js doesn't handle it automatically
         // Assumes main.js or another script initializes Popper.js tooltips based on data-tooltip-target
         // If your main.js already does this, this block can be removed or kept as a fallback.
@@ -414,8 +376,9 @@
                 rootMargin: '0px 0px -50px 0px' // Adjust bottom margin to trigger slightly earlier
             });
 
+            // Select all elements with .animate-on-scroll and observe them
             document.querySelectorAll('.animate-on-scroll').forEach(element => {
-                observer.observe(element);
+                 observer.observe(element);
             });
         });
     </script>
