@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                  if (!tooltipElement.classList.contains('opacity-100') && tooltipElement.style.display !== 'none') {
                                       handleTransitionEnd();
                                  }
-                             }, 300); // Match transition duration + a little buffer
+                             }, 250); // Match transition duration + a little buffer
 
                          } else {
                               // If no active trigger or popper instance, just ensure it's hidden
