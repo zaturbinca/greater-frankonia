@@ -2,31 +2,38 @@
 
 /* --- Base & Variables --- */
 :root {
-    --color-background: #0c0f1a;
-    --color-text: #e5e7eb; /* gray-200 */
-    --color-text-muted: #9ca3af; /* gray-400 */
-    --color-text-dark: #6b7280; /* gray-500 */
-    --color-primary: #2dd4bf; /* teal-400 */
+    --color-background: #0c0f1a; /* Original Dark Background */
+    --color-text: #e5e7eb; /* Light gray (Tailwind gray-200) */
+    --color-text-muted: #9ca3af; /* Gray (Tailwind gray-400) */
+    --color-text-dark: #6b7280; /* Gray (Tailwind gray-500) */
+    --color-primary: #2dd4bf; /* teal-400 - Accent */
+    --color-primary-rgb: 45, 212, 191; /* RGB for teal-400 */
     --color-primary-dark: #14b8a6; /* teal-600 */
     --color-primary-light: #5eead4; /* teal-300 */
-    --color-secondary: #4b5563; /* gray-600 */
+    --color-secondary: #4b5563; /* gray-600 - For secondary elements on dark bg */
     --color-secondary-light: #6b7280; /* gray-500 */
-    --color-accent: #d1a31f; /* Example gold/yellow */
-    --color-glass-bg: rgba(30, 41, 59, 0.7); /* slate-800 with opacity */
-    --color-glass-border: rgba(255, 255, 255, 0.15);
-    --color-shadow-primary: rgba(45, 212, 191, 0.25);
-    --color-shadow-secondary: rgba(107, 114, 128, 0.2);
-    --color-shadow-lift: rgba(45, 212, 191, 0.2);
-    --color-shadow-lift-accent: rgba(209, 163, 31, 0.25);
+    --color-accent: #d1a31f; /* Example gold/yellow - Retained for now */
+
+    /* Dark Theme Glass Effect */
+    --color-glass-bg: rgba(30, 41, 59, 0.75); /* Dark slate with opacity */
+    --color-glass-border: rgba(255, 255, 255, 0.1); /* Subtle light border */
+
+    /* Subtle Shadows for Dark Theme */
+    --color-shadow-primary: rgba(45, 212, 191, 0.1);    /* Subtle teal glow for primary button accents */
+    --color-shadow-secondary: rgba(255, 255, 255, 0.03); /* Very subtle light gray shadow */
+    --color-shadow-lift: rgba(0, 0, 0, 0.1);            /* Subtle dark shadow for general lift */
+    --color-shadow-lift-accent: rgba(45, 212, 191, 0.08); /* Subtle teal accent for specific lifts (e.g., hover-lift-teal-glow) */
+
     --color-restricted: #ef4444; /* red-500 */
     --color-restricted-bg: rgba(239, 68, 68, 0.1); /* red-500/10 */
     --color-restricted-glow: rgba(239, 68, 68, 0.4); /* red-500/40 */
-    --color-active-glow: rgba(16, 185, 129, 0.4); /* green-500/40 */
-    --color-hereditary-glow: rgba(245, 158, 11, 0.4); /* amber-500/40 */
+    --color-active-glow: rgba(16, 185, 129, 0.4); /* green-500/40 - Teal accent glow */
+    --color-hereditary-glow: rgba(245, 158, 11, 0.4); /* amber-500/40 - Retained for specific use */
 
 
     --font-primary: 'Inter', sans-serif;
-    --font-serif: 'Georgia', serif;
+    /* --font-serif: 'Georgia', serif; */ /* Ensure this remains commented out for dark theme */
+    --color-restricted-rgb: 239, 68, 68; /* RGB for red-500 - Ensure this is present */
 
     --border-radius-sm: 0.375rem; /* rounded-md */
     --border-radius-md: 0.5rem; /* added for clarity */
@@ -97,26 +104,41 @@ body::before {
     position: fixed; /* Fixed position to cover the whole viewport */
     inset: 0; /* Top, right, bottom, left are all 0 */
     z-index: -1; /* Place behind content */
-    /* Diagonal line pattern SVG */
-    background-image: url('data:image/svg+xml,%3Csvg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239CA3AF" fill-opacity="0.08"%3E%3Cpath fill-rule="evenodd" d="M0 10V0h1L0 1zm10 0V0h-1L10 1z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    /* Diagonal line pattern SVG - opacity lowered to 0.03 */
+    background-image: url('data:image/svg+xml,%3Csvg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239CA3AF" fill-opacity="0.03"%3E%3Cpath fill-rule="evenodd" d="M0 10V0h1L0 1zm10 0V0h-1L10 1z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
     background-size: 10px 10px; /* Size of the pattern unit */
-    opacity: 0.5; /* Adjust opacity as needed */
+    opacity: 0.5; /* Base opacity of the pseudo-element itself */
     pointer-events: none; /* Allow clicks to pass through */
-    animation: backgroundPan 60s linear infinite; /* Apply the pan animation */
+    animation: backgroundPan 240s linear infinite; /* Slowed down animation */
 }
+
 
 /* --- Enhanced Animation Classes --- */
 /* Removed !important from transitions here as they are handled by the reduced motion query */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(var(--spacing-10)); /* Use variable */
+    transform: translateY(var(--spacing-8)); /* Reduced from 40px (var(--spacing-10)) to 32px */
     transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .animate-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    /* transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1); */ /* Base transition is fine */
 }
+
+/* Header Logo Image Border Override */
+.header-logo-link img {
+    border-width: 1px !important; /* Reduce border width */
+    border-color: rgba(255, 255, 255, 0.2) !important; /* Make border much more subtle */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add border-color to transition */
+}
+.header-logo-link:hover img {
+    transform: scale(1.1) rotate(5deg);
+    border-color: rgba(var(--color-primary-rgb), 0.5) !important; /* Teal border on hover */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+
 /* Staggered animation delays */
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
@@ -152,38 +174,30 @@ body::before {
 /* --- Navigation --- */
 .nav-link-hover {
     position: relative;
-    transition: color 0.3s ease;
-    padding-bottom: var(--spacing-1); /* Use variable */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+    padding: var(--spacing-1_5) var(--spacing-3); /* Adjusted padding for subtle background */
     color: var(--color-text-muted);
     font-weight: 500; /* medium */
+    border-radius: var(--border-radius-md); /* Rounded corners for background */
 }
 .nav-link-hover::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
-    transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    display: none; /* Remove underline style */
 }
 .nav-link-hover:hover,
 .nav-link-hover:focus {
     color: white;
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle light gray background on hover/focus */
     outline: none;
-}
-.nav-link-hover:hover::after,
-.nav-link-hover:focus::after {
-    width: 100%;
 }
 /* Active state for current page */
 .nav-link-hover.active {
-    color: white;
+    color: var(--color-primary); /* Teal text for active */
+    background-color: rgba(var(--color-primary-rgb), 0.15); /* Subtle teal pill background */
 }
-.nav-link-hover.active::after {
-    width: 100%;
-    background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
+.nav-link-hover.active:hover,
+.nav-link-hover.active:focus {
+    color: var(--color-primary-light); /* Slightly lighter teal on hover/focus of active link */
+    background-color: rgba(var(--color-primary-rgb), 0.2); /* Slightly darker/more opaque pill */
 }
 
 
@@ -215,7 +229,7 @@ body::before {
     align-items: center;
     justify-content: center;
     font-weight: 600; /* semibold */
-    padding: var(--spacing-3) var(--spacing-8); /* py-3 px-8 */
+    padding: var(--spacing-2_5) var(--spacing-6); /* Reduced padding: 10px 24px */
     border-radius: var(--border-radius-lg);
     box-shadow: 0 var(--spacing-1) var(--spacing-4) rgba(0,0,0, 0.1); /* Use variables */
     font-size: 1.125rem; /* text-lg */
@@ -234,7 +248,7 @@ body::before {
 }
 /* Smaller button variant */
 .btn.btn-sm {
-    padding: var(--spacing-2) var(--spacing-2); /* py-2 px-2 - Reduced horizontal padding */
+    padding: var(--spacing-1_5) var(--spacing-4); /* Adjusted proportional padding: 6px 16px */
     font-size: theme('fontSize.sm'); /* text-sm */
     border-radius: var(--border-radius-md); /* rounded-md */
 }
@@ -247,8 +261,8 @@ body::before {
 }
 .btn-primary-glow:hover:not(:disabled),
 .btn-primary-glow:focus:not(:disabled) {
-    transform: scale(1.06) translateY(calc(-1 * var(--spacing-1))); /* Slightly more lift */
-    box-shadow: 0 var(--spacing-3) var(--spacing-8) rgba(45, 212, 191, 0.5); /* Stronger shadow */
+    transform: scale(1.03) translateY(calc(-1 * var(--spacing-0_5))); /* Reduced scale and lift */
+    box-shadow: 0 var(--spacing-2) var(--spacing-6) var(--color-shadow-primary); /* Softer shadow using variable */
     filter: brightness(1.1);
 }
 
@@ -259,10 +273,10 @@ body::before {
 }
 .btn-secondary-glow:hover:not(:disabled),
 .btn-secondary-glow:focus:not(:disabled) {
-    transform: scale(1.06) translateY(calc(-1 * var(--spacing-1))); /* Slightly more lift */
+    transform: scale(1.03) translateY(calc(-1 * var(--spacing-0_5))); /* Reduced scale and lift */
     background-color: rgba(75, 85, 99, 0.7); /* gray-600 with opacity */
     border-color: var(--color-secondary-light);
-    box-shadow: 0 var(--spacing-2) var(--spacing-6) var(--color-shadow-secondary); /* Stronger shadow */
+    box-shadow: 0 var(--spacing-2) var(--spacing-6) var(--color-shadow-secondary); /* Kept very subtle shadow */
 }
 
 /* --- Glassmorphism Effect --- */
@@ -285,7 +299,7 @@ body::before {
     /* This class is on the body, providing the base gradient */
     background: linear-gradient(-45deg, var(--color-background), #111827, #1a2641, #111827);
     background-size: 600% 600%;
-    animation: subtleGradientAnimation 45s ease infinite;
+    /* animation: subtleGradientAnimation 45s ease infinite; */ /* Ensure this is commented out */
 }
 
 /* --- Header Styling --- */
@@ -447,19 +461,21 @@ header#main-header.scrolled {
     }
 }
 .tab-button.active {
-    color: white;
-    border-color: var(--color-primary);
-    background-color: rgba(45, 212, 191, 0.1); /* teal-400 with low opacity */
+    color: white; /* Brighter text for active tab */
+    background-color: rgba(255, 255, 255, 0.05); /* Very subtle light pill background */
+    border-bottom-color: var(--color-primary); /* Keep teal underline for active state */
 }
-.tab-button:not(.active):hover {
-    color: var(--color-text);
-    background-color: rgba(75, 85, 99, 0.2); /* gray-600/20 */
-    border-bottom-color: var(--color-secondary);
+.tab-button:not(.active):hover,
+.tab-button:not(.active):focus { /* Combined hover and focus for inactive tabs */
+    color: var(--color-text); /* Brighter text on hover/focus for inactive */
+    background-color: rgba(255, 255, 255, 0.03); /* Even more subtle background */
+    border-bottom-color: var(--color-secondary); /* Faint border bottom on hover/focus */
+    outline: none; /* Ensure no default outline on focus if custom style is applied */
 }
-.tab-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb, 45, 212, 191), 0.4);
+.tab-button.active:focus { /* Specific focus for active tab if needed */
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px rgba(var(--color-primary-rgb), 0.5); /* Focus ring using primary color */
     z-index: 1; /* Ensure focus ring is visible */
+    outline: none;
 }
 
 .tab-content-wrapper {
@@ -520,10 +536,10 @@ header#main-header.scrolled {
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .rank-list li:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(255, 255, 255, 0.03); /* Subtle striping for readability */
 }
 .rank-list li:hover {
-    background-color: rgba(45, 212, 191, 0.15);
+    background-color: rgba(var(--color-primary-rgb), 0.1); /* Subtle teal accent on hover, slightly more subtle */
     color: white;
     transform: translateX(var(--spacing-1_5)); /* Use variable */
 }
@@ -566,7 +582,7 @@ header#main-header.scrolled {
 
 /* --- Mottos --- */
 .motto {
-    font-family: var(--font-serif);
+    font-family: var(--font-primary); /* Changed from --font-serif to --font-primary */
     font-style: italic;
     letter-spacing: 1px;
     opacity: 0.9;
@@ -580,7 +596,7 @@ header#main-header.scrolled {
     background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22%3E%3Cg fill-rule=%22evenodd%22%3E%3Cg fill=%22%239CA3AF%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
 }
 .text-shadow-lg {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Made slightly softer */
 }
 
 /* --- Join Section Specifics --- */
@@ -625,6 +641,8 @@ footer {
     transition: opacity 0.2s ease-in-out;
     max-width: 20rem; /* Added max-width */
     word-wrap: break-word; /* Ensure text wraps */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for dark theme */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for dark theme */
 }
 .tooltip-arrow,
 .tooltip-arrow::before {
@@ -936,11 +954,11 @@ footer {
     flex-shrink: 0; /* Prevent shrinking */
     /* align-self: flex-start; /* REMOVED - align-items: center on parent handles vertical alignment */
     border: 1px solid transparent; /* Base border */
-    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-out; /* Add transition for glow and slight lift */
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-out;
 }
-/* Type Badge Hover Glow */
+/* Type Badge Hover Glow - REMOVED generic teal glow, keeping lift */
 .regiment-detail-card.fancy .regiment-detail-type-badge:hover {
-    box-shadow: 0 0 var(--spacing-2) rgba(var(--color-primary-rgb, 45, 212, 191), 0.6); /* Subtle teal glow */
+    /* box-shadow: 0 0 var(--spacing-2) rgba(var(--color-primary-rgb, 45, 212, 191), 0.6); */ /* REMOVED */
     transform: translateY(-2px); /* Slight lift */
 }
 
@@ -1105,8 +1123,8 @@ footer {
     color: var(--color-restricted); /* Red color */
     text-transform: uppercase;
     letter-spacing: 1px;
-    /* Initial text shadow for glow */
-    text-shadow: 0 0 var(--spacing-2) var(--color-restricted-glow), 0 0 var(--spacing-4) var(--color-restricted-glow);
+    /* MODIFIED: Static, more subtle text shadow */
+    text-shadow: 0 0 var(--spacing-3) rgba(var(--color-restricted-rgb), 0.3);
     /* Ensure it's above other content */
     z-index: 2; /* Higher than default content */
     /* Inherit glass effect background/border */
@@ -1125,10 +1143,10 @@ footer {
     /* background-size: 3px 3px, cover; */
 }
 
-/* Apply the new text glow pulse animation to the unauthorized message when it has the pulse class */
-.unauthorized-message.restricted-pulse {
-     animation: pulse-text-glow-restricted 2s infinite ease-in-out; /* Apply the new animation */
-}
+/* REMOVED: Pulse animation is no longer applied by default, keyframe can be removed later if not used elsewhere */
+/* .unauthorized-message.restricted-pulse {
+     animation: pulse-text-glow-restricted 2s infinite ease-in-out;
+} */
 
 /* Specific styles for the Restricted Card's default content */
 .regiment-detail-card.fancy.restricted-card-layout .regiment-detail-content {
@@ -1193,6 +1211,7 @@ footer {
 /* --- START: Visual Enhancements (Added) --- */
 
 /* Subtle Radial Gradient Overlay on Body */
+/*
 body::after {
     content: '';
     position: fixed;
@@ -1201,6 +1220,7 @@ body::after {
     background: radial-gradient(circle at center, rgba(45, 212, 191, 0.05) 0%, transparent 60%); /* Subtle teal glow from center */
     pointer-events: none;
 }
+*/ /* This body::after radial gradient is also commented out */
 
 /* Enhanced Section Title Hover */
 /* Already added in the main .section-title:hover rule */
@@ -1243,6 +1263,7 @@ body::after {
 /* Subtle Shine Effect on Hover for Cards and Buttons */
 /* Add a pseudo-element for the shine */
 /* Applying to .btn is within scope, applying to .regiment-detail-card.fancy is NOT */
+/*
 .btn::after { /* Removed .regiment-detail-card.fancy::after */
     content: '';
     position: absolute;
@@ -1256,25 +1277,32 @@ body::after {
     transition: none; /* Disable default transitions */
     z-index: 3; /* Above content */
 }
+*/
 
 /* Animation for the shine effect */
+/*
 @keyframes shine {
     0% { left: -100%; }
     60% { left: 150%; } /* Move across */
     100% { left: 150%; }
 }
+*/
 
+/*
 .btn:hover:not(:disabled)::after { /* Removed .regiment-detail-card.fancy:hover::after */
     animation: shine 1.5s ease-in-out; /* Apply animation on hover */
 }
+*/
 
 /* Ensure shine is clipped by card/button shape */
 /* Applying to .btn is within scope, applying to .regiment-detail-card.fancy is NOT */
+/*
 .btn { /* Removed .regiment-detail-card.fancy */
     position: relative; /* Needed for absolute positioning of ::after */
     overflow: hidden; /* Clip the shine */
     z-index: 0; /* Ensure z-index context */
 }
+*/
 
 /* Adjust z-index for unauthorized message to be above shine */
 /* This rule is specific to regiment cards and is outside the scope */
@@ -1284,12 +1312,14 @@ body::after {
 
 
 /* Ensure reduced motion disables shine animation */
+/*
 @media (prefers-reduced-motion: reduce) {
     .btn:hover:not(:disabled)::after { /* Removed .regiment-detail-card.fancy:hover::after */
         animation: none !important;
         display: none !important; /* Hide the pseudo-element */
     }
 }
+*/
 
 /* --- Added specific hover effect for the battlefield glass block --- */
 /* NOTE: Keeping these scoped rules as requested, they do not apply to index.html */
@@ -1586,7 +1616,7 @@ header#main-header.scrolled.glass-effect:hover {
 
 /* Testimonial Card Styling */
 .testimonial-card {
-    /* Inherits glass-effect and hover-lift-glow */
+    /* Inherits glass-effect and hover-lift-teal-glow */
     display: flex;
     flex-direction: column;
 }
@@ -1627,15 +1657,34 @@ header#main-header.scrolled.glass-effect:hover {
 
 /* AI Tool Form Styling */
 #ai-recommendation-form select {
-    /* Inherits w-full, px-4, py-2, bg-slate-700, border, border-gray-600, rounded-md, text-gray-200, focus styles */
+    /* Tailwind classes like bg-slate-700, border-gray-600 are applied in HTML */
+    /* CSS here refines those for the Apple-like dark theme */
     appearance: none; /* Remove default arrow */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2220%22 height%3D%2220%22 fill%3D%22%239CA3AF%22 viewBox%3D%220 0 20 20%22%3E%3Cpath d%3D%22M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z%22 clip-rule%3D%22evenodd%22 fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2220%22 height%3D%2220%22 fill%3D%22%239CA3AF%22 viewBox%3D%220 0 20 20%22%3E%3Cpath d%3D%22M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z%22 clip-rule%3D%22evenodd%22 fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'); /* Custom arrow (gray-400) */
     background-repeat: no-repeat;
-    background-position: right var(--spacing-3) center; /* Position arrow */
-    background-size: 0.75rem; /* Size arrow */
+    background-position: right var(--spacing-3) center;
+    background-size: 0.75rem;
     padding-right: var(--spacing-10); /* Make space for arrow */
     cursor: pointer;
+    background-color: rgba(55, 65, 81, 0.5); /* slate-700 with 50% opacity for a more "glassy" feel */
+    border-color: rgba(255, 255, 255, 0.1); /* More subtle border for dark theme */
+    color: var(--color-text); /* Ensure text is light */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+
+#ai-recommendation-form select:hover {
+    background-color: rgba(55, 65, 81, 0.7); /* Slightly more opaque on hover */
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+#ai-recommendation-form select:focus {
+    /* Tailwind focus:outline-none focus:ring-teal-500 focus:border-teal-500 */
+    /* Ensure focus ring is visible and uses primary color */
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-primary); /* Create a distinct focus ring */
+    border-color: var(--color-primary); /* Change border to primary on focus */
+}
+
 
 #ai-recommendation-form label i.fas {
     /* Inherits mr-2, text-teal-400 */
