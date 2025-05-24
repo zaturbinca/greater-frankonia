@@ -141,6 +141,14 @@ body::before {
     box-shadow: 0 var(--spacing-4) var(--spacing-8) var(--color-shadow-lift), 0 0 var(--spacing-5) var(--color-shadow-lift-accent); /* Use variables */
 }
 
+.hover-lift-teal-glow {
+    transition: var(--transition-transform), var(--transition-shadow);
+}
+.hover-lift-teal-glow:hover {
+    transform: translateY(calc(-1 * var(--spacing-2))) scale(1.03);
+    box-shadow: 0 var(--spacing-4) var(--spacing-8) var(--color-shadow-lift), 0 0 var(--spacing-6) var(--color-primary);
+}
+
 /* --- Navigation --- */
 .nav-link-hover {
     position: relative;
