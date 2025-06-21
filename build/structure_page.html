@@ -3,508 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Structure - The Germanic Empire of Frankonia</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Georgia&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Popper.js (for Tooltips) -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css"> <!-- <<< CHECK THIS PATH -->
-
-    <!-- Favicon (Example - replace with actual favicon links) -->
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+    <title>Imperial Structure - GEF</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body class="animated-subtle-gradient-bg">
+<body>
 
-    <div x-data="{ mobileMenuOpen: false }" class="relative">
-
-        <!-- Header -->
-        <header id="main-header" class="py-3 px-4 md:px-10 glass-effect sticky top-0 z-50 transition-all duration-500 ease-in-out">
-            <div class="container mx-auto flex justify-between items-center">
-                <!-- Logo & Title -->
-                <a href="index.html#home" class="flex items-center gap-3 animate-on-scroll focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-background rounded-md header-logo-link">
-                    <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=680f8010&is=680e2e90&hm=2fba1af6f0d320a42f8eec48433f71c90e3914f642ccbd956c20fb66b2878908&=&format=webp&quality=lossless&width=960&height=960"
-                         alt="Frankonia Logo" class="h-10 w-10 md:h-12 w-12 rounded-full object-cover border-2 border-teal-400/50"
-                         onerror="this.style.display='none'">
-                    <span class="text-xl md:text-2xl font-bold tracking-tight text-white hidden sm:inline">
-                        The Germanic Empire of <span class="text-teal-400">Frankonia</span>
-                    </span>
-                    <span class="text-xl md:text-2xl font-bold tracking-tight text-white sm:hidden">
-                        <span class="text-teal-400">G</span>EF
-                    </span>
-                </a>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-5 lg:space-x-7">
-                    <a href="index.html#home" class="nav-link-hover animate-on-scroll delay-1">Home</a>
-                    <a href="lore_page.html" class="nav-link-hover animate-on-scroll delay-2">Lore</a>
-                    <a href="structure_page.html" class="nav-link-hover animate-on-scroll delay-3 active">Structure</a>
-                    <a href="regiments_page.html" class="nav-link-hover animate-on-scroll delay-4">Regiments List</a>
-                    <a href="index.html#gallery" class="nav-link-hover animate-on-scroll delay-5">Gallery</a>
-                    <a href="index.html#testimonials" class="nav-link-hover animate-on-scroll delay-6">Testimonials</a>
-                    <a href="index.html#ai-tool" class="nav-link-hover animate-on-scroll delay-7">AI Tool</a>
-                    <a href="index.html#discord-status" class="nav-link-hover animate-on-scroll delay-8">Discord</a>
-                    <a href="index.html#join" class="nav-link-hover animate-on-scroll delay-9">Join Us</a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <button @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="md:hidden text-gray-300 hover:text-white transition duration-200 animate-on-scroll delay-1 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
-                        aria-controls="mobile-menu"
-                        :aria-expanded="mobileMenuOpen.toString()">
-                    <span class="sr-only">Open main menu</span>
-                    <i class="fas fa-bars fa-lg" x-show="!mobileMenuOpen"></i>
-                    <i class="fas fa-times fa-lg" x-show="mobileMenuOpen"></i>
-                </button>
+    <!-- Global Header -->
+    <header class="main-header">
+        <a href="index.html" class="logo-container">
+            <div class="logo-wrapper">
+                <img src="assets/frankonia_logo.png" alt="GEF Logo" class="logo">
+                <div class="crown-decoration">
+                    <i class="fas fa-crown"></i>
+                    <i class="fas fa-crown"></i>
+                </div>
             </div>
-        </header>
-
-        <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen"
-             x-transition:enter="transition ease-out duration-300 transform"
-             x-transition:enter-start="-translate-x-full"
-             x-transition:enter-end="translate-x-0"
-             x-transition:leave="transition ease-in duration-200 transform"
-             x-transition:leave-start="translate-x-0"
-             x-transition:leave-end="-translate-x-full"
-             class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-800/95 backdrop-blur-md shadow-lg md:hidden overflow-y-auto"
-             id="mobile-menu"
-             @click.away="mobileMenuOpen = false">
-            <div class="pt-20 pb-6 px-4 space-y-4">
-                 <a href="index.html#home" @click="mobileMenuOpen = false" class="mobile-nav-link block">Home</a>
-                 <a href="lore_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Lore</a>
-                 <a href="structure_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block active">Structure</a>
-                 <a href="regiments_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Regiments List</a>
-                 <a href="index.html#gallery" @click="mobileMenuOpen = false" class="mobile-nav-link block">Gallery</a>
-                 <a href="index.html#testimonials" @click="mobileMenuOpen = false" class="mobile-nav-link block">Testimonials</a>
-                 <a href="index.html#ai-tool" @click="mobileMenuOpen = false" class="mobile-nav-link block">AI Tool</a>
-                 <a href="index.html#discord-status" @click="mobileMenuOpen = false" class="mobile-nav-link block">Discord Status</a>
-                 <a href="index.html#join" @click="mobileMenuOpen = false" class="mobile-nav-link block">Join Us</a>
-                 <hr class="border-gray-600 my-4">
-                 <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-roblox w-5 mr-2"></i> Roblox Group</a>
-                 <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-discord w-5 mr-2"></i> Discord Server</a>
-            </div>
+            <span class="group-name">The Germanic Empire of Frankonia</span>
+            <span class="group-name-mobile">GEF</span>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lore_page.html">Lore</a></li>
+                <li><a href="structure_page.html" class="active">Structure</a></li>
+                <li><a href="regiments_page.html">Regiments</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="index.html#ai-tool-section">AI Tool</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="#" class="btn btn-primary discord-join-link">Join Us</a>
         </div>
-        <!-- Overlay for Mobile Menu -->
-        <div x-show="mobileMenuOpen" x-transition.opacity.duration.300ms class="fixed inset-0 bg-black/50 z-30 md:hidden" @click="mobileMenuOpen = false"></div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lore_page.html">Lore</a></li>
+            <li><a href="structure_page.html">Structure</a></li>
+            <li><a href="regiments_page.html">Regiments</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="index.html#ai-tool-section">AI Tool</a></li>
+            <li><a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank">Roblox Group</a></li>
+            <li><a href="#" class="discord-join-link">Discord Server</a></li>
+        </ul>
+    </nav>
 
+    <main>
+        <section class="container hidden">
+            <div class="section-header">
+                <h2>Imperial Structure</h2>
+                <div class="divider"></div>
+                <h3 class="subtitle">Order and hierarchy define Frankonia. Explore our military, government, and command structure.</h3>
+            </div>
 
-        <main>
-            <!-- Structure Section -->
-            <section id="structure" class="section-padding pt-28 md:pt-36"> <!-- Adjusted padding-top -->
-                <div class="container mx-auto max-w-6xl">
-                    <h2 class="section-title animate-on-scroll">
-                        Imperial <span class="text-teal-400">Structure</span>
-                    </h2>
-                    <div class="section-divider animate-on-scroll delay-1"></div>
-                    <p class="section-subtitle animate-on-scroll delay-2">
-                        Order and hierarchy define Frankonia. Explore our military, government, and command structure.
-                    </p>
-
-                    <div x-data="{ activeTab: 'military' }" class="w-full max-w-4xl mx-auto animate-on-scroll delay-3 mb-16">
-                        <div class="flex justify-center border-b border-gray-700 mb-8 flex-wrap gap-x-2 sm:gap-x-4">
-                            <button @click="activeTab = 'military'" :class="{ 'active': activeTab === 'military' }" class="tab-button animate-on-scroll delay-4"> <!-- Added animation -->
-                                <i class="fas fa-shield-halved mr-2 opacity-80"></i> Military
-                            </button>
-                            <button @click="activeTab = 'government'" :class="{ 'active': activeTab === 'government' }" class="tab-button animate-on-scroll delay-5"> <!-- Added animation -->
-                                <i class="fas fa-landmark mr-2 opacity-80"></i> Government
-                            </button>
-                            <button @click="activeTab = 'main'" :class="{ 'active': activeTab === 'main' }" class="tab-button animate-on-scroll delay-6"> <!-- Added animation -->
-                                <i class="fas fa-users mr-2 opacity-80"></i> Main Group
-                            </button>
-                            <button @click="activeTab = 'command'" :class="{ 'active': activeTab === 'command' }" class="tab-button animate-on-scroll delay-7"> <!-- Added animation -->
-                                <i class="fas fa-crown mr-2 opacity-80"></i> Command
-                            </button>
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="military">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Military</span>
+                        <div class="tab-ornament">»</div>
+                    </button>
+                    <button class="tab-btn" data-tab="government">
+                        <i class="fas fa-landmark"></i>
+                        <span>Government</span>
+                        <div class="tab-ornament">»</div>
+                    </button>
+                    <button class="tab-btn" data-tab="command">
+                        <i class="fas fa-crown"></i>
+                        <span>High Command</span>
+                        <div class="tab-ornament">»</div>
+                    </button>
+                    <button class="tab-btn" data-tab="main-group">
+                        <i class="fab fa-roblox"></i>
+                        <span>Group Roles</span>
+                        <div class="tab-ornament">»</div>
+                    </button>
+                </div>
+                <div class="tab-content">
+                    <!-- Military Tab -->
+                    <div class="tab-pane active" id="military">
+                        <div class="rank-header">
+                            <h3><i class="fas fa-medal"></i> Military Ranks</h3>
+                            <div class="rank-divider"></div>
                         </div>
+                        <p>Progression within the Armed Forces, the backbone of the Empire's strength.</p>
+                        
+                        <h4>Rank Overview</h4>
+                        <ul class="rank-list">
+                            <li>Grand Marshal</li><li>Field Marshal</li><li>Lieutenant General</li><li>Major General</li><li>Brigadier General</li><li>Colonel</li><li>Lieutenant Colonel</li><li>Major</li><li>Captain</li><li>First Lieutenant</li><li>Second Lieutenant</li><li>Sergeant Major</li><li>Sergeant First Class</li><li>Sergeant</li><li>Corporal</li><li>Lance Corporal</li><li>Private First Class</li><li>Private</li><li>Enlist</li>
+                        </ul>
+                        
+                        <h4>Rank Privileges</h4>
+                        <ul class="responsibilities-list">
+                            <li><strong>[UPPER HIGH COMMAND] [ROYAL FAMILY] Grand Marshal:</strong> No new privileges.</li>
+                            <li><strong>[UPPER HIGH COMMAND] Field Marshal:</strong> No new privileges.</li>
+                            <li><strong>[UPPER HIGH COMMAND] Lieutenant General:</strong> No new privileges.</li>
+                            <li><strong>[UPPER HIGH COMMAND] Major General:</strong> Authorized to host SSUs.</li>
+                            <li><strong>[UPPER HIGH COMMAND] Brigadier General:</strong> Authorized to rank personnel within the Armed Forces and co-host SSUs.</li>
+                            <li><strong>[LOWER HIGH COMMAND] Colonel:</strong> Authorized to rank personnel within their specific regiment.</li>
+                            <li><strong>[LOWER HIGH COMMAND] Lt. Colonel:</strong> No new privileges.</li>
+                            <li><strong>[OFFICER] Major:</strong> No new privileges.</li>
+                            <li><strong>[OFFICER] Captain:</strong> No new privileges.</li>
+                            <li><strong>[OFFICER] 1st Lieutenant:</strong> Authorized to host training sessions.</li>
+                            <li><strong>[OFFICER] 2nd Lieutenant:</strong> No new privileges.</li>
+                            <li><strong>[NON COMMISSIONED OFFICER] Sergeant Major:</strong> Authorized to co-host training sessions.</li>
+                            <li><strong>[NON COMMISSIONED OFFICER] Sergeant First Class:</strong> No new privileges.</li>
+                            <li><strong>[NON COMMISSIONED OFFICER] Sergeant:</strong> Authorized to operate any equipment or station at the border without direct supervision.</li>
+                            <li><strong>[NON COMMISSIONED OFFICER] Corporal:</strong> No new privileges.</li>
+                            <li><strong>[ENLISTED] Lance Corporal:</strong> Authorized to operate a specific line or station at the border under supervision.</li>
+                            <li><strong>[ENLISTED] Private First Class:</strong> No new privileges.</li>
+                            <li><strong>[ENLISTED] Private:</strong> The lowest ranking border guard, not authorized to operate border equipment or stations.</li>
+                            <li><strong>[ENLISTED] Enlist:</strong> Entry-level rank. Required to complete initial training. Permitted to guard the border when training is not being hosted.</li>
+                        </ul>
+                        <p class="final-note">Note: The Royal Guard division is supervised directly by the Emperor, Crowned Prince, and Royal Advisor, with a Director appointed to manage the division's day-to-day operations.</p>
+                    </div>
 
-                        <div class="tab-content-wrapper">
-                            <!-- Military Tab -->
-                            <div x-show="activeTab === 'military'"
-                                 class="tab-content animate-on-scroll delay-8"> <!-- Removed x-transition attributes -->
-                                <h3 class="tab-title">Military Ranks</h3>
-                                <p class="tab-description">
-                                    Armed Forces rank progression.
-                                    <a href="https://docs.google.com/document/d/17wLo0RG4eTRrbeoDa3Jp-RSZMGQOx3chF9hstovAWSM/edit?tab=t.0#heading=h.m2i18814hptf" target="_blank" rel="noopener noreferrer" class="tab-link">
-                                        Detailed Structure
-                                        <i class="fas fa-external-link-alt text-xs ml-1" data-tooltip-target="tooltip" data-tooltip-text="View detailed structure document"></i>
-                                    </a>
-                                </p>
-                                <h4 class="text-lg font-semibold text-white mb-2 mt-4 first:mt-0">General Officers</h4>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
-                                   <li><i class="fas fa-award text-yellow-400 mr-2"></i> Grand Marshal</li>
-                                   <li><i class="fas fa-award text-yellow-400 mr-2"></i> Field Marshal</li>
-                                   <li><i class="fas fa-star text-yellow-400 mr-2"></i> Lieutenant General</li>
-                                   <li><i class="fas fa-star text-yellow-400 mr-2"></i> Major General</li>
-                                   <li><i class="fas fa-star text-yellow-400 mr-2"></i> Brigadier General</li>
-                                </ul>
-                                <h4 class="text-lg font-semibold text-white mb-2 mt-4">Officers</h4>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
-                                   <li><i class="fas fa-align-justify text-blue-400 mr-2"></i> Colonel</li>
-                                   <li><i class="fas fa-align-justify text-blue-400 mr-2"></i> Lieutenant Colonel</li>
-                                   <li><i class="fas fa-align-justify text-blue-400 mr-2"></i> Major</li>
-                                   <li><i class="fas fa-align-justify text-blue-400 mr-2"></i> Captain</li>
-                                   <li><i class="fas fa-align-justify text-blue-400 mr-2"></i> First Lieutenant</li>
-                                   <li><i class="fas fa-align-justify text-blue-400 mr-2"></i> Second Lieutenant</li>
-                                </ul>
-                                <h4 class="text-lg font-semibold text-white mb-2 mt-4">Non-Commissioned Officers</h4>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
-                                   <li><i class="fas fa-equals text-green-400 mr-2"></i> Sergeant Major</li>
-                                   <li><i class="fas fa-equals text-green-400 mr-2"></i> Sergeant First Class</li>
-                                   <li><i class="fas fa-equals text-green-400 mr-2"></i> Sergeant</li>
-                                   <li><i class="fas fa-equals text-green-400 mr-2"></i> Corporal</li>
-                                   <li><i class="fas fa-equals text-green-400 mr-2"></i> Lance Corporal</li>
-                                </ul>
-                                <h4 class="text-lg font-semibold text-white mb-2 mt-4">Enlisted</h4>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
-                                   <li><i class="fas fa-minus text-gray-400 mr-2"></i> Private First Class</li>
-                                   <li><i class="fas fa-minus text-gray-400 mr-2"></i> Private</li>
-                                   <li><i class="fas fa-minus text-gray-400 mr-2"></i> Enlist</li>
-                                </ul>
-
-                                <!-- Added Military Responsibilities -->
-                                <h3 class="tab-title mt-8 animate-on-scroll delay-9">Military Responsibilities</h3>
-                                <p class="tab-description animate-on-scroll delay-10">Key duties and roles for each rank.</p>
-                                <ul class="rank-list space-y-3 text-gray-300 mt-4 animate-on-scroll delay-11">
-                                    <li><span class="font-semibold text-white">Grand Marshal:</span> The supreme overseer of the armed forces, ensuring the efficiency of the military leadership (Field Marshal and Generals). (Only one position).</li>
-                                    <li><span class="font-semibold text-white">Field Marshal:</span> The primary director of the armed forces, responsible for leading overall operations, advised by the Lieutenant and Major Generals. (Only one position).</li>
-                                    <li><span class="font-semibold text-white">Lieutenant General:</span> Oversees all regiments and works directly with the Field Marshal in directing the armed forces. (Only one position).</li>
-                                    <li><span class="font-semibold text-white">Major General:</span> Oversees a specific regiment (Military Police, Special Forces, or Mechanized Infantry), ensuring its smooth operation. Advises the Lieutenant General and Field Marshal on overall military direction. (Three positions, one per specified regiment).</li>
-                                    <li><span class="font-semibold text-white">Brigadier General:</span> Works alongside the Colonel to direct the operations of a regiment. More of an overseer position.</li>
-                                    <li><span class="font-semibold text-white">Colonel:</span> The primary commander of a regiment, responsible for its overall administration and tasks (including recruitment and assignments). Works with the Brigadier General, who assists with direction, particularly for larger operations and bigger decisions.</li>
-                                    <li><span class="font-semibold text-white">Lieutenant Colonel:</span> The second-in-command (Executive Officer) of a regiment, assisting the Colonel with regimental duties but with less overall authority.</li>
-                                    <li><span class="font-semibold text-white">Major:</span> Oversees a squad, acting as a commander at the squad level, similar to a Colonel for a regiment.</li>
-                                    <li><span class="font-semibold text-white">Captain:</span> Leads a squad, similar to a Lieutenant Colonel for a regiment.</li>
-                                </ul>
-
-                                <!-- Added Military Privileges -->
-                                <h3 class="tab-title mt-8 animate-on-scroll delay-12">Military Privileges</h3>
-                                <p class="tab-description animate-on-scroll delay-13">Specific authorities granted at each rank.</p>
-                                <ul class="rank-list space-y-3 text-gray-300 mt-4 animate-on-scroll delay-14">
-                                    <li><span class="font-semibold text-white">[UPPER HIGH COMMAND] [ROYAL FAMILY] Grand Marshall:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[UPPER HIGH COMMAND] Field Marshall:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[UPPER HIGH COMMAND] Lieutenant General:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[UPPER HIGH COMMAND] Major General:</span> Authorized to host SSUs.</li>
-                                    <li><span class="font-semibold text-white">[UPPER HIGH COMMAND] Brigadier General:</span> Authorized to rank personnel within the Armed Forces and co-host SSUs.</li>
-                                    <li><span class="font-semibold text-white">[LOWER HIGH COMMAND] Colonel:</span> Authorized to rank personnel within their specific regiment.</li>
-                                    <li><span class="font-semibold text-white">[LOWER HIGH COMMAND] Lt. Colonel:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[OFFICER] Major:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[OFFICER] Captain:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[OFFICER] 1st Lieutenant:</span> Authorized to host training sessions.</li>
-                                    <li><span class="font-semibold text-white">[OFFICER] 2nd Lieutenant:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[NON COMMISSIONED OFFICER] Sergeant Major:</span> Authorized to co-host training sessions.</li>
-                                    <li><span class="font-semibold text-white">[NON COMMISSIONED OFFICER] Sergeant First Class:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[NON COMMISSIONED OFFICER] Sergeant:</span> Authorized to operate any equipment or station at the border without direct supervision.</li>
-                                    <li><span class="font-semibold text-white">[NON COMMISSIONED OFFICER] Corporal:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[ENLISTED] Lance Corporal:</span> Authorized to operate a specific line or station at the border under supervision.</li>
-                                    <li><span class="font-semibold text-white">[ENLISTED] Private First Class:</span> No new privileges.</li>
-                                    <li><span class="font-semibold text-white">[ENLISTED] Private:</span> The lowest ranking border guard; not authorized to operate border equipment or stations.</li>
-                                    <li><span class="font-semibold text-white">[ENLISTED] Enlist:</span> Entry-level rank. Required to complete initial training. Permitted to guard the border when training is not being hosted.</li>
-                                </ul>
-
-                                <!-- Added Royal Guard Note -->
-                                <p class="text-sm text-gray-400 mt-8 italic animate-on-scroll delay-15">
-                                    <i class="fas fa-info-circle mr-2"></i> Note: The Royal Guard division is supervised directly by the Emperor, Crowned Prince, and Royal Advisor, with a Director appointed to manage the division's day-to-day operations.
-                                </p>
-
-                            </div>
-                            <!-- Government Tab -->
-                            <div x-show="activeTab === 'government'"
-                                 class="tab-content animate-on-scroll delay-8"> <!-- Removed x-transition attributes -->
-                                <h3 class="tab-title">Government Ranks</h3>
-                                <p class="tab-description">
-                                    Civil administration rank progression.
-                                    <a href="https://docs.google.com/document/d/17wLo0RG4eTRrbeoDa3Jp-RSZMGQOx3chF9hstovAWSM/edit?tab=t.0#heading=h.m2i18814hptf" target="_blank" rel="noopener noreferrer" class="tab-link">
-                                        Detailed Structure
-                                        <i class="fas fa-external-link-alt text-xs ml-1" data-tooltip-target="tooltip" data-tooltip-text="View detailed structure document"></i>
-                                    </a>
-                                </p>
-                                <h4 class="text-lg font-semibold text-white mb-2 mt-4 first:mt-0">Leadership & Directors</h4>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
-                                    <li><i class="fas fa-building text-blue-400 mr-2"></i> Chancellor</li>
-                                    <li><i class="fas fa-building text-blue-400 mr-2"></i> Vice Chancellor</li>
-                                    <li><i class="fas fa-building text-blue-400 mr-2"></i> Director</li>
-                                    <li><i class="fas fa-building text-blue-400 mr-2"></i> Deputy Director</li>
-                                    <li><i class="fas fa-building text-blue-400 mr-2"></i> Secretary of State</li>
-                                    <li><i class="fas fa-building text-blue-400 mr-2"></i> Undersecretary of State</li>
-                                </ul>
-                                <h4 class="text-lg font-semibold text-white mb-2 mt-4">Councilors</h4>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
-                                    <li><i class="fas fa-scroll text-purple-400 mr-2"></i> Chief Councilor</li>
-                                    <li><i class="fas fa-scroll text-purple-400 mr-2"></i> Senior Councilor</li>
-                                    <li><i class="fas fa-scroll text-purple-400 mr-2"></i> Councilor</li>
-                                </ul>
-                                <h4 class="text-lg font-semibold text-white mb-2 mt-4">Administrative Staff</h4>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
-                                    <li><i class="fas fa-file-alt text-gray-400 mr-2"></i> Chief Registrar</li>
-                                    <li><i class="fas fa-file-alt text-gray-400 mr-2"></i> Registrar</li>
-                                    <li><i class="fas fa-file-alt text-gray-400 mr-2"></i> Chief Assessor</li>
-                                    <li><i class="fas fa-file-alt text-gray-400 mr-2"></i> Assessor</li>
-                                    <li><i class="fas fa-file-alt text-gray-400 mr-2"></i> Senior Clerk</li>
-                                    <li><i class="fas fa-file-alt text-gray-400 mr-2"></i> Clerk</li>
-                                </ul>
-
-                                <!-- Added Government Responsibilities -->
-                                <h3 class="tab-title mt-8 animate-on-scroll delay-9">Government Responsibilities</h3>
-                                <p class="tab-description animate-on-scroll delay-10">Key duties and roles for each rank within the government.</p>
-                                <ul class="rank-list space-y-3 text-gray-300 mt-4 animate-on-scroll delay-11">
-                                    <li><span class="font-semibold text-white">[UPPER HIGH COMMAND] [ROYAL FAMILY] Chancellor:</span> Oversees the Government</li>
-                                    <li><span class="font-semibold text-white">[UPPER HIGH COMMAND] Vice Chancellor:</span> Assistant to the Chancellor</li>
-                                    <li><span class="font-semibold text-white">[UPPER HIGH COMMAND] Director:</span> Directs the Government</li>
-                                    <li><span class="font-semibold text-white">[UPPER HIGH COMMAND] Deputy Director:</span> Assistant to the Director</li>
-                                    <li><span class="font-semibold text-white">[LOWER HIGH COMMAND] Secretary of State:</span> Works on Foreign Policy</li>
-                                    <li><span class="font-semibold text-white">[LOWER HIGH COMMAND] Under Secretary of State:</span> Assistant to the Secretary of State</li>
-                                    <li><span class="font-semibold text-white">[LOWER HIGH COMMAND] Chief Councilor:</span> Represents Frankonia</li>
-                                    <li><span class="font-semibold text-white">[HIGH RANK] Senior Councilor:</span> Assists in Representing Frankonia</li>
-                                    <li><span class="font-semibold text-white">[HIGH RANK] Councilor:</span> Works in Law</li>
-                                    <li><span class="font-semibold text-white">[HIGH RANK] Chief Registrar:</span> Works on documentation and records within Frankonia</li>
-                                    <li><span class="font-semibold text-white">[HIGH RANK] Registrar:</span> Works on documentation and records within Frankonia</li> <!-- Assuming Registrar has similar duties to Chief Registrar -->
-                                    <li><span class="font-semibold text-white">[LOW RANK] Chief Assessor:</span> Evaluates and asses government functions or policies</li> <!-- Assuming Chief Assessor has similar duties to Assessor -->
-                                    <li><span class="font-semibold text-white">[LOW RANK] Assessor:</span> Evaluates and asses government functions or policies</li>
-                                    <li><span class="font-semibold text-white">[LOW RANK] Senior Clerk:</span> Experienced Clerk</li>
-                                    <li><span class="font-semibold text-white">[LOW RANK] Clerk:</span> Assists the Councilors</li>
-                                </ul>
-                            </div>
-                            <!-- Main Group Tab -->
-                            <div x-show="activeTab === 'main'"
-                                 class="tab-content animate-on-scroll delay-8"> <!-- Removed x-transition attributes -->
-                                <h3 class="tab-title">Main Group Ranks</h3>
-                                <p class="tab-description">Overall roles within the Roblox group.</p>
-                                <h4 class="text-lg font-semibold text-white mb-2 mt-4 first:mt-0">Leadership & High Command</h4>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
-                                    <li><i class="fas fa-chess-king text-yellow-400 mr-2"></i> Holder</li>
-                                    <li><i class="fas fa-chess-king text-yellow-400 mr-2"></i> Emperor</li>
-                                    <li><i class="fas fa-chess-pawn text-yellow-500 mr-2"></i> Crowned Prince</li>
-                                    <li><i class="fas fa-hat-wizard text-yellow-600 mr-2"></i> Royal Advisor</li>
-                                    <li><i class="fas fa-landmark text-blue-400 mr-2"></i> Chancellor</li>
-                                    <li><i class="fas fa-landmark text-blue-500 mr-2"></i> Vice Chancellor</li>
-                                    <li><i class="fas fa-shield-halved text-green-400 mr-2"></i> Grand Marshal</li>
-                                    <li><i class="fas fa-users-cog text-teal-400 mr-2"></i> IA (Internal Administration)</li>
-                                    <li><i class="fas fa-chess-rook text-red-400 mr-2"></i> High Command</li>
-                                </ul>
-                                <h4 class="text-lg font-semibold text-white mb-2 mt-4">Branches & Statuses</h4>
-                                <ul class="rank-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300">
-                                    <li><i class="fas fa-briefcase text-blue-400 mr-2"></i> Government</li>
-                                    <li><i class="fas fa-helmet-battle text-green-400 mr-2"></i> Armed Forces</li> <!-- Added Icon Here -->
-                                    <li><i class="fas fa-person text-gray-400 mr-2"></i> Civilian</li>
-                                    <li><i class="fas fa-ban text-red-500 mr-2"></i> Blacklisted</li>
-                                    <li><i class="fas fa-plane-arrival text-gray-500 mr-2"></i> Immigrant</li>
-                                </ul>
-                            </div>
-                            <!-- Command Tab -->
-                            <div x-show="activeTab === 'command'"
-                                 class="tab-content animate-on-scroll delay-8"> <!-- Removed x-transition attributes -->
-                                <h3 class="tab-title">Chain of Command (Rheinhold Royal Family)</h3>
-                                <p class="tab-description">Current leadership structure.</p>
-                                <ul class="rank-list space-y-3 text-gray-300 command-list">
-                                    <li class="hover-lift-glow">
-                                        <span class="rank-label text-yellow-400" data-tooltip-target="tooltip" data-tooltip-text="Highest Authority">Emperor:</span>
-                                        Triple9
-                                    </li>
-                                    <li class="hover-lift-glow">
-                                        <span class="rank-label text-yellow-500" data-tooltip-target="tooltip" data-tooltip-text="Heir Apparent">Crowned Prince:</span>
-                                        Zg47
-                                    </li>
-                                    <li class="hover-lift-glow">
-                                        <span class="rank-label text-yellow-600" data-tooltip-target="tooltip" data-tooltip-text="Key Advisor to the Emperor">Royal Advisor:</span>
-                                        Lists
-                                    </li>
-                                    <li class="hover-lift-glow">
-                                        <span class="rank-label text-blue-400" data-tooltip-target="tooltip" data-tooltip-text="Head of Government">Chancellor:</span>
-                                        <span class="italic text-gray-500">VACANT</span>
-                                    </li>
-                                    <li class="hover-lift-glow">
-                                        <span class="rank-label text-blue-500" data-tooltip-target="tooltip" data-tooltip-text="Second in Command of Government">Vice Chancellor:</span>
-                                        <span class="italic text-gray-500">VACANT</span>
-                                    </li>
-                                    <li class="hover-lift-glow">
-                                        <span class="rank-label text-green-400" data-tooltip-target="tooltip" data-tooltip-text="Head of Armed Forces">Grand Marshal:</span>
-                                        Zakariya
-                                    </li>
-                                </ul>
-                            </div>
+                    <!-- Government Tab -->
+                    <div class="tab-pane" id="government">
+                        <div class="rank-header">
+                            <h3><i class="fas fa-landmark"></i> Government Ranks</h3>
+                            <div class="rank-divider"></div>
                         </div>
-
-                        <!-- View Regiments Button -->
-                        <div class="text-center mt-12 animate-on-scroll delay-9">
-                             <a href="regiments_page.html" class="btn btn-primary-glow">
-                                 View All Regiments <i class="fas fa-arrow-right ml-2"></i>
-                             </a>
+                        <p>Progression within the civil administration, the engine of the Empire's prosperity.</p>
+                        <ul class="rank-list">
+                            <li>Chancellor</li><li>Vice Chancellor</li><li>Director</li><li>Deputy Director</li><li>Secretary of State</li><li>Undersecretary of State</li><li>Chief Councilor</li><li>Senior Councilor</li><li>Councilor</li><li>Chief Registrar</li><li>Registrar</li><li>Chief Assessor</li><li>Assessor</li><li>Senior Clerk</li><li>Clerk</li>
+                        </ul>
+                        
+                        <h4>Key Responsibilities</h4>
+                        <ul class="responsibilities-list">
+                            <li><strong>Chancellery:</strong> Head of Government, oversees all civil matters and policy.</li>
+                            <li><strong>Secretariat:</strong> Manages specific departments (e.g., Foreign Affairs, Treasury).</li>
+                            <li><strong>Council:</strong> Handles legislation, record-keeping, and policy implementation.</li>
+                            <li><strong>Civil Service:</strong> Entry-level administrative tasks and data collection.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Command Tab -->
+                    <div class="tab-pane" id="command">
+                        <div class="rank-header">
+                            <h3><i class="fas fa-crown"></i> High Command</h3>
+                            <div class="rank-divider"></div>
                         </div>
+                        <p>The current leadership of the Rheinhold Royal Family and their appointed heads of state.</p>
+                        <ul class="command-list">
+                            <li><i class="fas fa-crown"></i><strong class="tooltip-container">Emperor: Triple9<span class="tooltip-text">Highest Authority</span></strong></li>
+                            <li><i class="fas fa-shield-alt"></i><strong class="tooltip-container">Crowned Prince: Zg47<span class="tooltip-text">Heir Apparent</span></strong></li>
+                            <li><i class="fas fa-user-tie"></i><strong class="tooltip-container">Royal Advisor: Lists<span class="tooltip-text">Key Advisor to the Emperor</span></strong></li>
+                            <li><i class="fas fa-star"></i><strong class="tooltip-container">Grand Marshal: Zakariya<span class="tooltip-text">Head of Armed Forces</span></strong></li>
+                            <li><i class="fas fa-landmark"></i><strong class="tooltip-container">Chancellor: VACANT<span class="tooltip-text">Head of Government</span></strong></li>
+                            <li><i class="fas fa-building"></i><strong class="tooltip-container">Vice Chancellor: VACANT<span class="tooltip-text">Deputy Head of Government</span></strong></li>
+                        </ul>
+                    </div>
 
+                    <!-- Main Group Tab -->
+                    <div class="tab-pane" id="main-group">
+                        <div class="rank-header">
+                            <h3><i class="fab fa-roblox"></i> Main Group Roles</h3>
+                            <div class="rank-divider"></div>
+                        </div>
+                        <p>The overall roles within the primary Roblox group, reflecting a member's general standing.</p>
+                        <ul class="rank-list">
+                            <li>Holder</li><li>Emperor</li><li>Crowned Prince</li><li>Royal Advisor</li><li>Chancellor</li><li>Vice Chancellor</li><li>Grand Marshal</li><li>IA (Internal Administration)</li><li>High Command</li><li>Government</li><li>Armed Forces</li><li>Civilian</li><li>Blacklisted</li><li>Immigrant</li>
+                        </ul>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="regiments_page.html" class="btn btn-primary">View All Regiments</a>
+            </div>
+        </section>
+    </main>
 
-        <!-- Footer -->
-        <footer class="mt-24 py-10 px-6 md:px-12 bg-slate-900/70 border-t border-gray-700/50">
-            <div class="container mx-auto text-center text-gray-400">
-                <div class="mb-4 animate-on-scroll">
-                    <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=680f8010&is=680e2e90&hm=2fba1af6f0d320a42f8eec48433f71c90e3914f642ccbd956c20fb66b2878908&=&format=webp&quality=lossless&width=960&height=960"
-                         alt="Frankonia Logo Small" class="h-12 w-12 mx-auto rounded-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.style.display='none'">
-                </div>
-                <p class="mb-4 animate-on-scroll delay-1 motto text-gray-500 text-sm">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p> <!-- Added mb-4 -->
-                <p class="mt-3 animate-on-scroll delay-2 text-sm">© <span id="current-year"></span> The Germanic Empire of Frankonia. All Rights Reserved.</p>
-                <p class="text-xs mt-1 animate-on-scroll delay-3 text-gray-500">A Fictional Roblox Group Simulation.</p>
-                <div class="mt-5 space-x-6 animate-on-scroll delay-4">
-                    <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Roblox Group"><i class="fab fa-roblox"></i></a>
-                    <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Discord Server"><i class="fab fa-discord"></i></a>
-                    <!-- Add other links if needed -->
+    <!-- Global Footer -->
+    <footer class="main-footer">
+        <div class="footer-seal">
+            <div class="seal-ring">
+                <div class="seal-center">
+                    <img src="assets/frankonia_logo.png" alt="Imperial Seal" style="width: 40px; height: 40px; object-fit: contain;">
                 </div>
             </div>
-        </footer>
-
-        <!-- Tooltip Element -->
-        <div id="tooltip" class="fixed hidden z-[60] px-3 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-md shadow-sm opacity-0 transition-opacity duration-200 tooltip-custom" role="tooltip" aria-hidden="true">
-            Tooltip text
-            <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
+        <p class="motto">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p>
+        <div class="social-links">
+            <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" title="Roblox Group" class="tooltip-container"><i class="fab fa-roblox"></i><span class="tooltip-text">Roblox Group</span></a>
+            <a href="#" class="discord-join-link tooltip-container" title="Discord Server"><i class="fab fa-discord"></i><span class="tooltip-text">Discord Server</span></a>
+        </div>
+        <p class="copyright">© <span id="current-year">2024</span> The Germanic Empire of Frankonia. All Rights Reserved.</p>
+        <p class="sub-text">A Fictional Roblox Group Simulation.</p>
+    </footer>
 
-        <!-- Scroll to Top Button (Hidden by default, JS handles visibility) -->
-        <button id="scroll-to-top"
-                class="fixed bottom-6 right-6 bg-teal-500 text-white p-3 rounded-full shadow-lg hover:bg-teal-600 transition-opacity duration-300 opacity-0 pointer-events-none z-50 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-background"
-                aria-label="Scroll to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-
-    </div> <!-- End Alpine x-data wrapper -->
-
-    <!-- Custom JavaScript (Same as index.html) -->
-    <script src="js/main.js"></script> <!-- <<< CHECK THIS PATH -->
-
-    <!-- Tooltip Script (Specific to this page's data-tooltip-target) -->
-    <script>
-        // NOTE: This script is kept as per the user's instruction NOT to edit regiments_page.html.
-        // The main.js file also now handles tooltips using the same attribute, which might cause
-        // minor redundancy or unexpected behavior in some browsers.
-        document.addEventListener('DOMContentLoaded', () => {
-            const tooltipTargetElements = document.querySelectorAll('[data-tooltip-target="tooltip"]');
-            const tooltipElement = document.getElementById('tooltip');
-            let popperInstance = null;
-            let showTimeout; // Added timeout variable
-
-            function showTooltip(targetElement) {
-                if (!tooltipElement || !targetElement) return;
-
-                // Clear any existing timeout
-                clearTimeout(showTimeout);
-
-                // Set a timeout to show the tooltip after 0.5 seconds
-                showTimeout = setTimeout(() => {
-                    // Set tooltip text
-                    const tooltipText = targetElement.getAttribute('data-tooltip-text') || targetElement.getAttribute('title') || 'Tooltip';
-                    tooltipElement.textContent = tooltipText; // Set text directly
-
-                    // Get placement from data attribute
-                    const placement = targetElement.getAttribute('data-popper-placement') || 'top';
-
-                    // Create Popper instance
-                    // Check if an instance already exists for this element before creating a new one
-                    if (targetElement._popper) {
-                         popperInstance = targetElement._popper;
-                         popperInstance.setOptions({ placement: placement }); // Update placement if needed
-                         popperInstance.update();
-                    } else {
-                        popperInstance = Popper.createPopper(targetElement, tooltipElement, {
-                            placement: placement,
-                            modifiers: [
-                                {
-                                    name: 'offset',
-                                    options: {
-                                        offset: [0, 8], // Offset the tooltip by 8px from the target
-                                    },
-                                },
-                                {
-                                    name: 'preventOverflow', // Keep tooltip within bounds
-                                    options: {
-                                        boundary: 'body',
-                                    },
-                                },
-                                {
-                                    name: 'flip', // Flip placement if it overflows
-                                    options: {
-                                        fallbackPlacements: ['top', 'bottom', 'left', 'right'],
-                                    },
-                                },
-                                {
-                                    name: 'arrow', // Enable arrow
-                                    options: {
-                                        element: tooltipElement.querySelector('.tooltip-arrow'),
-                                    },
-                                },
-                            ],
-                        });
-                        targetElement._popper = popperInstance; // Store the instance on the element
-                    }
-
-
-                    // Show the tooltip
-                    tooltipElement.classList.remove('hidden');
-                    tooltipElement.setAttribute('aria-hidden', 'false');
-                    // Use requestAnimationFrame to ensure the element is visible before applying opacity transition
-                    requestAnimationFrame(() => {
-                        tooltipElement.style.opacity = 1;
-                    });
-                }, 500); // Changed from 2000 to 500 milliseconds
-            }
-
-            function hideTooltip() {
-                // Clear the show timeout if it hasn't fired yet
-                clearTimeout(showTimeout);
-
-                if (popperInstance) {
-                    // Don't destroy the instance, just hide the tooltip
-                    // popperInstance.destroy();
-                    // popperInstance = null; // Keep the instance for reuse
-                }
-                if (tooltipElement) {
-                    tooltipElement.style.opacity = 0;
-                    tooltipElement.setAttribute('aria-hidden', 'true');
-                    // Hide completely after transition
-                    setTimeout(() => {
-                         tooltipElement.classList.add('hidden');
-                    }, 200); // Match transition duration
-                }
-            }
-
-            tooltipTargetElements.forEach(targetElement => {
-                // Use mouseenter/mouseleave for hover
-                targetElement.addEventListener('mouseenter', () => showTooltip(targetElement));
-                targetElement.addEventListener('mouseleave', hideTooltip);
-
-                // Use focus/blur for keyboard accessibility
-                targetElement.addEventListener('focus', () => showTooltip(targetElement));
-                targetElement.addEventListener('blur', hideTooltip);
-
-                 // Clean up Popper instance on element removal (optional)
-                 const observer = new MutationObserver((mutations) => {
-                    mutations.forEach(mutation => {
-                        if (!document.body.contains(targetElement)) {
-                            hideTooltip();
-                            if (targetElement._popper) {
-                                targetElement._popper.destroy();
-                                delete targetElement._popper;
-                            }
-                            observer.disconnect();
-                        }
-                    });
-                 });
-                 observer.observe(document.body, { childList: true, subtree: true });
-            });
-        });
-    </script>
-
+    <div class="cursor-glow"></div>
+    <script src="script.js" defer></script>
 </body>
 </html>
