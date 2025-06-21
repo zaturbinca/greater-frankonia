@@ -3,650 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imperial Divisions List - The Germanic Empire of Frankonia</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Georgia&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Popper.js (for Tooltips) -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css"> <!-- <<< CHECK THIS PATH -->
-
-    <!-- Favicon (Example - replace with actual favicon links) -->
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+    <title>Imperial Regiments - GEF</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body class="animated-subtle-gradient-bg">
+<body>
 
-    <div x-data="{ mobileMenuOpen: false }" class="relative">
-
-        <!-- Header -->
-        <header id="main-header" class="py-3 px-4 md:px-10 glass-effect sticky top-0 z-50 transition-all duration-500 ease-in-out">
-            <div class="container mx-auto flex justify-between items-center">
-                <!-- Logo & Title -->
-                <a href="index.html#home" class="flex items-center gap-3 animate-on-scroll focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-background rounded-md header-logo-link">
-                     <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=680f8010&is=680e2e90&hm=2fba1af6f0d320a42f8eec48433f71c90e3914f642ccbd956c20fb66b2878908&=&format=webp&quality=lossless&width=960&height=960"
-                         alt="Frankonia Logo" class="h-10 w-10 md:h-12 w-12 rounded-full object-cover border-2 border-teal-400/50"
-                         onerror="this.style.display='none'">
-                    <span class="text-xl md:text-2xl font-bold tracking-tight text-white hidden sm:inline">
-                        The Germanic Empire of <span class="text-teal-400">Frankonia</span>
-                    </span>
-                    <span class="text-xl md:text-2xl font-bold tracking-tight text-white sm:hidden">
-                        <span class="text-teal-400">G</span>EF
-                    </span>
-                </a>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-5 lg:space-x-7">
-                    <a href="index.html#home" class="nav-link-hover animate-on-scroll delay-1">Home</a>
-                    <a href="lore_page.html" class="nav-link-hover animate-on-scroll delay-2">Lore</a>
-                    <a href="structure_page.html" class="nav-link-hover animate-on-scroll delay-3">Structure</a>
-                    <a href="regiments_page.html" class="nav-link-hover animate-on-scroll delay-4 active">Regiments List</a>
-                    <a href="index.html#gallery" class="nav-link-hover animate-on-scroll delay-5">Gallery</a>
-                    <a href="index.html#testimonials" class="nav-link-hover animate-on-scroll delay-6">Testimonials</a>
-                    <a href="index.html#ai-tool" class="nav-link-hover animate-on-scroll delay-7">AI Tool</a>
-                    <a href="index.html#discord-status" class="nav-link-hover animate-on-scroll delay-8">Discord</a>
-                    <a href="index.html#join" class="nav-link-hover animate-on-scroll delay-9">Join Us</a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <button @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="md:hidden text-gray-300 hover:text-white transition duration-200 animate-on-scroll delay-1 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
-                        aria-controls="mobile-menu"
-                        :aria-expanded="mobileMenuOpen.toString()">
-                    <span class="sr-only">Open main menu</span>
-                    <i class="fas fa-bars fa-lg" x-show="!mobileMenuOpen"></i>
-                    <i class="fas fa-times fa-lg" x-show="mobileMenuOpen"></i>
-                </button>
+    <!-- Global Header -->
+    <header class="main-header">
+        <a href="index.html" class="logo-container">
+            <div class="logo-wrapper">
+                <img src="assets/frankonia_logo.png" alt="GEF Logo" class="logo">
+                <div class="crown-decoration">
+                    <i class="fas fa-crown"></i>
+                    <i class="fas fa-crown"></i>
+                </div>
             </div>
-        </header>
-
-        <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen"
-             x-transition:enter="transition ease-out duration-300 transform"
-             x-transition:enter-start="-translate-x-full"
-             x-transition:enter-end="translate-x-0"
-             x-transition:leave="transition ease-in duration-200 transform"
-             x-transition:leave-start="translate-x-0"
-             x-transition:leave-end="-translate-x-full"
-             class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-800/95 backdrop-blur-md shadow-lg md:hidden overflow-y-auto"
-             id="mobile-menu"
-             @click.away="mobileMenuOpen = false">
-            <div class="pt-20 pb-6 px-4 space-y-4">
-                 <a href="index.html#home" @click="mobileMenuOpen = false" class="mobile-nav-link block">Home</a>
-                 <a href="lore_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Lore</a>
-                 <a href="structure_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Structure</a>
-                 <a href="regiments_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block active">Regiments List</a>
-                 <a href="index.html#gallery" @click="mobileMenuOpen = false" class="mobile-nav-link block">Gallery</a>
-                 <a href="index.html#testimonials" @click="mobileMenuOpen = false" class="mobile-nav-link block">Testimonials</a>
-                 <a href="index.html#ai-tool" @click="mobileMenuOpen = false" class="mobile-nav-link block">AI Tool</a>
-                 <a href="index.html#discord-status" @click="mobileMenuOpen = false" class="mobile-nav-link block">Discord Status</a>
-                 <a href="index.html#join" @click="mobileMenuOpen = false" class="mobile-nav-link block">Join Us</a>
-                 <hr class="border-gray-600 my-4">
-                 <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-roblox w-5 mr-2"></i> Roblox Group</a>
-                 <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-discord w-5 mr-2"></i> Discord Server</a>
-            </div>
+            <span class="group-name">The Germanic Empire of Frankonia</span>
+            <span class="group-name-mobile">GEF</span>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lore_page.html">Lore</a></li>
+                <li><a href="structure_page.html">Structure</a></li>
+                <li><a href="regiments_page.html" class="active">Regiments</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="index.html#ai-tool-section">AI Tool</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="#" class="btn btn-primary discord-join-link">Join Us</a>
         </div>
-        <!-- Overlay for Mobile Menu -->
-        <div x-show="mobileMenuOpen" x-transition.opacity.duration.300ms class="fixed inset-0 bg-black/50 z-30 md:hidden" @click="mobileMenuOpen = false"></div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lore_page.html">Lore</a></li>
+            <li><a href="structure_page.html">Structure</a></li>
+            <li><a href="regiments_page.html">Regiments</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="index.html#ai-tool-section">AI Tool</a></li>
+            <li><a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank">Roblox Group</a></li>
+            <li><a href="#" class="discord-join-link">Discord Server</a></li>
+        </ul>
+    </nav>
 
+    <main>
+        <section class="container hidden">
+            <div class="section-header">
+                <h2>Imperial Regiments</h2>
+                <div class="divider"></div>
+                <h3 class="subtitle">An overview of the specialized military, administrative, and guard units within the Frankonian Empire.</h3>
+            </div>
 
-        <main>
-            <!-- Regiments List Section -->
-            <section id="regiments-list" class="section-padding min-h-screen pt-28 md:pt-36 relative">
-                 <!-- Section Background Pattern/Overlay -->
-                 <div class="absolute inset-0 z-0 regiments-section-bg"></div>
-
-                <div class="container mx-auto max-w-7xl relative z-10"> <!-- Wider container for detailed cards -->
-                    <div class="section-title-wrapper animate-on-scroll">
-                         <div class="section-title-decoration left animate-on-scroll delay-1"></div>
-                         <h1 class="section-title">
-                            Imperial <span class="text-teal-400">Regiments List</span>
-                         </h1>
-                         <div class="section-title-decoration right animate-on-scroll delay-1"></div>
+            <div class="regiments-grid">
+                <!-- Card 1: Army -->
+                <div class="regiment-card interactive-card">
+                    <div class="regiment-medal">
+                        <div class="medal-ribbon"></div>
+                        <div class="medal-center">
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
-                    <div class="section-divider animate-on-scroll delay-2"></div>
-                    <p class="section-subtitle animate-on-scroll delay-3">
-                        Detailed overview of the specialized military, administrative, and guard units within the Frankonian Empire.
-                    </p>
-
-                    <!-- Regiment Detail Cards Grid -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 mt-12">
-
-                        <!-- Card 1: Army -->
-                        <div x-data="{ isExpanded: false }" class="regiment-detail-card fancy glass-effect animate-on-scroll delay-4 relative overflow-hidden"> <!-- Added relative overflow-hidden -->
-                            <div class="regiment-color-swatch" style="background-color: #1a3a1a;"></div>
-                            <div class="regiment-detail-content">
-                                <div class="regiment-detail-icon-area">
-                                    <i class="fas fa-users fa-3x text-teal-400 regiment-detail-icon"></i>
-                                </div>
-                                <div class="regiment-detail-text-area">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="regiment-detail-name">Army</h3>
-                                        <!-- Tag Container - UPDATED justify-start -->
-                                        <div class="flex flex-wrap items-center justify-start gap-1">
-                                            <span class="regiment-detail-type-badge combative"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Main line of defense against all dangers.">Combative</span>
-                                            <span class="regiment-detail-type-badge armed-forces"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Part of the main military structure.">Armed Forces</span>
-                                        </div>
-                                    </div>
-                                    <!-- Description Wrapper -->
-                                    <div class="regiment-description-wrapper" :class="isExpanded ? 'expanded' : 'truncated'">
-                                        <p class="regiment-detail-description">
-                                            The army is the last stronghold of the Empire's defense and the primary instrument of its power. They are the backbone of Frankonia's defenses, the first line of defense against all dangers. They are the Empire's fist, the sharp edge of the Empire's military power, with the vital and difficult task of fighting the enemy head-on and taking territory.
-                                            <br><br>
-                                            They are primarily responsible for leading the way through combat, attacking enemy forces, dispersing opposition, and opening the way. Aggressive action is necessary to make way for subsequent imperial forces to operate. By overcoming initial resistance and securing the ground, the Armed Forces make way for the subsequent deployment of the Empire's forces of stabilization, such as garrison forces and forces of pacification, whose purpose is to consolidate power, impose authority, and bring conquered land under Frankonian suzerainty.
-                                            <br><br>
-                                            A characteristic of the Frankonian Military is the complete lack of any requirement to join. The Empire believes that participation in its primary combat force is available to anyone willing to fight. So, there are no qualifications of any sort to join up – no tests, no background checks, no experience necessary. The invitation to join is available to anyone, under any circumstance, at whatever time they report for service. This creates an ongoing flow of manpower, enabling the Military to remain at constant levels of preparedness to carry out the Empire's needs for defense and conquest.
-                                        </p>
-                                    </div>
-                                    <!-- See More/Less Button -->
-                                    <button @click="isExpanded = !isExpanded" class="see-more-button" :aria-expanded="isExpanded.toString()">
-                                        <span x-text="isExpanded ? 'See Less' : 'See More'">See More</span>
-                                        <i class="fas ml-1 text-xs" :class="isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                                    </button>
-                                    <!-- Footer -->
-                                    <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700/50 gap-2"> <!-- Changed gap-4 to gap-2 -->
-                                         <span class="regiment-detail-status-badge active"
-                                               data-tooltip-target="tooltip" data-tooltip-text="Regiment In Use">Active</span>
-                                         <!-- Changed to <a> tag and updated href/tooltip/icon -->
-                                         <a href="index.html#discord-status" class="btn btn-secondary-glow btn-sm relative overflow-hidden"
-                                                 data-tooltip-target="tooltip" data-popper-placement="top" data-tooltip-text="Join our Discord server to enlist!"> <!-- Added relative overflow-hidden -->
-                                             Enlist Now <i class="fab fa-discord ml-1.5 text-xs"></i>
-                                         </a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="regiment-card-header">
+                        <div class="regiment-icon">
+                            <i class="fas fa-fist-raised"></i>
+                            <div class="status-light" style="background-color: var(--success-color);"></div>
                         </div>
-
-                        <!-- Card 2: Military Police -->
-                        <div x-data="{ isExpanded: false }" class="regiment-detail-card fancy glass-effect animate-on-scroll delay-5 relative overflow-hidden"> <!-- Added relative overflow-hidden -->
-                             <div class="regiment-color-swatch" style="background-color: #808080;"></div>
-                             <div class="regiment-detail-content">
-                                <div class="regiment-detail-icon-area">
-                                    <i class="fas fa-user-shield fa-3x text-teal-400 regiment-detail-icon"></i>
-                                </div>
-                                <div class="regiment-detail-text-area">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="regiment-detail-name">Military Police</h3>
-                                        <!-- Tag Container - UPDATED justify-start -->
-                                        <div class="flex flex-wrap items-center justify-start gap-1">
-                                            <span class="regiment-detail-type-badge enforcement"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Main enforcement unit designed to uphold discipline and order.">Enforcement</span>
-                                            <span class="regiment-detail-type-badge armed-forces"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Part of the main military structure.">Armed Forces</span>
-                                        </div>
-                                    </div>
-                                     <!-- Description Wrapper -->
-                                    <div class="regiment-description-wrapper" :class="isExpanded ? 'expanded' : 'truncated'">
-                                        <p class="regiment-detail-description">
-                                            The Military Police is the backbone of the Empire's military organization and the foremost preserver of discipline and order within the Empire's ranks. The Military Police is the military's backbone of discipline in the Frankonian military, the first line of defense against internal disruption and disorder that may undermine operational effectiveness. The Military Police is the Empire's protectors within, the keepers of military order and law, charged with the critical and challenging mission of preserving discipline and security.
-                                            <br><br>
-                                            They are primarily responsible for enforcing military discipline, investigating infractions of conduct, commanding military prisoners, and directing the flow of materiel and forces in an orderly fashion. Their stringent enforcement of discipline is necessary to make all the forces of the empire operationally efficient as well as inwardly cohesive. Through the enforcement of stringent discipline and discipline within an organized system, the Military Police enable combat units to stay focused on the mission without distraction by internal conflicts, and occupation and garrison forces to exercise proper functions within secured zones.
-                                            <br><br>
-                                            Unlike the public recruitment of frontline soldiers, recruitment into the Military Police Regiment requires the exhibition of discipline, reliability, as well as obedience to imperial law. The Empire believes that the discharge of duties within the interior enforcement unit is only possible by those with the best possible standards of conduct and fidelity. Recruitment is therefore selective, following thorough background screening, judgment, and character evaluation, as well as an established service record of reliability. The prestige of service within this key regiment is only available to those who measure up to high levels of demand and are deemed worthy to enforce the law within the army. Selective filtration ensures that the Military Police Regiment consists of individuals of the required integrity and capability to provide discipline and stability, as well as to enhance the overall efficiency and reputation of the Empire's military forces.
-                                        </p>
-                                    </div>
-                                     <!-- See More/Less Button -->
-                                    <button @click="isExpanded = !isExpanded" class="see-more-button" :aria-expanded="isExpanded.toString()">
-                                        <span x-text="isExpanded ? 'See Less' : 'See More'">See More</span>
-                                        <i class="fas ml-1 text-xs" :class="isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                                    </button>
-                                    <!-- Footer -->
-                                    <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700/50 gap-2"> <!-- Changed gap-4 to gap-2 -->
-                                         <span class="regiment-detail-status-badge active"
-                                               data-tooltip-target="tooltip" data-tooltip-text="Regiment In Use">Active</span>
-                                         <!-- Tooltip added -->
-                                         <button class="btn btn-secondary-glow btn-sm disabled:opacity-50 relative overflow-hidden" disabled
-                                                 data-tooltip-target="tooltip" data-popper-placement="top" data-tooltip-text="Requires tryout"> <!-- Added relative overflow-hidden -->
-                                             Tryout <i class="fas fa-lock ml-1.5 text-xs"></i>
-                                         </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <h3>Army</h3>
+                        <div class="regiment-badges">
+                            <span class="badge badge-combative tooltip-container">Combative<span class="tooltip-text">The main line of defense against all dangers.</span></span>
+                            <span class="badge badge-af tooltip-container">Armed Forces<span class="tooltip-text">Part of the main military structure.</span></span>
                         </div>
-
-                        <!-- Card 3: Government -->
-                        <div x-data="{ isExpanded: false }" class="regiment-detail-card fancy glass-effect animate-on-scroll delay-6 relative overflow-hidden"> <!-- Added relative overflow-hidden -->
-                             <div class="regiment-color-swatch" style="background-color: #a0522d;"></div>
-                             <div class="regiment-detail-content">
-                                <div class="regiment-detail-icon-area">
-                                    <i class="fas fa-landmark fa-3x text-teal-400 regiment-detail-icon"></i>
-                                </div>
-                                <div class="regiment-detail-text-area">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="regiment-detail-name">Government</h3>
-                                        <!-- Tag Container - UPDATED justify-start -->
-                                        <div class="flex flex-wrap items-center justify-start gap-1">
-                                            <span class="regiment-detail-type-badge civil"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Main civil administration unit, designed to create and vote laws and policies.">Civil</span>
-                                            <span class="regiment-detail-type-badge independent"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Operates outside the direct military command chain.">Independent</span>
-                                        </div>
-                                    </div>
-                                    <!-- Description Wrapper -->
-                                    <div class="regiment-description-wrapper" :class="isExpanded ? 'expanded' : 'truncated'">
-                                        <p class="regiment-detail-description">
-                                            The Government is the heart and soul of any underpinning authority of the Empire, and through it, all other institutions, particularly the military, rely on it. Think of it as the brain of Frankonia – the one that gives laws, administration, and strategic plans to keep the Empire stable and growing. As the ruling body, the Government has the chief political authority as well as administrative powers, charged with the responsibility of running the Empire and providing guidance in its overall direction. Legislative duties – meaning the creation of laws applicable within the Empire – overseeing vast territories, managing resources, and formulating policies both at the domestic and international levels fall under its jurisdiction.
-                                            <br><br>
-                                            Good governance on the Government's part will hold the Empire together and stable, with just enough momentum to keep moving forward. With these clear laws placed before everyone, things would run smoothly under the influence of the Government – whether in any respect of Frankonia: society, economy, or national security. The Government, however, is selective in distinguishing its own members, unlike the general military, where a simple willingness to join is sufficient. Service in the Government is primarily based on merit and loyalty and the passing of an application.
-                                            <br><br>
-                                            The Empire expects its officials to be skilled, but more so, the Empire sees them as loyal to the Crown and to the Frankonian cause. Candidates must demonstrate their loyalty. The whole process is slightly selective. Only the individuals who are perceived by the recognized authorities as the most intellectually gifted and honest will be granted the opportunity to uphold the law and enact the will of the Empire.
-                                        </p>
-                                    </div>
-                                     <!-- See More/Less Button -->
-                                    <button @click="isExpanded = !isExpanded" class="see-more-button" :aria-expanded="isExpanded.toString()">
-                                        <span x-text="isExpanded ? 'See Less' : 'See More'">See More</span>
-                                        <i class="fas ml-1 text-xs" :class="isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                                    </button>
-                                    <!-- Footer -->
-                                    <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700/50 gap-2"> <!-- Changed gap-4 to gap-2 -->
-                                         <span class="regiment-detail-status-badge active"
-                                               data-tooltip-target="tooltip" data-tooltip-text="Regiment In Use">Active</span>
-                                         <!-- Tooltip added -->
-                                         <button class="btn btn-secondary-glow btn-sm disabled:opacity-50 relative overflow-hidden" disabled
-                                                 data-tooltip-target="tooltip" data-popper-placement="top" data-tooltip-text="Requires application"> <!-- Added relative overflow-hidden -->
-                                             Application <i class="fas fa-lock ml-1.5 text-xs"></i>
-                                         </button>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="regiment-card-body">
+                        <div class="collapsible-content">
+                            <p>The Army is the primary land-based force of the Empire, responsible for frontline combat, territorial defense, and large-scale military operations. It is the backbone of Frankonia's might, composed of disciplined soldiers trained for any combat scenario.</p>
+                            <p>Enlistment into the Army is the standard path for new recruits wishing to serve in the armed forces, providing a solid foundation for a military career within the Empire.</p>
                         </div>
-
-                        <!-- Card 4: Royal Guard -->
-                        <div x-data="{ isExpanded: false }" class="regiment-detail-card fancy glass-effect animate-on-scroll delay-7 relative overflow-hidden"> <!-- Added relative overflow-hidden -->
-                             <div class="regiment-color-swatch" style="background-color: #ffffff;"></div>
-                             <div class="regiment-detail-content">
-                                <div class="regiment-detail-icon-area">
-                                    <i class="fas fa-chess-rook fa-3x text-teal-400 regiment-detail-icon"></i>
-                                </div>
-                                <div class="regiment-detail-text-area">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="regiment-detail-name">Royal Guard</h3>
-                                        <!-- Tag Container - UPDATED justify-start -->
-                                        <div class="flex flex-wrap items-center justify-start gap-1">
-                                            <span class="regiment-detail-type-badge elite"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Main protection unit, designed to guard the Royal Family and important buildings.">Elite Guard</span>
-                                            <span class="regiment-detail-type-badge independent"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Operates outside the direct military command chain.">Independent</span>
-                                        </div>
-                                    </div>
-                                    <!-- Description Wrapper -->
-                                    <div class="regiment-description-wrapper" :class="isExpanded ? 'expanded' : 'truncated'">
-                                        <p class="regiment-detail-description">
-                                            The Royal Guard is the elite unit dedicated to the protection of the Empire's highest values. They guard the heart of Frankonia, the ultimate first line of protection from dangers to the Royal Family as well as to key imperial structures. They are the watchful sentinels of the Empire, the impenetrable bastion of internal security, with the vital and stringent task of guarding the Empire's supreme authority and most important sites.
-                                            <br><br>
-                                            Their primary responsibility is to remain ever watchful, keeping key locations safe, providing tight security to the Royal Family, and responding quickly to any peril that may threaten those under their protection. They must be steadfastly committed and ready to ensure continuity and stability to the leadership and functioning of the Empire. By offering complete security to the Royal Family and key buildings, the Royal Guard ensures that the heart of the Empire remains secure, allowing the military leadership and government to function without interruption.
-                                            <br><br>
-                                            Unlike the open enlistment of the regular military, membership within the Royal Guard is selective and strict. The Empire's belief is that service within this elite protection unit requires men of the utmost fidelity, efficiency, and integrity. Not everyone is accepted; only those who undergo rigorous screening, intense testing, and have an immaculate service record and behaviour are granted the privilege of joining these elite ranks. Only those who demonstrate unshakeable fidelity and reach the highest levels of excellence are given the privilege of joining, ensuring that the Royal Guard is composed of only the best-trained and most reliable men.
-                                        </p>
-                                    </div>
-                                     <!-- See More/Less Button -->
-                                    <button @click="isExpanded = !isExpanded" class="see-more-button" :aria-expanded="isExpanded.toString()">
-                                        <span x-text="isExpanded ? 'See Less' : 'See More'">See More</span>
-                                        <i class="fas ml-1 text-xs" :class="isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                                    </button>
-                                    <!-- Footer -->
-                                    <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700/50 gap-2"> <!-- Changed gap-4 to gap-2 -->
-                                         <span class="regiment-detail-status-badge active"
-                                               data-tooltip-target="tooltip" data-tooltip-text="Regiment In Use">Active</span>
-                                         <!-- Tooltip added -->
-                                         <button class="btn btn-secondary-glow btn-sm disabled:opacity-50 relative overflow-hidden" disabled
-                                                 data-tooltip-target="tooltip" data-popper-placement="top" data-tooltip-text="Requires Passing The Academy"> <!-- Added relative overflow-hidden -->
-                                             Academy <i class="fas fa-lock ml-1.5 text-xs"></i>
-                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- Card 5: Special Forces -->
-                         <div x-data="{ isExpanded: false }" class="regiment-detail-card fancy glass-effect animate-on-scroll delay-8 relative overflow-hidden"> <!-- Added relative overflow-hidden -->
-                             <div class="regiment-color-swatch" style="background: linear-gradient(90deg, #556b2f, #f5f5f5);"></div>
-                             <div class="regiment-detail-content">
-                                <div class="regiment-detail-icon-area">
-                                    <i class="fas fa-mask fa-3x text-teal-400 regiment-detail-icon"></i>
-                                </div>
-                                <div class="regiment-detail-text-area">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="regiment-detail-name">Special Forces</h3>
-                                        <!-- Tag Container - UPDATED justify-start -->
-                                        <div class="flex flex-wrap items-center justify-start gap-1">
-                                            <span class="regiment-detail-type-badge covert"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Main special operations unit, designed to take on the most difficult tasks.">Covert Ops</span>
-                                            <span class="regiment-detail-type-badge armed-forces"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Part of the main military structure.">Armed Forces</span>
-                                        </div>
-                                    </div>
-                                    <!-- Description Wrapper -->
-                                    <div class="regiment-description-wrapper" :class="isExpanded ? 'expanded' : 'truncated'">
-                                        <p class="regiment-detail-description">
-                                            The Special Forces are the Empire's finest, best-trained military resource, an instrument of precision power. They are the spear point of Frankonia, the first strike at risk calling for unorthodox solutions and occurring beyond the reach of conventional forces. They are the Empire's clandestine branch, the leading edge of its military power, with the vital and immensely difficult task of penetrating to the depths of enemy territory and performing vital missions beyond the reach of conventional forces.
-                                            <br><br>
-                                            They are tasked with executing high-risk, high-payoff missions deep into enemy territory or in danger zones. These include special reconnaissance, direct action assault, counter-terrorism, and irregular warfare missions. Their greater level of expertise, rigorous training, and independence or small unit capability are necessary to execute strategic missions, shut down adversary operations, gain vital intelligence, or kill high-priority target dangers. Executing these key missions, the Special Forces provide the Empire with a vital advantage, sometimes setting the battlefield before other forces enter or where other forces fear to tread.
-                                            <br><br>
-                                            Unlike conventional Armed Forces' public recruitment, Special Forces entry is competitive and challenging. The Empire knows that it needs those with unmatched staying power, mental resilience, specialist expertise, and impenetrable devotion to work within these elite forces. Consequently, entry is competitive, and individuals must go through a rigorous selection process, advanced courses, and demonstrate phenomenal talent and staying power under maximum pressure. The opportunity to be among these secretive ranks is only given to the very few who convince they have the rare talent mixture to perform under maximum pressure.
-                                        </p>
-                                    </div>
-                                     <!-- See More/Less Button -->
-                                    <button @click="isExpanded = !isExpanded" class="see-more-button" :aria-expanded="isExpanded.toString()">
-                                        <span x-text="isExpanded ? 'See Less' : 'See More'">See More</span>
-                                        <i class="fas ml-1 text-xs" :class="isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                                    </button>
-                                    <!-- Footer -->
-                                    <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700/50 gap-2"> <!-- Changed gap-4 to gap-2 -->
-                                         <span class="regiment-detail-status-badge active"
-                                               data-tooltip-target="tooltip" data-tooltip-text="Regiment In Use">Active</span>
-                                         <!-- Tooltip added -->
-                                         <button class="btn btn-secondary-glow btn-sm disabled:opacity-50 relative overflow-hidden" disabled
-                                                 data-tooltip-target="tooltip" data-popper-placement="top" data-tooltip-text="Selective Process"> <!-- Added relative overflow-hidden -->
-                                             Selective <i class="fas fa-lock ml-1.5 text-xs"></i>
-                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 6: Mechanized Infantry -->
-                         <div x-data="{ isExpanded: false }" class="regiment-detail-card fancy glass-effect animate-on-scroll delay-9 relative overflow-hidden"> <!-- Added relative overflow-hidden -->
-                             <div class="regiment-color-swatch" style="background-color: #556b2f;"></div>
-                             <div class="regiment-detail-content">
-                                <div class="regiment-detail-icon-area">
-                                    <i class="fas fa-truck-moving fa-3x text-teal-400 regiment-detail-icon"></i>
-                                </div>
-                                <div class="regiment-detail-text-area">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="regiment-detail-name">Mechanized Infantry</h3>
-                                        <!-- Tag Container - UPDATED justify-start -->
-                                        <div class="flex flex-wrap items-center justify-start gap-1">
-                                            <span class="regiment-detail-type-badge combative"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Main line of defense against all dangers.">Combative</span>
-                                            <span class="regiment-detail-type-badge armed-forces"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="Part of the main military structure.">Armed Forces</span>
-                                        </div>
-                                    </div>
-                                    <!-- Description Wrapper -->
-                                    <div class="regiment-description-wrapper" :class="isExpanded ? 'expanded' : 'truncated'">
-                                        <p class="regiment-detail-description">
-                                            Mechanized Infantry is an essential part of the Empire's forces, providing much-needed mobility and covered fire. They are the mobile armor backbone of the Empire's armor power, serving as the spearhead of rapid assault and exploitation on the battlefield. They are the Empire's armored fist, the sharp land power cutting edge, with the crucial but difficult task of moving rapidly under fire and capturing objectives quickly alongside armor vehicles.
-                                            <br><br>
-                                            They are primarily responsible for delivering swift attacks, assaulting and combating from or near their armored fighting vehicles and infantry fighting vehicles. They are able to match the tempo of the movement of tanks, capitalize on breakthroughs through enemy terrain, and secure key positions before they are attacked by the enemy. Their ability to deploy quickly to fight from cover is necessary to carry the initiative of an attack to its conclusion and secure territory in good time. Engaging in combined arms combat, the Mechanized Infantry enables captured positions and objectives to be held by power and simultaneously.
-                                            <br><br>
-                                            Unlike the open recruitment of the regular army, entry into the Mechanized Infantry is selective based on both aptitude and training levels. The Empire knows that warfare and maneuvering from advanced armor vehicles require a combination of physical conditioning, mechanical ability, and controlled coordination. As such, entry is not universal; it requires the display of mechanical ability, completion of strict schooling on vehicle maintenance and operations, and proficiency in coordinated combat operations. The opportunity to join those mobile ranks is extended only to those with the skills and discipline to perform within an armored unit.
-                                        </p>
-                                    </div>
-                                     <!-- See More/Less Button -->
-                                    <button @click="isExpanded = !isExpanded" class="see-more-button" :aria-expanded="isExpanded.toString()">
-                                        <span x-text="isExpanded ? 'See Less' : 'See More'">See More</span>
-                                        <i class="fas ml-1 text-xs" :class="isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                                    </button>
-                                    <!-- Footer -->
-                                    <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700/50 gap-2"> <!-- Changed gap-4 to gap-2 -->
-                                         <span class="regiment-detail-status-badge active"
-                                               data-tooltip-target="tooltip" data-tooltip-text="Regiment In Use">Active</span>
-                                         <!-- Tooltip added -->
-                                         <button class="btn btn-secondary-glow btn-sm disabled:opacity-50 relative overflow-hidden" disabled
-                                                 data-tooltip-target="tooltip" data-popper-placement="top" data-tooltip-text="Requires tryout"> <!-- Added relative overflow-hidden -->
-                                             Tryout <i class="fas fa-lock ml-1.5 text-xs"></i>
-                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- Card 7: Internal Admin -->
-                         <!-- Added Alpine.js state and hover events -->
-                         <div x-data="{ isUnauthorized: false }"
-                              @mouseenter="isUnauthorized = true"
-                              @mouseleave="isUnauthorized = false"
-                              class="regiment-detail-card fancy glass-effect animate-on-scroll delay-10 relative overflow-hidden restricted-card-layout"> <!-- Added relative overflow-hidden and restricted-card-layout class -->
-                             <div class="regiment-color-swatch" style="background-color: #000000;"></div>
-
-                             <!-- Default Classified Content (shown when NOT unauthorized) -->
-                             <div class="regiment-detail-content items-center justify-center text-center"
-                                  :class="{ 'opacity-0': isUnauthorized, 'opacity-100': !isUnauthorized }"
-                                  :style="isUnauthorized ? 'pointer-events: none;' : ''"
-                                  style="transition: opacity 0.3s ease-in-out;"> <!-- Add transition directly -->
-                                <div class="regiment-detail-icon-area mb-4"> <!-- Adjusted margin -->
-                                    <i class="fas fa-lock fa-3x text-gray-600 regiment-detail-icon"></i> <!-- Changed icon and color -->
-                                </div>
-                                <div class="regiment-detail-text-area text-center">
-                                    <h3 class="regiment-detail-name mb-2">Internal Administration</h3> <!-- Adjusted margin -->
-                                    <p class="text-gray-500 text-sm mb-4 access-restricted-text">Access Restricted</p> <!-- Added placeholder text -->
-                                     <span class="regiment-detail-status-badge classified"
-                                           data-tooltip-target="tooltip" data-tooltip-text="Access Restricted">Classified</span>
-                                </div>
-                            </div>
-
-                            <!-- Unauthorized Message Overlay (shown when unauthorized - on hover) -->
-                            <div x-show="isUnauthorized"
-                                 x-transition:enter="transition ease-out duration-300"
-                                 x-transition:enter-start="opacity-0"
-                                 x-transition:enter-end="opacity-100"
-                                 x-transition:leave="transition ease-in duration-300"
-                                 x-transition:leave-start="opacity-100"
-                                 x-transition:leave-end="opacity-0"
-                                 class="absolute inset-0 flex items-center justify-center text-center unauthorized-message restricted-pulse"> <!-- Apply restricted-pulse here -->
-                                 NOT AUTHORIZED TO VIEW THE CONTENTS
-                            </div>
-                        </div>
-
-                        <!-- Card 8: Royal Family -->
-                         <div x-data="{ isExpanded: false }" class="regiment-detail-card fancy glass-effect animate-on-scroll delay-11 relative overflow-hidden"> <!-- Added relative overflow-hidden -->
-                             <div class="regiment-color-swatch" style="background: linear-gradient(90deg, #ffd700, #e5e4e2);"></div>
-                             <div class="regiment-detail-content">
-                                <div class="regiment-detail-icon-area">
-                                    <i class="fas fa-crown fa-3x text-yellow-400 regiment-detail-icon"></i>
-                                </div>
-                                <div class="regiment-detail-text-area">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="regiment-detail-name">Royal Family</h3>
-                                        <!-- Tag Container - UPDATED justify-start -->
-                                        <div class="flex flex-wrap items-center justify-start gap-1">
-                                            <span class="regiment-detail-type-badge leadership"
-                                                  data-tooltip-target="tooltip" data-tooltip-text="The Royal Family of the Empire. Takes the most important decisions and leads the group.">Leadership</span>
-                                            <!-- No additional tag requested for Royal Family -->
-                                        </div>
-                                    </div>
-                                    <!-- Description Wrapper -->
-                                    <div class="regiment-description-wrapper" :class="isExpanded ? 'expanded' : 'truncated'">
-                                        <p class="regiment-detail-description">
-                                            The Royal Family is the heart and center of the Empire, the highest symbol of its power and right to rule. They are the crown of Frankonia, a living symbol of its past, traditions, and future. They are the leaders of the Empire, the main source of its identity and strength, with the important role of representing the nation and giving final direction.
-                                            <br><br>
-                                            While the Government leads and the military protects, the Royal Family rules. They make the final decisions on important matters, protect the Empire's traditions, and make sure the royal bloodline continues.
-                                            <br><br>
-                                            Their presence is needed to give the people one clear, trusted family that the whole Empire can follow. By holding the highest authority, the Royal Family keeps the Empire united and ensures its rule continues without end.
-                                            <br><br>
-                                            Being part of the Royal Family isn’t a choice or something you can apply for. It depends only on being born into the family or, in rare cases, marrying into it. There are no qualifications to meet or tests to pass—just being part of the family by birth or royal law.
-                                            <br><br>
-                                            The power and responsibility of leading the Empire are passed down through family lines. It’s not earned through effort, but given by birth and protected by tradition and the rules of royal succession. This keeps the leadership within the family, just as the Empire intends.
-                                        </p>
-                                    </div>
-                                     <!-- See More/Less Button -->
-                                    <button @click="isExpanded = !isExpanded" class="see-more-button" :aria-expanded="isExpanded.toString()">
-                                        <span x-text="isExpanded ? 'See Less' : 'See More'">See More</span>
-                                        <i class="fas ml-1 text-xs" :class="isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                                    </button>
-                                    <!-- Footer -->
-                                    <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-700/50 gap-2"> <!-- Changed gap-4 to gap-2 -->
-                                         <span class="regiment-detail-status-badge hereditary"
-                                               data-tooltip-target="tooltip" data-tooltip-text="Unobtainable">Hereditary</span>
-                                         <!-- Tooltip added -->
-                                         <button class="btn btn-secondary-glow btn-sm disabled:opacity-50 relative overflow-hidden" disabled
-                                                 data-tooltip-target="tooltip" data-popper-placement="top" data-tooltip-text="Off Limits"> <!-- Added relative overflow-hidden -->
-                                             Off Limits <i class="fas fa-lock ml-1.5 text-xs"></i>
-                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> <!-- End Grid -->
+                        <button class="toggle-description">See More</button>
+                    </div>
+                    <div class="regiment-card-footer">
+                        <span class="status-badge status-active tooltip-container">Active<span class="tooltip-text">This regiment is operational.</span></span>
+                        <a href="#" class="btn btn-secondary regiment-action-btn discord-join-link tooltip-container">Enlist Now<span class="tooltip-text">Join our Discord to enlist!</span></a>
+                    </div>
                 </div>
-            </section>
-        </main>
 
-        <!-- Footer -->
-        <footer class="mt-24 py-10 px-6 md:px-12 bg-slate-900/70 border-t border-gray-700/50">
-            <div class="container mx-auto text-center text-gray-400">
-                <div class="mb-4 animate-on-scroll">
-                    <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=680f8010&is=680e2e90&hm=2fba1af6f0d320a42f8eec48433f71c90e3914f642ccbd956c20fb66b2878908&=&format=webp&quality=lossless&width=960&height=960"
-                         alt="Frankonia Logo Small" class="h-12 w-12 mx-auto rounded-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.style.display='none'">
+                <!-- Card 2: Military Police -->
+                <div class="regiment-card interactive-card">
+                    <div class="regiment-medal">
+                        <div class="medal-ribbon"></div>
+                        <div class="medal-center">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="regiment-card-header">
+                        <div class="regiment-icon">
+                            <i class="fas fa-gavel"></i>
+                            <div class="status-light" style="background-color: var(--success-color);"></div>
+                        </div>
+                        <h3>Military Police</h3>
+                        <div class="regiment-badges">
+                            <span class="badge badge-enforcement tooltip-container">Enforcement<span class="tooltip-text">Upholds discipline and order within the military.</span></span>
+                            <span class="badge badge-af tooltip-container">Armed Forces<span class="tooltip-text">Part of the main military structure.</span></span>
+                        </div>
+                    </div>
+                    <div class="regiment-card-body">
+                        <div class="collapsible-content">
+                            <p>The Military Police (MP) are the guardians of order within the armed forces. Their duties include enforcing military law, maintaining security at key installations, and ensuring the conduct of all personnel aligns with the Empire's standards.</p>
+                            <p>Entry into the Military Police is selective and requires a tryout, as members are entrusted with significant authority and responsibility.</p>
+                        </div>
+                        <button class="toggle-description">See More</button>
+                    </div>
+                    <div class="regiment-card-footer">
+                        <span class="status-badge status-active tooltip-container">Active<span class="tooltip-text">This regiment is operational.</span></span>
+                        <a href="#" class="btn btn-secondary regiment-action-btn off-limits tooltip-container">Tryout<span class="tooltip-text">Requires a tryout process. Join Discord for info.</span></a>
+                    </div>
                 </div>
-                <p class="mb-4 animate-on-scroll delay-1 motto text-gray-500 text-sm">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p> <!-- Added mb-4 -->
-                <p class="mt-3 animate-on-scroll delay-2 text-sm">© <span id="current-year"></span> The Germanic Empire of Frankonia. All Rights Reserved.</p>
-                <p class="text-xs mt-1 animate-on-scroll delay-3 text-gray-500">A Fictional Roblox Group Simulation.</p>
-                <div class="mt-5 space-x-6 animate-on-scroll delay-4">
-                    <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Roblox Group"><i class="fab fa-roblox"></i></a>
-                    <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Discord Server"><i class="fab fa-discord"></i></a>
-                    <!-- Add other links if needed -->
+
+                <!-- Card 3: Government -->
+                <div class="regiment-card interactive-card">
+                    <div class="regiment-medal">
+                        <div class="medal-ribbon"></div>
+                        <div class="medal-center">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                    </div>
+                    <div class="regiment-card-header">
+                        <div class="regiment-icon">
+                            <i class="fas fa-landmark"></i>
+                            <div class="status-light" style="background-color: var(--success-color);"></div>
+                        </div>
+                        <h3>Government</h3>
+                        <div class="regiment-badges">
+                            <span class="badge badge-civil tooltip-container">Civil<span class="tooltip-text">Manages the civil administration of the Empire.</span></span>
+                            <span class="badge badge-independent tooltip-container">Independent<span class="tooltip-text">Operates outside the direct military command chain.</span></span>
+                        </div>
+                    </div>
+                    <div class="regiment-card-body">
+                        <div class="collapsible-content">
+                            <p>The Government is the civil administrative body of the Empire, responsible for creating, debating, and enacting laws and policies. It manages the non-military aspects of the state, including diplomacy, treasury, and internal affairs.</p>
+                            <p>Joining the Government requires a formal application process, seeking individuals with a keen interest in politics, law, and administration.</p>
+                        </div>
+                        <button class="toggle-description">See More</button>
+                    </div>
+                    <div class="regiment-card-footer">
+                        <span class="status-badge status-active tooltip-container">Active<span class="tooltip-text">This regiment is operational.</span></span>
+                        <a href="#" class="btn btn-secondary regiment-action-btn off-limits tooltip-container">Application<span class="tooltip-text">Requires a formal application. Join Discord for info.</span></a>
+                    </div>
+                </div>
+                
+                <!-- Card 4: Royal Guard -->
+                <div class="regiment-card interactive-card">
+                    <div class="regiment-medal">
+                        <div class="medal-ribbon"></div>
+                        <div class="medal-center">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                    </div>
+                    <div class="regiment-card-header">
+                        <div class="regiment-icon">
+                            <i class="fas fa-chess-rook"></i>
+                            <div class="status-light" style="background-color: var(--success-color);"></div>
+                        </div>
+                        <h3>Royal Guard</h3>
+                        <div class="regiment-badges">
+                            <span class="badge badge-elite tooltip-container">Elite Guard<span class="tooltip-text">Protects the Royal Family and key state locations.</span></span>
+                            <span class="badge badge-independent tooltip-container">Independent<span class="tooltip-text">Operates outside the direct military command chain.</span></span>
+                        </div>
+                    </div>
+                    <div class="regiment-card-body">
+                        <div class="collapsible-content">
+                            <p>The Royal Guard is an elite unit entrusted with the personal protection of the Royal Family and the security of vital imperial locations. They are the most disciplined and loyal protectors in the Empire, handpicked for their unwavering dedication.</p>
+                            <p>Acceptance into this prestigious unit is highly competitive and requires successfully passing the rigorous trials of the Royal Guard Academy.</p>
+                        </div>
+                        <button class="toggle-description">See More</button>
+                    </div>
+                    <div class="regiment-card-footer">
+                        <span class="status-badge status-active tooltip-container">Active<span class="tooltip-text">This regiment is operational.</span></span>
+                        <a href="#" class="btn btn-secondary regiment-action-btn off-limits tooltip-container">Academy<span class="tooltip-text">Requires passing the Academy. Join Discord for info.</span></a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Special Forces -->
+                <div class="regiment-card interactive-card">
+                    <div class="regiment-medal">
+                        <div class="medal-ribbon"></div>
+                        <div class="medal-center">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                    </div>
+                    <div class="regiment-card-header">
+                        <div class="regiment-icon">
+                            <i class="fas fa-user-secret"></i>
+                            <div class="status-light" style="background-color: var(--success-color);"></div>
+                        </div>
+                        <h3>Special Forces</h3>
+                        <div class="regiment-badges">
+                            <span class="badge badge-covert tooltip-container">Covert Ops<span class="tooltip-text">Undertakes high-risk, special operations.</span></span>
+                            <span class="badge badge-af tooltip-container">Armed Forces<span class="tooltip-text">Part of the main military structure.</span></span>
+                        </div>
+                    </div>
+                    <div class="regiment-card-body">
+                        <div class="collapsible-content">
+                            <p>The Special Forces (SF) are the surgical instrument of the Frankonian military, tasked with carrying out the most dangerous and sensitive missions. They operate in small, highly-skilled teams, conducting reconnaissance, sabotage, and high-value target engagements.</p>
+                            <p>Entry into the Special Forces is by invitation and a grueling selective process, open only to the most capable and proven soldiers.</p>
+                        </div>
+                        <button class="toggle-description">See More</button>
+                    </div>
+                    <div class="regiment-card-footer">
+                        <span class="status-badge status-active tooltip-container">Active<span class="tooltip-text">This regiment is operational.</span></span>
+                        <a href="#" class="btn btn-secondary regiment-action-btn off-limits tooltip-container">Selective<span class="tooltip-text">Requires a selective process. Join Discord for info.</span></a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Mechanized Infantry -->
+                <div class="regiment-card interactive-card">
+                    <div class="regiment-medal">
+                        <div class="medal-ribbon"></div>
+                        <div class="medal-center">
+                            <i class="fas fa-truck-monster"></i>
+                        </div>
+                    </div>
+                    <div class="regiment-card-header">
+                        <div class="regiment-icon">
+                            <i class="fas fa-truck-monster"></i>
+                            <div class="status-light" style="background-color: var(--success-color);"></div>
+                        </div>
+                        <h3>Mechanized Infantry</h3>
+                         <div class="regiment-badges">
+                            <span class="badge badge-combative tooltip-container">Combative<span class="tooltip-text">Specializes in armored assault and support.</span></span>
+                            <span class="badge badge-af tooltip-container">Armed Forces<span class="tooltip-text">Part of the main military structure.</span></span>
+                        </div>
+                    </div>
+                    <div class="regiment-card-body">
+                        <div class="collapsible-content">
+                            <p>The Mechanized Infantry combines the mobility and firepower of armored vehicles with the flexibility of foot soldiers. This division specializes in rapid assault and armored support, capable of breaking through enemy lines and securing objectives quickly.</p>
+                            <p>Joining requires a tryout to assess a soldier's aptitude for operating in a high-speed, high-stakes combat environment.</p>
+                        </div>
+                        <button class="toggle-description">See More</button>
+                    </div>
+                    <div class="regiment-card-footer">
+                        <span class="status-badge status-active tooltip-container">Active<span class="tooltip-text">This regiment is operational.</span></span>
+                        <a href="#" class="btn btn-secondary regiment-action-btn off-limits tooltip-container">Tryout<span class="tooltip-text">Requires a tryout process. Join Discord for info.</span></a>
+                    </div>
+                </div>
+
+                <!-- Card 7: Internal Administration (Classified) -->
+                <div class="regiment-card classified">
+                    <div class="regiment-card-header">
+                        <h3><i class="fas fa-eye-slash"></i> Internal Administration</h3>
+                    </div>
+                    <div class="regiment-card-body">
+                        <p class="classified-text">ACCESS RESTRICTED</p>
+                    </div>
+                    <div class="regiment-card-footer">
+                        <span class="status-badge status-classified tooltip-container">Classified<span class="tooltip-text">Access is restricted.</span></span>
+                    </div>
+                    <div class="classified-overlay">
+                        <i class="fas fa-lock"></i>
+                        <p>UNAUTHORIZED</p>
+                    </div>
+                </div>
+
+                <!-- Card 8: Royal Family -->
+                <div class="regiment-card interactive-card">
+                    <div class="regiment-medal">
+                        <div class="medal-ribbon"></div>
+                        <div class="medal-center">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                    </div>
+                    <div class="regiment-card-header">
+                        <div class="regiment-icon">
+                            <i class="fas fa-crown"></i>
+                            <div class="status-light" style="background-color: var(--text-muted);"></div>
+                        </div>
+                        <h3>Royal Family</h3>
+                        <div class="regiment-badges">
+                            <span class="badge badge-leadership tooltip-container">Leadership<span class="tooltip-text">The hereditary rulers of the Empire.</span></span>
+                            <i class="fas fa-crown crown-icon tooltip-container"><span class="tooltip-text">Symbol of the Monarchy</span></i>
+                        </div>
+                    </div>
+                    <div class="regiment-card-body">
+                        <div class="collapsible-content">
+                            <p>The Royal Family stands at the apex of the Frankonian power structure. As the hereditary rulers of the Empire, they hold ultimate authority over all state, military, and civil matters. Their leadership defines the nation's direction and destiny.</p>
+                            <p>Membership is determined by bloodline and is not an attainable position for the general populace.</p>
+                        </div>
+                        <button class="toggle-description">See More</button>
+                    </div>
+                    <div class="regiment-card-footer">
+                        <span class="status-badge status-hereditary tooltip-container">Hereditary<span class="tooltip-text">This position is unobtainable.</span></span>
+                        <a href="#" class="btn btn-secondary regiment-action-btn off-limits tooltip-container">Off Limits<span class="tooltip-text">This position is unobtainable.</span></a>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </section>
+    </main>
 
-        <!-- Tooltip Element -->
-        <div id="tooltip" class="fixed hidden z-[60] px-3 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-md shadow-sm opacity-0 transition-opacity duration-200 tooltip-custom" role="tooltip" aria-hidden="true">
-            Tooltip text
-            <div class="tooltip-arrow" data-popper-arrow></div>
+    <!-- Global Footer -->
+    <footer class="main-footer">
+        <div class="footer-seal">
+            <div class="seal-ring">
+                <div class="seal-center">
+                    <img src="assets/frankonia_logo.png" alt="Imperial Seal" style="width: 40px; height: 40px; object-fit: contain;">
+                </div>
+            </div>
         </div>
+        <p class="motto">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p>
+        <div class="social-links">
+            <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" title="Roblox Group" class="tooltip-container"><i class="fab fa-roblox"></i><span class="tooltip-text">Roblox Group</span></a>
+            <a href="#" class="discord-join-link tooltip-container" title="Discord Server"><i class="fab fa-discord"></i><span class="tooltip-text">Discord Server</span></a>
+        </div>
+        <p class="copyright">© <span id="current-year">2024</span> The Germanic Empire of Frankonia. All Rights Reserved.</p>
+        <p class="sub-text">A Fictional Roblox Group Simulation.</p>
+    </footer>
 
-    </div> <!-- End Alpine x-data wrapper -->
-
-    <!-- Custom JavaScript (Same as index.html) -->
-    <script src="js/main.js"></script> <!-- <<< CHECK THIS PATH -->
-
-    <!-- Tooltip Script (Specific to this page's data-tooltip-target) -->
-    <script>
-        // NOTE: This script is kept as per the user's instruction NOT to edit regiments_page.html.
-        // The main.js file also now handles tooltips using the same attribute, which might cause
-        // minor redundancy or unexpected behavior in some browsers.
-        document.addEventListener('DOMContentLoaded', () => {
-            const tooltipTargetElements = document.querySelectorAll('[data-tooltip-target="tooltip"]');
-            const tooltipElement = document.getElementById('tooltip');
-            let popperInstance = null;
-            let showTimeout; // Added timeout variable
-
-            function showTooltip(targetElement) {
-                if (!tooltipElement || !targetElement) return;
-
-                // Clear any existing timeout
-                clearTimeout(showTimeout);
-
-                // Set a timeout to show the tooltip after 0.5 seconds
-                showTimeout = setTimeout(() => {
-                    // Set tooltip text
-                    const tooltipText = targetElement.getAttribute('data-tooltip-text') || targetElement.getAttribute('title') || 'Tooltip';
-                    tooltipElement.textContent = tooltipText; // Set text directly
-
-                    // Get placement from data attribute
-                    const placement = targetElement.getAttribute('data-popper-placement') || 'top';
-
-                    // Create Popper instance
-                    // Check if an instance already exists for this element before creating a new one
-                    if (targetElement._popper) {
-                         popperInstance = targetElement._popper;
-                         popperInstance.setOptions({ placement: placement }); // Update placement if needed
-                         popperInstance.update();
-                    } else {
-                        popperInstance = Popper.createPopper(targetElement, tooltipElement, {
-                            placement: placement,
-                            modifiers: [
-                                {
-                                    name: 'offset',
-                                    options: {
-                                        offset: [0, 8], // Offset the tooltip by 8px from the target
-                                    },
-                                },
-                                {
-                                    name: 'preventOverflow', // Keep tooltip within bounds
-                                    options: {
-                                        boundary: 'body',
-                                    },
-                                },
-                                {
-                                    name: 'flip', // Flip placement if it overflows
-                                    options: {
-                                        fallbackPlacements: ['top', 'bottom', 'left', 'right'],
-                                    },
-                                },
-                                {
-                                    name: 'arrow', // Enable arrow
-                                    options: {
-                                        element: tooltipElement.querySelector('.tooltip-arrow'),
-                                    },
-                                },
-                            ],
-                        });
-                        targetElement._popper = popperInstance; // Store the instance on the element
-                    }
-
-
-                    // Show the tooltip
-                    tooltipElement.classList.remove('hidden');
-                    tooltipElement.setAttribute('aria-hidden', 'false');
-                    // Use requestAnimationFrame to ensure the element is visible before applying opacity transition
-                    requestAnimationFrame(() => {
-                        tooltipElement.style.opacity = 1;
-                    });
-                }, 500); // Changed from 2000 to 500 milliseconds
-            }
-
-            function hideTooltip() {
-                // Clear the show timeout if it hasn't fired yet
-                clearTimeout(showTimeout);
-
-                if (popperInstance) {
-                    // Don't destroy the instance, just hide the tooltip
-                    // popperInstance.destroy();
-                    // popperInstance = null; // Keep the instance for reuse
-                }
-                if (tooltipElement) {
-                    tooltipElement.style.opacity = 0;
-                    tooltipElement.setAttribute('aria-hidden', 'true');
-                    // Hide completely after transition
-                    setTimeout(() => {
-                         tooltipElement.classList.add('hidden');
-                    }, 200); // Match transition duration
-                }
-            }
-
-            tooltipTargetElements.forEach(targetElement => {
-                // Use mouseenter/mouseleave for hover
-                targetElement.addEventListener('mouseenter', () => showTooltip(targetElement));
-                targetElement.addEventListener('mouseleave', hideTooltip);
-
-                // Use focus/blur for keyboard accessibility
-                targetElement.addEventListener('focus', () => showTooltip(targetElement));
-                targetElement.addEventListener('blur', hideTooltip);
-
-                 // Clean up Popper instance on element removal (optional)
-                 const observer = new MutationObserver((mutations) => {
-                    mutations.forEach(mutation => {
-                        if (!document.body.contains(targetElement)) {
-                            hideTooltip();
-                            if (targetElement._popper) {
-                                targetElement._popper.destroy();
-                                delete targetElement._popper;
-                            }
-                            observer.disconnect();
-                        }
-                    });
-                 });
-                 observer.observe(document.body, { childList: true, subtree: true });
-            });
-        });
-    </script>
-
+    <div class="cursor-glow"></div>
+    <script src="script.js" defer></script>
 </body>
 </html>
