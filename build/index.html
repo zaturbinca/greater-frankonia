@@ -3,705 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Germanic Empire of Frankonia - Roblox Group Simulation</title>
-    <meta name="description" content="Join the Germanic Empire of Frankonia, an alternate history WW1/WW2 Roblox military simulation group. Experience disciplined gameplay, rank progression, and a strong community. Enlist today!">
-    <meta name="keywords" content="Roblox, military simulation, WW1, WW2, alternate history, Frankonia, Germanic Empire, roleplay, group, community, disciplined, training, enlist">
-    <meta name="author" content="The Germanic Empire of Frankonia">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Georgia&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Popper.js (for Tooltips) -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Favicon (Example - replace with actual favicon links) -->
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+    <title>The Germanic Empire of Frankonia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body class="animated-subtle-gradient-bg">
+<body>
 
-    <div x-data="{ mobileMenuOpen: false }" class="relative">
-
-        <!-- Header -->
-        <header id="main-header" class="py-3 px-4 md:px-10 glass-effect sticky top-0 z-50 transition-all duration-500 ease-in-out" role="banner">
-            <div class="container mx-auto flex justify-between items-center">
-                <!-- Logo & Title -->
-                <a href="#home" class="flex items-center gap-3 animate-on-scroll focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-background rounded-md header-logo-link" aria-label="Home - The Germanic Empire of Frankonia">
-                    <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=680f8010&is=680e2e90&hm=2fba1af6f0d320a42f8eec48433f71c90e3914f642ccbd956c20fb66b2878908&=&format=webp&quality=lossless&width=960&height=960"
-                         alt="Frankonia Empire Logo" class="h-10 w-10 md:h-12 w-12 rounded-full object-cover border-2 border-teal-400/50"
-                         onerror="this.style.display='none'">
-                    <span class="text-xl md:text-2xl font-bold tracking-tight text-white hidden sm:inline">
-                        The Germanic Empire of <span class="text-teal-400">Frankonia</span>
-                    </span>
-                    <span class="text-xl md:text-2xl font-bold tracking-tight text-white sm:hidden">
-                        <span class="text-teal-400">G</span>EF
-                    </span>
-                </a>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-5 lg:space-x-7" role="navigation" aria-label="Main navigation">
-                    <a href="#home" class="nav-link-hover animate-on-scroll delay-1 active" aria-current="page">Home</a>
-                    <a href="lore_page.html" class="nav-link-hover animate-on-scroll delay-2">Lore</a>
-                    <a href="structure_page.html" class="nav-link-hover animate-on-scroll delay-3">Structure</a>
-                    <a href="regiments_page.html" class="nav-link-hover animate-on-scroll delay-4">Regiments List</a>
-                    <a href="#gallery" class="nav-link-hover animate-on-scroll delay-5">Gallery</a>
-                    <a href="#testimonials" class="nav-link-hover animate-on-scroll delay-6">Testimonials</a>
-                    <a href="#ai-tool" class="nav-link-hover animate-on-scroll delay-7">AI Tool</a>
-                    <a href="#discord-status" class="nav-link-hover animate-on-scroll delay-8">Discord</a>
-                    <a href="#join" class="nav-link-hover animate-on-scroll delay-9">Join Us</a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <button @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="md:hidden text-gray-300 hover:text-white transition duration-200 animate-on-scroll delay-1 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
-                        aria-controls="mobile-menu"
-                        :aria-expanded="mobileMenuOpen.toString()"
-                        aria-label="Toggle mobile menu">
-                    <span class="sr-only" x-text="mobileMenuOpen ? 'Close main menu' : 'Open main menu'">Open main menu</span>
-                    <i class="fas fa-bars fa-lg" x-show="!mobileMenuOpen" aria-hidden="true"></i>
-                    <i class="fas fa-times fa-lg" x-show="mobileMenuOpen" aria-hidden="true"></i>
-                </button>
+    <!-- Global Header -->
+    <header class="main-header">
+        <a href="index.html" class="logo-container">
+            <div class="logo-wrapper">
+                <img src="assets/frankonia_logo.png" alt="GEF Logo" class="logo">
+                <div class="crown-decoration">
+                    <i class="fas fa-crown"></i>
+                    <i class="fas fa-crown"></i>
+                </div>
             </div>
-        </header>
+            <span class="group-name">The Germanic Empire of Frankonia</span>
+            <span class="group-name-mobile">GEF</span>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="lore_page.html">Lore</a></li>
+                <li><a href="structure_page.html">Structure</a></li>
+                <li><a href="regiments_page.html">Regiments</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#ai-tool-section">AI Tool</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="#" class="btn btn-primary discord-join-link">Join Us</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lore_page.html">Lore</a></li>
+            <li><a href="structure_page.html">Structure</a></li>
+            <li><a href="regiments_page.html">Regiments</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#ai-tool-section">AI Tool</a></li>
+            <li><a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank">Roblox Group</a></li>
+            <li><a href="#" class="discord-join-link">Discord Server</a></li>
+        </ul>
+    </nav>
 
-        <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen"
-             x-transition:enter="transition ease-out duration-300 transform"
-             x-transition:enter-start="-translate-x-full"
-             x-transition:enter-end="translate-x-0"
-             x-transition:leave="transition ease-in duration-200 transform"
-             x-transition:leave-start="translate-x-0"
-             x-transition:leave-end="-translate-x-full"
-             class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-800/95 backdrop-blur-md shadow-lg md:hidden overflow-y-auto"
-             id="mobile-menu"
-             @click.away="mobileMenuOpen = false"
-             role="navigation"
-             aria-label="Mobile navigation">
-            <div class="pt-20 pb-6 px-4 space-y-4">
-                 <a href="#home" @click="mobileMenuOpen = false" class="mobile-nav-link block active" aria-current="page">Home</a>
-                 <a href="lore_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Lore</a>
-                 <a href="structure_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Structure</a>
-                 <a href="regiments_page.html" @click="mobileMenuOpen = false" class="mobile-nav-link block">Regiments List</a>
-                 <a href="#gallery" @click="mobileMenuOpen = false" class="mobile-nav-link block">Gallery</a>
-                 <a href="#testimonials" @click="mobileMenuOpen = false" class="mobile-nav-link block">Testimonials</a>
-                 <a href="#ai-tool" @click="mobileMenuOpen = false" class="mobile-nav-link block">AI Tool</a>
-                 <a href="#discord-status" @click="mobileMenuOpen = false" class="mobile-nav-link block">Discord Status</a>
-                 <a href="#join" @click="mobileMenuOpen = false" class="mobile-nav-link block">Join Us</a>
-                 <hr class="border-gray-600 my-4">
-                 <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-roblox w-5 mr-2" aria-hidden="true"></i> Roblox Group</a>
-                 <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block"><i class="fab fa-discord w-5 mr-2" aria-hidden="true"></i> Discord Server</a>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="imperial-seal">
+                    <div class="seal-inner">
+                        <img src="assets/frankonia_logo.png" alt="Imperial Seal">
+                    </div>
+                </div>
+                <h1>Germanic Empire of Frankonia</h1>
+                <p class="motto">ʜᴏɴᴏʀ • ᴅᴜᴛʏ • ᴠᴀʟᴏʀ</p>
+                <p class="imperial-decree">By decree of His Imperial Majesty, we stand united against all threats to the Empire</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary discord-join-link">Enlist Today</a>
+                    <a href="lore_page.html" class="btn btn-secondary">Discover Our Lore</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to Explore</span>
+                <div class="arrow"></div>
+            </div>
+        </section>
+
+        <!-- Why Join Us Section -->
+        <section class="container hidden">
+            <div class="section-header">
+                <h2>Why Join Frankonia?</h2>
+                <div class="divider"></div>
+                <h3 class="subtitle">Forge your path in a community built on discipline, strategy, and camaraderie.</h3>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card interactive-card">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Thriving Community</h3>
+                    <p>Join active and dedicated players who share a passion for disciplined roleplay and strategic gameplay.</p>
+                </div>
+                <div class="feature-card interactive-card">
+                    <i class="fas fa-chess-rook feature-icon"></i>
+                    <h3>Strategic Gameplay</h3>
+                    <p>Engage in large-scale, tactical events where every decision matters. Outthink and outmaneuver your opponents.</p>
+                </div>
+                <div class="feature-card interactive-card">
+                    <i class="fas fa-angle-double-up feature-icon"></i>
+                    <h3>Career Progression</h3>
+                    <p>Experience a clear path to advancement through dedication, skill, and loyalty within our structured ranks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Gallery Section -->
+        <section class="container hidden">
+            <div class="section-header">
+                <h2>Media Gallery</h2>
+                <div class="divider"></div>
+                <h3 class="subtitle">Witness the Empire in action. Moments captured from the heart of Frankonia.</h3>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('https://picsum.photos/400/250?random=1&grayscale');">
+                    <div class="gallery-item-content"><h4>Frontline Engagement</h4></div>
+                </div>
+                <div class="gallery-item" style="background-image: url('https://picsum.photos/400/250?random=2&grayscale');">
+                    <div class="gallery-item-content"><h4>Regiment Formation</h4></div>
+                </div>
+                <div class="gallery-item" style="background-image: url('https://picsum.photos/400/250?random=3&grayscale');">
+                    <div class="gallery-item-content"><h4>Victory Parade</h4></div>
+                </div>
+                <div class="gallery-item" style="background-image: url('https://picsum.photos/400/250?random=4&grayscale');">
+                    <div class="gallery-item-content"><h4>Officer's Briefing</h4></div>
+                </div>
+            </div>
+            <div class="gallery-more">
+                <a href="#" class="btn btn-secondary">View Full Gallery</a>
+            </div>
+        </section>
+
+        <!-- Member Testimonials Section -->
+        <section class="container hidden">
+            <div class="section-header">
+                <h2>Voices from the Empire</h2>
+                <div class="divider"></div>
+                <h3 class="subtitle">Hear directly from our members about their experience in Frankonia.</h3>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card interactive-card">
+                    <blockquote>"The community and discipline here are unmatched. Every event feels immersive and important. I've learned a lot and made great friends."</blockquote>
+                    <p class="testimonial-author">Anonymous Member A<span>Veteran Soldier</span></p>
+                </div>
+                <div class="testimonial-card interactive-card">
+                    <blockquote>"Leadership is transparent and genuinely cares about the members. There's a real sense of belonging and purpose."</blockquote>
+                    <p class="testimonial-author">Anonymous Member B<span>Military Police</span></p>
+                </div>
+                <div class="testimonial-card interactive-card">
+                    <blockquote>"The alternate history lore is what drew me in. It adds so much depth to the roleplay. It's not just a military group, it's a whole world."</blockquote>
+                    <p class="testimonial-author">Anonymous Member D<span>Lore Enthusiast</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Recommendation Tool Section -->
+        <section class="container hidden" id="ai-tool-section">
+            <div class="section-header">
+                <h2>Find Your Place</h2>
+                <div class="divider"></div>
+                <h3 class="subtitle">Answer two questions to discover which Frankonian regiment best suits your style.</h3>
+            </div>
+            <div class="ai-tool-container interactive-card">
+                <h4>Regiment Recommender</h4>
+                <div class="form-group">
+                    <label for="playstyle">I prefer roles that involve...</label>
+                    <select id="playstyle">
+                        <option value="">-- Select an Approach --</option>
+                        <option value="Direct Combat">Direct Combat & Frontline Action</option>
+                        <option value="Enforcement">Upholding Order & Discipline</option>
+                        <option value="Strategy">Politics, Law & Administration</option>
+                        <option value="Elite Guard">Protection & Elite Duties</option>
+                        <option value="Covert Ops">Stealth & Special Operations</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="interest">I am most interested in...</label>
+                    <select id="interest">
+                        <option value="">-- Select an Interest --</option>
+                        <option value="Military Structure">Military Discipline & Structure</option>
+                        <option value="Roleplay">Alternate History Lore & Roleplay</option>
+                        <option value="Community">Community & Social Interaction</option>
+                        <option value="Achievement">Rank Progression & Achievement</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="get-recommendation-btn" style="width: 100%;">Find My Regiment</button>
+                <p id="ai-error">Please select an option for both questions.</p>
+                <div id="ai-result">
+                    <h5>Your Recommended Regiment:</h5>
+                    <h4 id="result-title">Loading...</h4>
+                    <p id="result-desc">Based on your answers, we suggest exploring this path...</p>
+                    <p id="result-reason">Reasoning placeholder</p>
+                    <a href="regiments_page.html" class="learn-more-link">Learn More About All Regiments</a>
+                </div>
+                <p class="final-note">This tool is a guide. Final placement depends on training, availability, and entry requirements.</p>
+            </div>
+        </section>
+
+        <!-- Discord Status Section -->
+        <section class="container hidden">
+            <div class="section-header">
+                <h2>Join the Conversation</h2>
+                <div class="divider"></div>
+                <h3 class="subtitle">Our community thrives on Discord. See who's online and enlist today.</h3>
+            </div>
+            <div class="discord-widget" id="discord-widget">
+                <div id="discord-loading">
+                    <div class="spinner"></div>
+                    <p>Loading Discord Server Status...</p>
+                </div>
+                <div id="discord-error" style="display: none;">
+                    <p>Could not load Discord widget. Please ensure the widget is enabled in your Discord server settings.</p>
+                </div>
+                <div id="discord-widget-content" style="display: none;">
+                    <div class="discord-header">
+                        <img id="discord-server-icon" src="assets/frankonia_logo.png" alt="Server Icon">
+                        <div>
+                            <h4 id="discord-server-name">Server Name</h4>
+                            <span><span class="online-dot"></span><span id="discord-online-count">N/A</span> Online</span>
+                        </div>
+                    </div>
+                    <div id="discord-member-list">
+                        <p>Loading members...</p>
+                    </div>
+                    <div class="discord-actions">
+                        <a href="#" class="btn btn-primary discord-join-link">Connect to Discord</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Us CTA Section -->
+        <section class="container join-cta hidden">
+            <h2>The Empire Awaits</h2>
+            <p>Dedication. Perseverance. Discipline. If these values resonate with you, your place is with us. Answer the call and become part of Frankonia's legacy.</p>
+            <div class="join-cta-buttons">
+                <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" class="btn btn-primary">Join Roblox Group</a>
+                <a href="#" class="btn btn-secondary discord-join-link">Join Discord Server</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="main-footer">
+        <div class="footer-seal">
+            <div class="seal-ring">
+                <div class="seal-center">
+                    <img src="assets/frankonia_logo.png" alt="Imperial Seal">
+                </div>
             </div>
         </div>
-        <!-- Overlay for Mobile Menu -->
-        <div x-show="mobileMenuOpen" x-transition.opacity.duration.300ms class="fixed inset-0 bg-black/50 z-30 md:hidden" @click="mobileMenuOpen = false" aria-hidden="true"></div>
-
-
-        <main id="main-content">
-            <!-- Hero Section -->
-            <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 pt-24 pb-16 relative overflow-hidden hero-section mb-16 md:mb-24" aria-labelledby="hero-heading">
-                <div class="absolute inset-0 opacity-5 z-0 hero-pattern" aria-hidden="true"></div>
-                <div class="z-10 max-w-4xl">
-                    <h1 id="hero-heading" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-5 leading-tight animate-on-scroll text-shadow-lg">
-                        <span class="text-teal-300 block">Germanic Empire</span> of Frankonia
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto animate-on-scroll delay-1 motto">
-                        ʜᴏɴᴏʀ. ᴅᴜᴛʏ. ᴠᴀʟᴏʀ.
-                    </p>
-                    <p class="text-base md:text-lg text-gray-400 mb-10 max-w-xl mx-auto animate-on-scroll delay-2">
-                        An alternate history WW1/WW2 Roblox simulation. Experience disciplined military gameplay within a thriving monarchy.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4 animate-on-scroll delay-3">
-                        <a href="#join" class="btn btn-primary-glow">
-                            Enlist Today <i class="fas fa-chevron-right ml-2 text-sm" aria-hidden="true"></i>
-                        </a>
-                        <a href="lore_page.html" class="btn btn-secondary-glow">
-                            Discover Our Lore
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Why Join Us Section -->
-            <section id="why-join" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24" aria-labelledby="why-join-heading">
-                <div class="container mx-auto max-w-6xl">
-                    <h2 id="why-join-heading" class="section-title animate-on-scroll">
-                        Why <span class="text-teal-400">Join Us?</span>
-                    </h2>
-                    <div class="section-divider animate-on-scroll delay-1" aria-hidden="true"></div>
-                    <p class="section-subtitle animate-on-scroll delay-2">
-                        Experience a unique and rewarding community within the Germanic Empire of Frankonia.
-                    </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-12">
-                        <!-- Box 1: Strong Community -->
-                        <div class="glass-effect p-6 md:p-8 text-center animate-on-scroll delay-3 hover-lift-glow">
-                            <div class="text-teal-400 mb-4" aria-hidden="true">
-                                <i class="fas fa-users fa-3x"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-white mb-3">Strong Community</h3>
-                            <p class="text-gray-300">
-                                Join our active and dedicated community of players who share a passion for disciplined roleplay and strategic gameplay.
-                            </p>
-                        </div>
-
-                        <!-- Box 2: Rank Progression -->
-                        <div class="glass-effect p-6 md:p-8 text-center animate-on-scroll delay-4 hover-lift-glow">
-                            <div class="text-teal-400 mb-4" aria-hidden="true">
-                                <i class="fas fa-ranking-star fa-3x"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-white mb-3">Rank Progression</h3>
-                            <p class="text-gray-300">
-                                Experience a clear and structured path to advancement through dedication, skill, and loyalty within our ranks.
-                            </p>
-                        </div>
-
-                        <!-- Box 3: Elite Training -->
-                        <div class="glass-effect p-6 md:p-8 text-center animate-on-scroll delay-5 hover-lift-glow">
-                            <div class="text-teal-400 mb-4" aria-hidden="true">
-                                <i class="fas fa-dumbbell fa-3x"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-white mb-3">Elite Training</h3>
-                            <p class="text-gray-300">
-                                Receive top-tier training from experienced personnel, honing your skills for effective military simulation and roleplay.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Media Gallery Section -->
-            <section id="gallery" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24" aria-labelledby="gallery-heading">
-                <div class="container mx-auto max-w-6xl">
-                    <h2 id="gallery-heading" class="section-title animate-on-scroll">
-                        Media <span class="text-teal-400">Gallery</span>
-                    </h2>
-                    <div class="section-divider animate-on-scroll delay-1" aria-hidden="true"></div>
-                    <p class="section-subtitle animate-on-scroll delay-2">
-                        See Frankonia in action! Screenshots and videos from events, training, and community moments.
-                    </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-                        <!-- Gallery Item Placeholder 1 -->
-                        <div class="glass-effect p-4 animate-on-scroll delay-3 hover-lift-glow gallery-item">
-                            <div class="w-full h-48 bg-slate-700 rounded-md flex items-center justify-center text-gray-400 text-sm mb-3 overflow-hidden">
-                                <i class="fas fa-image fa-3x opacity-50" aria-hidden="true"></i>
-                                <!-- Placeholder Image/Video -->
-                                <!-- <img src="placeholder-image-1.jpg" alt="Gallery Item 1" class="w-full h-full object-cover"> -->
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-1">Event Screenshot</h3>
-                            <p class="text-gray-400 text-sm">A moment from a recent large-scale event.</p>
-                        </div>
-
-                         <!-- Gallery Item Placeholder 2 -->
-                        <div class="glass-effect p-4 animate-on-scroll delay-4 hover-lift-glow gallery-item">
-                            <div class="w-full h-48 bg-slate-700 rounded-md flex items-center justify-center text-gray-400 text-sm mb-3 overflow-hidden">
-                                <i class="fas fa-video fa-3x opacity-50" aria-hidden="true"></i>
-                                <!-- Placeholder Image/Video -->
-                                <!-- <video src="placeholder-video-1.mp4" controls class="w-full h-full object-cover"></video> -->
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-1">Training Footage</h3>
-                            <p class="text-gray-400 text-sm">Highlights from a standard training session.</p>
-                        </div>
-
-                         <!-- Gallery Item Placeholder 3 -->
-                        <div class="glass-effect p-4 animate-on-scroll delay-5 hover-lift-glow gallery-item">
-                            <div class="w-full h-48 bg-slate-700 rounded-md flex items-center justify-center text-gray-400 text-sm mb-3 overflow-hidden">
-                                <i class="fas fa-users fa-3x opacity-50" aria-hidden="true"></i>
-                                <!-- Placeholder Image/Video -->
-                                <!-- <img src="placeholder-image-2.jpg" alt="Gallery Item 2" class="w-full h-full object-cover"> -->
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-1">Community Gathering</h3>
-                            <p class="text-gray-400 text-sm">Members socializing after an event.</p>
-                        </div>
-
-                         <!-- Gallery Item Placeholder 4 -->
-                        <div class="glass-effect p-4 animate-on-scroll delay-6 hover-lift-glow gallery-item">
-                            <div class="w-full h-48 bg-slate-700 rounded-md flex items-center justify-center text-gray-400 text-sm mb-3 overflow-hidden">
-                                <i class="fas fa-image fa-3x opacity-50" aria-hidden="true"></i>
-                                <!-- Placeholder Image/Video -->
-                                <!-- <img src="placeholder-image-3.jpg" alt="Gallery Item 3" class="w-full h-full object-cover"> -->
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-1">Combat Scenario</h3>
-                            <p class="text-gray-400 text-sm">Action shot from a combat simulation.</p>
-                        </div>
-
-                         <!-- Gallery Item Placeholder 5 -->
-                        <div class="glass-effect p-4 animate-on-scroll delay-7 hover-lift-glow gallery-item">
-                            <div class="w-full h-48 bg-slate-700 rounded-md flex items-center justify-center text-gray-400 text-sm mb-3 overflow-hidden">
-                                <i class="fas fa-video fa-3x opacity-50" aria-hidden="true"></i>
-                                <!-- Placeholder Image/Video -->
-                                <!-- <video src="placeholder-video-2.mp4" controls class="w-full h-full object-cover"></video> -->
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-1">Regiment Showcase</h3>
-                            <p class="text-gray-400 text-sm">Footage highlighting a specific regiment.</p>
-                        </div>
-
-                         <!-- Gallery Item Placeholder 6 -->
-                        <div class="glass-effect p-4 animate-on-scroll delay-8 hover-lift-glow gallery-item">
-                            <div class="w-full h-48 bg-slate-700 rounded-md flex items-center justify-center text-gray-400 text-sm mb-3 overflow-hidden">
-                                <i class="fas fa-image fa-3x opacity-50" aria-hidden="true"></i>
-                                <!-- Placeholder Image/Video -->
-                                <!-- <img src="placeholder-image-4.jpg" alt="Gallery Item 4" class="w-full h-full object-cover"> -->
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-1">Formation Drill</h3>
-                            <p class="text-gray-400 text-sm">Screenshot of a disciplined formation.</p>
-                        </div>
-                    </div>
-                    <div class="text-center mt-12 animate-on-scroll delay-9">
-                         <a href="#" class="btn btn-secondary-glow btn-sm">
-                             View More <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
-                         </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Member Testimonials Section -->
-            <section id="testimonials" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24" aria-labelledby="testimonials-heading">
-                 <div class="container mx-auto max-w-5xl">
-                    <h2 id="testimonials-heading" class="section-title animate-on-scroll">
-                        Member <span class="text-teal-400">Voices</span>
-                    </h2>
-                    <div class="section-divider animate-on-scroll delay-1" aria-hidden="true"></div>
-                    <p class="section-subtitle animate-on-scroll delay-2">
-                        Hear directly from our dedicated members about their experience in Frankonia.
-                    </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                        <!-- Testimonial 1 -->
-                        <div class="glass-effect p-6 animate-on-scroll delay-3 hover-lift-glow testimonial-card">
-                            <div class="text-teal-400 mb-4 text-3xl" aria-hidden="true">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="text-gray-300 italic mb-4">
-                                "Joining Frankonia was the best decision I made on Roblox. The discipline, the community, the events - it's unlike anything else. I've learned so much and made great friends."
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://via.placeholder.com/50/2dd4bf/ffffff?text=A" alt="Member Avatar" class="w-10 h-10 rounded-full object-cover mr-4 border-2 border-teal-400/50" loading="lazy">
-                                <div>
-                                    <p class="font-semibold text-white">Anonymous Member A</p>
-                                    <p class="text-gray-400 text-sm">Veteran Soldier</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 2 -->
-                        <div class="glass-effect p-6 animate-on-scroll delay-4 hover-lift-glow testimonial-card">
-                            <div class="text-teal-400 mb-4 text-3xl" aria-hidden="true">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="text-gray-300 italic mb-4">
-                                "The leadership here is top-notch. They genuinely care about the members and the quality of the simulation. Every event is well-planned and immersive."
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://via.placeholder.com/50/14b8a6/ffffff?text=B" alt="Member Avatar" class="w-10 h-10 rounded-full object-cover mr-4 border-2 border-teal-600/50" loading="lazy">
-                                <div>
-                                    <p class="font-semibold text-white">Anonymous Member B</p>
-                                    <p class="text-gray-400 text-sm">Active Participant</p>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- Testimonial 3 -->
-                        <div class="glass-effect p-6 animate-on-scroll delay-5 hover-lift-glow testimonial-card">
-                            <div class="text-teal-400 mb-4 text-3xl" aria-hidden="true">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="text-gray-300 italic mb-4">
-                                "Rank progression feels earned and rewarding. There's a clear path for those who show dedication. It motivates you to be your best."
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://via.placeholder.com/50/5eead4/ffffff?text=C" alt="Member Avatar" class="w-10 h-10 rounded-full object-cover mr-4 border-2 border-teal-300/50" loading="lazy">
-                                <div>
-                                    <p class="font-semibold text-white">Anonymous Member C</p>
-                                    <p class="text-gray-400 text-sm">Rising Through Ranks</p>
-                                </div>
-                            </div>
-                        </div>
-
-                         <!-- Testimonial 4 -->
-                        <div class="glass-effect p-6 animate-on-scroll delay-6 hover-lift-glow testimonial-card">
-                            <div class="text-teal-400 mb-4 text-3xl" aria-hidden="true">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="text-gray-300 italic mb-4">
-                                "The alternate history lore is fascinating and adds so much depth to the roleplay. It's not just a military group, it's a whole world."
-                            </p>
-                            <div class="flex items-center">
-                                <img src="https://via.placeholder.com/50/9ca3af/ffffff?text=D" alt="Member Avatar" class="w-10 h-10 rounded-full object-cover mr-4 border-2 border-gray-400/50" loading="lazy">
-                                <div>
-                                    <p class="font-semibold text-white">Anonymous Member D</p>
-                                    <p class="text-gray-400 text-sm">Lore Enthusiast</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-            </section>
-
-            <!-- AI Rank Recommendation Tool Section -->
-            <section id="ai-tool" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24" aria-labelledby="ai-tool-heading">
-                <div class="container mx-auto max-w-3xl">
-                    <h2 id="ai-tool-heading" class="section-title animate-on-scroll">
-                        Find Your <span class="text-teal-400">Place</span>
-                    </h2>
-                    <div class="section-divider animate-on-scroll delay-1" aria-hidden="true"></div>
-                    <p class="section-subtitle animate-on-scroll delay-2">
-                        Not sure where you fit in Frankonia? Use our AI tool to get a personalized regiment recommendation based on your interests.
-                    </p>
-
-                    <div class="glass-effect p-6 md:p-8 mt-12 animate-on-scroll delay-3">
-                        <h3 class="text-xl font-semibold text-white mb-6 text-center">AI Regiment Recommender</h3>
-                        <p class="text-gray-300 mb-6 text-center">Answer a few questions to help us suggest a regiment that aligns with your playstyle and interests.</p>
-
-                        <form id="ai-recommendation-form" class="space-y-6">
-                            <!-- Question 1 -->
-                            <div>
-                                <label for="playstyle" class="block text-sm font-medium text-gray-300 mb-2">
-                                    <i class="fas fa-gamepad mr-2 text-teal-400" aria-hidden="true"></i> What is your preferred playstyle?
-                                </label>
-                                <select id="playstyle" name="playstyle" class="w-full px-4 py-2 bg-slate-700 border border-gray-600 rounded-md text-gray-200 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
-                                    <option value="">-- Select One --</option>
-                                    <option value="combat">Direct Combat & Frontline Action</option>
-                                    <option value="support">Support & Logistics</option>
-                                    <option value="strategy">Strategy & Planning</option>
-                                    <option value="stealth">Stealth & Reconnaissance</option>
-                                    <option value="civilian">Civilian & Non-Combat Roles</option>
-                                </select>
-                            </div>
-
-                            <!-- Question 2 -->
-                            <div>
-                                <label for="interest" class="block text-sm font-medium text-gray-300 mb-2">
-                                    <i class="fas fa-star mr-2 text-teal-400" aria-hidden="true"></i> What interests you most about Frankonia?
-                                </label>
-                                <select id="interest" name="interest" class="w-full px-4 py-2 bg-slate-700 border border-gray-600 rounded-md text-gray-200 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
-                                    <option value="">-- Select One --</option>
-                                    <option value="discipline">Military Discipline & Structure</option>
-                                    <option value="lore">Alternate History Lore & Roleplay</option>
-                                    <option value="community">Community & Social Interaction</option>
-                                    <option value="progression">Rank Progression & Achievement</option>
-                                    <option value="events">Large-Scale Events & Battles</option>
-                                </select>
-                            </div>
-
-
-                            <div class="text-center pt-4">
-                                <button type="submit" class="btn btn-primary-glow">
-                                    Get Recommendation <i class="fas fa-robot ml-2 text-sm" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                            <!-- Error message placeholder -->
-                            <!-- <p id="ai-form-error" class="text-red-400 text-sm text-center mt-4"></p> -->
-                        </form>
-
-                        <!-- Recommendation Result Area -->
-                        <div id="ai-recommendation-result" class="mt-8 p-6 bg-slate-800/70 border border-gray-700 rounded-md hidden animate-on-scroll delay-4">
-                            <h4 class="text-lg font-semibold text-white mb-3 flex items-center">
-                                <i class="fas fa-lightbulb mr-3 text-teal-400" aria-hidden="true"></i> Your Recommended Regiment:
-                            </h4>
-                            <p id="recommended-regiment-name" class="text-xl font-bold text-teal-300 mb-2">Loading...</p>
-                            <!-- Description will be populated here, potentially with HTML for notes -->
-                            <p id="recommended-regiment-description" class="text-gray-300 text-sm">Based on your answers, we suggest exploring this path...</p>
-                            <!-- Reason will be populated here -->
-                            <p class="text-gray-400 text-sm mt-2 recommendation-reason">Reasoning placeholder</p>
-                            <div class="mt-4 text-right">
-                                <a href="regiments_page.html" class="text-teal-400 hover:text-teal-300 text-sm font-medium transition-colors">
-                                    Learn More About Regiments <i class="fas fa-arrow-right ml-1 text-xs" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                         <p class="text-center text-gray-500 mt-4 text-xs">Note: This is a simulated tool for guidance. Final placement depends on training, availability, and entry requirements.</p>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- START: Discord Status Section -->
-            <section id="discord-status" class="section-padding bg-gradient-to-b from-background/5 via-background/20 to-background/5 mb-16 md:mb-24" aria-labelledby="discord-status-heading">
-                <div class="container mx-auto max-w-4xl">
-                    <h2 id="discord-status-heading" class="section-title animate-on-scroll">
-                        Server <span class="text-teal-400">Status</span>
-                    </h2>
-                    <div class="section-divider animate-on-scroll delay-1" aria-hidden="true"></div>
-                    <p class="section-subtitle animate-on-scroll delay-2">
-                        See who's online and join our community on Discord.
-                    </p>
-
-                    <!-- Discord Widget Container -->
-                    <div id="discord-widget-container" class="glass-effect p-6 md:p-8 animate-on-scroll delay-3 relative min-h-[300px] text-left" role="region" aria-live="polite" aria-atomic="false"> <!-- Added role, aria-live, aria-atomic -->
-                        <!-- Loader -->
-                        <div id="discord-loader" class="absolute inset-0 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm z-10 rounded-xl" aria-label="Loading Discord server status"> <!-- Adjusted loader bg, added aria-label -->
-                            <div class="w-12 h-12 border-4 border-t-teal-400 border-gray-600 rounded-full animate-spin" aria-hidden="true"></div>
-                        </div>
-
-                        <!-- Error Message Area -->
-                        <div id="discord-error-message" role="alert" aria-live="assertive" aria-atomic="true" class="hidden absolute inset-x-4 top-4 bg-red-900/80 border border-red-700 text-red-200 px-4 py-3 rounded-md z-20 text-center">
-                            <!-- Error content added by JS -->
-                        </div>
-
-                        <!-- Widget Content (populated by JS) -->
-                        <div id="discord-widget-content" class="opacity-0 transition-opacity duration-500 ease-in-out">
-                            <!-- Header -->
-                            <div class="flex items-center gap-4 mb-6 border-b border-gray-700/50 pb-4"> <!-- Adjusted border -->
-                                <img id="discord-server-icon" src="" alt="Discord Server Icon" class="w-16 h-16 rounded-full object-cover bg-slate-700 flex-shrink-0 border-2 border-gray-600/50"> <!-- Adjusted border, added alt -->
-                                <div>
-                                    <h3 id="discord-server-name" class="text-2xl font-semibold text-white">Loading Server...</h3>
-                                    <div class="text-sm text-gray-400 flex items-center gap-2 mt-1">
-                                        <span class="discord-status-dot discord-online inline-block w-2 h-2 rounded-full" aria-hidden="true"></span> <!-- Added size/display, aria-hidden -->
-                                        Online: <span id="discord-online-count" class="font-medium text-gray-200">--</span> <!-- Added font weight -->
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Member List -->
-                            <h4 class="text-sm font-semibold uppercase text-gray-400 mb-3 tracking-wider">Online Members</h4>
-                            <ul id="discord-member-list" class="max-h-60 overflow-y-auto space-y-1 pr-2 discord-member-scrollbar" role="list"> <!-- Reduced space-y, added role -->
-                                <!-- Placeholder -->
-                                <li id="discord-member-placeholder" class="text-gray-500 italic py-4 text-center">Loading members...</li>
-                                <!-- Member items will be added here by JS -->
-                            </ul>
-
-                            <!-- Action Buttons -->
-                            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8 pt-6 border-t border-gray-700/50"> <!-- Adjusted border -->
-                                <a href="#" id="discord-join-link" class="btn btn-primary-glow hidden" target="_blank" rel="noopener noreferrer"
-                                   data-tooltip-target="tooltip" data-tooltip-text="Click to join our Discord server!" aria-describedby="tooltip"> <!-- Added tooltip, aria-describedby -->
-                                    <i class="fab fa-discord mr-2" aria-hidden="true"></i> Join Discord
-                                </a>
-                                <button id="discord-copy-link-button" class="btn btn-secondary-glow hidden"
-                                        data-tooltip-target="tooltip" data-tooltip-text="Click to copy the Discord invite link!" aria-describedby="tooltip"> <!-- Added tooltip, aria-describedby -->
-                                    <i class="fas fa-copy mr-2" aria-hidden="true"></i> Copy Invite
-                                </button>
-                            </div>
-                        </div>
-                        <!-- End Widget Content -->
-                    </div>
-                    <!-- End Discord Widget Container -->
-                     <p class="text-center text-gray-500 mt-4 text-xs animate-on-scroll delay-4">Live status provided by the official Discord Widget API.</p>
-                </div>
-            </section>
-            <!-- END: Discord Status Section -->
-
-
-            <!-- Join Us Section -->
-            <section id="join" class="section-padding text-center relative overflow-hidden join-section flex flex-col justify-center" aria-labelledby="join-heading">
-                 <div class="container mx-auto max-w-3xl relative z-10">
-                    <h2 id="join-heading" class="section-title animate-on-scroll">
-                        <span class="text-teal-400">Enlist</span> in the Empire
-                    </h2>
-                    <div class="section-divider animate-on-scroll delay-1" aria-hidden="true"></div>
-                    <p class="text-lg text-gray-300 mb-10 leading-relaxed animate-on-scroll delay-2">
-                        Become part of Frankonia's disciplined forces. We seek dedicated members ready to uphold our values and contribute to victory. Answer the call.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center items-center gap-5 animate-on-scroll delay-3 mt-12">
-                        <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="btn btn-primary-glow">
-                            <i class="fab fa-roblox mr-2" aria-hidden="true"></i> Join Roblox Group
-                        </a>
-                        <!-- Link to Discord section instead of external link -->
-                        <a href="#discord-status" class="btn btn-secondary-glow">
-                            <i class="fab fa-discord mr-2" aria-hidden="true"></i> View Discord Status
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="py-10 px-6 md:px-12 bg-slate-900/70 border-t border-gray-700/50" role="contentinfo">
-            <div class="container mx-auto text-center text-gray-400">
-                <div class="mb-4 animate-on-scroll">
-                    <img src="https://media.discordapp.net/attachments/1356331685750378737/1363141619955536104/input_file_6_1.png?ex=680f8010&is=680e2e90&hm=2fba1af6f0d320a42f8eec48433f71c90e3914f642ccbd956c20fb66b2878908&=&format=webp&quality=lossless&width=960&height=960"
-                         alt="Frankonia Empire Logo Small" class="h-12 w-12 mx-auto rounded-full object-cover opacity-70 hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.style.display='none'" loading="lazy"> <!-- Added loading="lazy" -->
-                </div>
-                <p class="mt-3 animate-on-scroll delay-1 motto text-gray-500 text-sm">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p>
-                <p class="mt-3 animate-on-scroll delay-2 text-sm">© <span id="current-year"></span> The Germanic Empire of Frankonia. All Rights Reserved.</p>
-                <p class="text-xs mt-1 animate-on-scroll delay-3 text-gray-500">A Fictional Roblox Group Simulation.</p>
-                <div class="mt-5 space-x-6 animate-on-scroll delay-4">
-                    <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Roblox Group Link"><i class="fab fa-roblox" aria-hidden="true"></i></a> <!-- Added aria-label, aria-hidden -->
-                    <a href="https://discord.gg/K8hr2wCWw6" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Discord Server Link"><i class="fab fa-discord" aria-hidden="true"></i></a> <!-- Added aria-label, aria-hidden -->
-                    <!-- Add other links if needed -->
-                </div>
-            </div>
-        </footer>
-
-        <!-- Tooltip Element (Hidden by default) -->
-        <div id="tooltip" class="fixed hidden z-[60] px-3 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-md shadow-sm opacity-0 transition-opacity duration-200 tooltip-custom" role="tooltip" aria-hidden="true">
-            Tooltip text
-            <div class="tooltip-arrow" data-popper-arrow></div>
+        <p class="motto">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p>
+        <div class="social-links">
+            <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" title="Roblox Group" class="tooltip-container"><i class="fab fa-roblox"></i><span class="tooltip-text">Roblox Group</span></a>
+            <a href="#" class="discord-join-link tooltip-container" title="Discord Server"><i class="fab fa-discord"></i><span class="tooltip-text">Discord Server</span></a>
         </div>
+        <p class="copyright">© <span id="current-year">2024</span> The Germanic Empire of Frankonia. All Rights Reserved.</p>
+        <p class="sub-text">A Fictional Roblox Group Simulation.</p>
+    </footer>
 
-    </div> <!-- End Alpine x-data wrapper -->
-
-    <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
-    <script>
-        // AI Recommendation Tool Logic (Hard-coded Outcomes Version w/ Alternatives)
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('ai-recommendation-form');
-            const resultDiv = document.getElementById('ai-recommendation-result');
-            const regimentNameEl = document.getElementById('recommended-regiment-name');
-            const regimentDescEl = document.getElementById('recommended-regiment-description');
-            const recommendationReasonEl = resultDiv.querySelector('.recommendation-reason'); // Select existing reason element
-
-            // Regiment Data (Needed for descriptions and finding alternatives)
-            const regimentsData = [
-                 { id: 'armed-forces', name: 'Armed Forces', summary: 'The primary combat force, open to anyone willing to fight. Ideal for frontline action and events.', type: 'Combative', entry: 'Open', keywords: ['combat', 'frontline', 'action', 'events', 'progression', 'active'] },
-                 { id: 'military-police', name: 'Military Police', summary: 'Upholds discipline and order, manages logistics, and enforces military law.', type: 'Enforcement', entry: 'Tryout', keywords: ['support', 'logistics', 'discipline', 'structure', 'enforcement', 'tryout', 'active'] },
-                 { id: 'government', name: 'Government', summary: 'Civil administration unit focused on laws, policy, and community building.', type: 'Civil', entry: 'Application', keywords: ['strategy', 'planning', 'civilian', 'community', 'lore', 'application', 'casual'] },
-                 { id: 'royal-guard', name: 'Royal Guard', summary: 'Elite protection unit for the Royal Family and key sites.', type: 'Elite', entry: 'Selective', keywords: ['elite', 'protection', 'discipline', 'selective', 'active', 'progression'] },
-                 { id: 'special-forces', name: 'Special Forces', summary: 'Highly trained unit for covert operations and difficult missions.', type: 'Covert', entry: 'Invitation', keywords: ['stealth', 'reconnaissance', 'covert', 'elite', 'invitation', 'active'] },
-                 { id: 'mechanized-infantry', name: 'Mechanized Infantry', summary: 'Mobile combat force operating with armored vehicles.', type: 'Combative', entry: 'Tryout', keywords: ['combat', 'frontline', 'action', 'support', 'tryout', 'active', 'events'] },
-                 { id: 'internal-admin', name: 'Internal Administration', summary: 'Highly classified internal unit. Access Restricted.', type: 'Classified', entry: 'Restricted', keywords: [] },
-                 { id: 'royal-family', name: 'Royal Family', summary: 'The leadership and symbol of the Empire. Hereditary.', type: 'Leadership', entry: 'Hereditary', keywords: [] }
-            ];
-
-            // Helper function to find regiment data by ID
-            function findRegiment(id) {
-                return regimentsData.find(reg => reg.id === id);
-            }
-
-            // --- Hard-coded Recommendation Logic ---
-            function getHardcodedRecommendationId(playstyle, interest) {
-                if (playstyle === 'combat') {
-                    return 'armed-forces';
-                } else if (playstyle === 'support') {
-                    return 'military-police';
-                } else if (playstyle === 'strategy') {
-                    if (interest === 'discipline') {
-                        return 'military-police'; // Strategy + Discipline -> MP
-                    } else {
-                        return 'government'; // Other Strategy -> Gov
-                    }
-                } else if (playstyle === 'stealth') {
-                    return 'armed-forces'; // Pathway to SF
-                } else if (playstyle === 'civilian') {
-                    return 'government';
-                } else {
-                    return 'armed-forces'; // Default fallback
-                }
-            }
-
-            if (form && resultDiv && regimentNameEl && regimentDescEl && recommendationReasonEl) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    resultDiv.classList.add('hidden'); // Hide previous result first
-
-                    const playstyleSelect = form.elements['playstyle'];
-                    const interestSelect = form.elements['interest'];
-                    const playstyle = playstyleSelect.value;
-                    const interest = interestSelect.value;
-
-                    // --- 1. Input Validation ---
-                    let errorMsg = document.getElementById('ai-form-error');
-                    if (!playstyle || !interest) {
-                        if (!errorMsg) {
-                            errorMsg = document.createElement('p');
-                            errorMsg.id = 'ai-form-error';
-                            errorMsg.className = 'text-red-400 text-sm text-center mt-4';
-                            const submitButtonDiv = form.querySelector('.text-center.pt-4');
-                            if (submitButtonDiv && submitButtonDiv.parentNode === form) {
-                                submitButtonDiv.parentNode.insertBefore(errorMsg, submitButtonDiv.nextSibling);
-                            } else {
-                                form.appendChild(errorMsg);
-                            }
-                        }
-                        errorMsg.textContent = 'Please select an option for both questions.';
-                        errorMsg.style.display = 'block';
-                        return; // Stop processing
-                    } else {
-                        if (errorMsg) {
-                            errorMsg.textContent = '';
-                            errorMsg.style.display = 'none';
-                        }
-                    }
-
-                    // --- 2. Get Hardcoded Recommendation ---
-                    const recommendedRegimentId = getHardcodedRecommendationId(playstyle, interest);
-                    const recommendedRegiment = findRegiment(recommendedRegimentId);
-
-                    // --- 3. Display Result ---
-                    if (recommendedRegiment) {
-                        let recommendationDescription = recommendedRegiment.summary;
-                        let additionalNotes = ""; // To store notes about alternatives/goals
-                        let entryNote = "";
-
-                        // Generate standard entry note for the primary recommendation
-                        switch (recommendedRegiment.entry) {
-                            case 'Tryout': entryNote = `Entry requires passing a tryout.`; break;
-                            case 'Application': entryNote = `Entry requires a successful application.`; break;
-                            // Don't add notes for Open, Selective, Invitation here as they are handled below or are primary
-                        }
-
-                        // --- Add specific clarifications/alternative mentions ---
-                        const mechInf = findRegiment('mechanized-infantry');
-                        const royalGuard = findRegiment('royal-guard');
-                        const specialForces = findRegiment('special-forces');
-
-                        if (recommendedRegiment.id === 'armed-forces') {
-                            if (playstyle === 'stealth' && specialForces) {
-                                additionalNotes += ` This serves as the primary training ground. Based on your preferences you should start here. Excelling here is often the path towards specialized units like <span class="font-semibold text-teal-300">${specialForces.name}</span> (which requires passing a thorough selection process).`;
-                            } else if (playstyle === 'combat') {
-                                if ((interest === 'events' || interest === 'progression') && mechInf) {
-                                     additionalNotes += ` If you excel and seek vehicle-focused combat or a different progression path, the <span class="font-semibold text-teal-300">${mechInf.name}</span> (requires tryout) might be a future option.`;
-                                } else if (interest === 'discipline' && royalGuard) {
-                                     additionalNotes += ` For those who demonstrate exceptional discipline and skill over time, the elite <span class="font-semibold text-teal-300">${royalGuard.name}</span> (requires completing the academy) could be a long-term goal.`;
-                                }
-                            }
-                        } else if (recommendedRegiment.id === 'military-police') {
-                             if (interest === 'discipline' && royalGuard) {
-                                 additionalNotes += ` For those demonstrating exceptional discipline over time, the elite <span class="font-semibold text-teal-300">${royalGuard.name}</span> (selective entry) could be a potential long-term goal, though less common from this path.`;
-                             }
-                        }
-
-                        // Combine summary, additional notes, and entry note
-                        if (additionalNotes) {
-                            recommendationDescription += ` ${additionalNotes}`; // Add space before notes
-                        }
-                        if (entryNote) {
-                            recommendationDescription += ` <span class="text-gray-400 italic"> Note: ${entryNote}</span>`;
-                        }
-
-                        // Update the DOM
-                        regimentNameEl.textContent = recommendedRegiment.name;
-                        regimentDescEl.innerHTML = recommendationDescription; // Use innerHTML for the spans
-
-                        // Update the "Why" explanation
-                        const playstyleText = playstyleSelect.options[playstyleSelect.selectedIndex].text;
-                        const interestText = interestSelect.options[interestSelect.selectedIndex].text;
-                        recommendationReasonEl.textContent = `Recommended based on your preference for "${playstyleText}" and interest in "${interestText}".`;
-
-                        resultDiv.classList.remove('hidden');
-                        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                    } else {
-                         // Handle case where the ID didn't match any regiment
-                         regimentNameEl.textContent = "Recommendation Error";
-                         regimentDescEl.innerHTML = "Could not find details for the recommended regiment.";
-                         recommendationReasonEl.textContent = "";
-                         resultDiv.classList.remove('hidden');
-                    }
-
-                });
-            } else {
-                console.warn("AI Recommendation Tool elements not found. Form functionality disabled.");
-                const submitButton = form ? form.querySelector('button[type="submit"]') : null;
-                if (submitButton) {
-                    submitButton.disabled = true;
-                    submitButton.classList.add('opacity-50', 'cursor-not-allowed');
-                }
-            }
-        });
-    </script>
+    <div class="cursor-glow"></div>
+    <script src="script.js" defer></script>
 </body>
 </html>
