@@ -4,259 +4,262 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Germanic Empire of Frankonia</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Corrected and validated Font Awesome Script -->
-    <script src="https://kit.fontawesome.com/1a14344169.js" crossorigin="anonymous"></script>
+    <meta name="description" content="An alternate history WW1/WW2 Roblox simulation. Experience disciplined military gameplay within a thriving monarchy.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS (Animate on Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <img src="assets/frankonia_logo.png" alt="Frankonia Logo" class="preloader-logo">
+        <div class="loader-bar"></div>
+    </div>
 
-    <!-- Global Header -->
-    <header class="main-header">
-        <a href="index.html" class="logo-container">
-            <div class="logo-wrapper">
-                <img src="assets/frankonia_logo.png" alt="GEF Logo" class="logo">
-                <div class="crown-decoration">
-                    <i class="fas fa-crown"></i>
-                    <i class="fas fa-crown"></i>
-                </div>
-            </div>
-            <span class="group-name">The Germanic Empire of Frankonia</span>
-            <span class="group-name-mobile">GEF</span>
-        </a>
-        <nav class="main-nav">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/frankonia_logo.png" alt="Frankonia Logo">
+                <span class="logo-text-desktop">The Germanic Empire of Frankonia</span>
+                <span class="logo-text-mobile">GEF</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="lore.html">Lore</a></li>
+                    <li><a href="structure.html">Structure</a></li>
+                    <li><a href="regiments.html">Regiments List</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#ai-tool">AI Tool</a></li>
+                    <li><a href="#discord">Discord</a></li>
+                    <li><a href="#join" class="btn-nav">Join Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Open Menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="lore_page.html">Lore</a></li>
-                <li><a href="structure_page.html">Structure</a></li>
-                <li><a href="regiments_page.html">Regiments</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#ai-tool-section">AI Tool</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lore.html">Lore</a></li>
+                <li><a href="structure.html">Structure</a></li>
+                <li><a href="regiments.html">Regiments List</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#ai-tool">AI Tool</a></li>
+                <li><a href="#discord">Discord</a></li>
+                <li><a href="#join">Join Us</a></li>
+                <li class="mobile-only-link"><a href="#" target="_blank">Roblox Group</a></li>
+                <li class="mobile-only-link"><a href="#" target="_blank">Discord Server</a></li>
             </ul>
         </nav>
-        <div class="header-actions">
-            <a href="#" class="btn btn-primary discord-join-link">Join Us</a>
-        </div>
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
-    </header>
-    <nav class="mobile-nav" id="mobile-nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="lore_page.html">Lore</a></li>
-            <li><a href="structure_page.html">Structure</a></li>
-            <li><a href="regiments_page.html">Regiments</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#ai-tool-section">AI Tool</a></li>
-            <li><a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank">Roblox Group</a></li>
-            <li><a href="#" class="discord-join-link">Discord Server</a></li>
-        </ul>
-    </nav>
+    </div>
 
     <main>
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <div class="imperial-seal">
-                    <div class="seal-inner">
-                        <img src="assets/frankonia_logo.png" alt="Imperial Seal">
+                <h1 data-aos="fade-down">Germanic Empire of Frankonia</h1>
+                <p class="motto" data-aos="fade-up" data-aos-delay="200">ʜᴏɴᴏʀ. ᴅᴜᴛʏ. ᴠᴀʟᴏʀ.</p>
+                <p class="description" data-aos="fade-up" data-aos-delay="400">
+                    An alternate history WW1/WW2 Roblox simulation. Experience disciplined military gameplay within a thriving monarchy.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#join" class="btn btn-primary">Enlist Today</a>
+                    <a href="lore.html" class="btn btn-secondary">Discover Our Lore</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join Us? Section -->
+        <section class="content-section" id="why-join">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Why Join Us?</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">Experience a unique and rewarding community within the Germanic Empire of Frankonia.</p>
+                <div class="features-grid">
+                    <div class="feature-block">
+                        <i class="fas fa-users"></i>
+                        <h3>Strong Community</h3>
+                        <p>Join our active and dedicated community of players who share a passion for disciplined roleplay and strategic gameplay.</p>
+                    </div>
+                    <div class="feature-block">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Rank Progression</h3>
+                        <p>Experience a clear and structured path to advancement through dedication, skill, and loyalty within our ranks.</p>
+                    </div>
+                    <div class="feature-block">
+                        <i class="fas fa-shield-halved"></i>
+                        <h3>Elite Training</h3>
+                        <p>Receive top-tier training from experienced personnel, honing your skills for effective military simulation and roleplay.</p>
                     </div>
                 </div>
-                <h1>Germanic Empire of Frankonia</h1>
-                <p class="motto">ʜᴏɴᴏʀ • ᴅᴜᴛʏ • ᴠᴀʟᴏʀ</p>
-                <p class="imperial-decree">By decree of His Imperial Majesty, we stand united against all threats to the Empire</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary discord-join-link">Enlist Today</a>
-                    <a href="lore_page.html" class="btn btn-secondary">Discover Our Lore</a>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <span>Scroll to Explore</span>
-                <div class="arrow"></div>
             </div>
         </section>
-
-        <!-- Why Join Us Section -->
-        <section class="container hidden">
-            <div class="section-header">
-                <h2>Why Join Frankonia?</h2>
-                <div class="divider"></div>
-                <h3 class="subtitle">Forge your path in a community built on discipline, strategy, and camaraderie.</h3>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card interactive-card">
-                    <i class="fas fa-users feature-icon"></i>
-                    <h3>Thriving Community</h3>
-                    <p>Join active and dedicated players who share a passion for disciplined roleplay and strategic gameplay.</p>
-                </div>
-                <div class="feature-card interactive-card">
-                    <i class="fas fa-chess-rook feature-icon"></i>
-                    <h3>Strategic Gameplay</h3>
-                    <p>Engage in large-scale, tactical events where every decision matters. Outthink and outmaneuver your opponents.</p>
-                </div>
-                <div class="feature-card interactive-card">
-                    <i class="fas fa-angle-double-up feature-icon"></i>
-                    <h3>Career Progression</h3>
-                    <p>Experience a clear path to advancement through dedication, skill, and loyalty within our structured ranks.</p>
-                </div>
-            </div>
-        </section>
-
+        
         <!-- Media Gallery Section -->
-        <section class="container hidden">
-            <div class="section-header">
-                <h2>Media Gallery</h2>
+        <section class="content-section dark-bg" id="gallery">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Media Gallery</h2>
                 <div class="divider"></div>
-                <h3 class="subtitle">Witness the Empire in action. Moments captured from the heart of Frankonia.</h3>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('https://picsum.photos/400/250?random=1&grayscale');">
-                    <div class="gallery-item-content"><h4>Frontline Engagement</h4></div>
+                <p class="section-subtitle">See Frankonia in action! Screenshots and videos from events, training, and community moments.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://via.placeholder.com/400x300/111/D4AF37?text=Event" alt="Event Screenshot"><div class="gallery-overlay"><h3>Event Screenshot</h3><p>A moment from a large-scale event.</p></div></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/400x300/111/D4AF37?text=Training" alt="Training Footage"><div class="gallery-overlay"><h3>Training Footage</h3><p>Highlights from a training session.</p></div></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/400x300/111/D4AF37?text=Community" alt="Community Gathering"><div class="gallery-overlay"><h3>Community Gathering</h3><p>Members socializing after an event.</p></div></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/400x300/111/D4AF37?text=Combat" alt="Combat Scenario"><div class="gallery-overlay"><h3>Combat Scenario</h3><p>Action shot from a combat simulation.</p></div></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/400x300/111/D4AF37?text=Showcase" alt="Regiment Showcase"><div class="gallery-overlay"><h3>Regiment Showcase</h3><p>Footage highlighting a regiment.</p></div></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/400x300/111/D4AF37?text=Formation" alt="Formation Drill"><div class="gallery-overlay"><h3>Formation Drill</h3><p>Screenshot of a disciplined formation.</p></div></div>
                 </div>
-                <div class="gallery-item" style="background-image: url('https://picsum.photos/400/250?random=2&grayscale');">
-                    <div class="gallery-item-content"><h4>Regiment Formation</h4></div>
+                <div class="text-center mt-4">
+                     <a href="#" class="btn btn-secondary">View More</a>
                 </div>
-                <div class="gallery-item" style="background-image: url('https://picsum.photos/400/250?random=3&grayscale');">
-                    <div class="gallery-item-content"><h4>Victory Parade</h4></div>
-                </div>
-                <div class="gallery-item" style="background-image: url('https://picsum.photos/400/250?random=4&grayscale');">
-                    <div class="gallery-item-content"><h4>Officer's Briefing</h4></div>
-                </div>
-            </div>
-            <div class="gallery-more">
-                <a href="#" class="btn btn-secondary">View Full Gallery</a>
             </div>
         </section>
 
         <!-- Member Testimonials Section -->
-        <section class="container hidden">
-            <div class="section-header">
-                <h2>Voices from the Empire</h2>
+        <section class="content-section" id="testimonials">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Member Voices</h2>
                 <div class="divider"></div>
-                <h3 class="subtitle">Hear directly from our members about their experience in Frankonia.</h3>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card interactive-card">
-                    <blockquote>"The community and discipline here are unmatched. Every event feels immersive and important. I've learned a lot and made great friends."</blockquote>
-                    <p class="testimonial-author">Anonymous Member A<span>Veteran Soldier</span></p>
-                </div>
-                <div class="testimonial-card interactive-card">
-                    <blockquote>"Leadership is transparent and genuinely cares about the members. There's a real sense of belonging and purpose."</blockquote>
-                    <p class="testimonial-author">Anonymous Member B<span>Military Police</span></p>
-                </div>
-                <div class="testimonial-card interactive-card">
-                    <blockquote>"The alternate history lore is what drew me in. It adds so much depth to the roleplay. It's not just a military group, it's a whole world."</blockquote>
-                    <p class="testimonial-author">Anonymous Member D<span>Lore Enthusiast</span></p>
+                <p class="section-subtitle">Hear directly from our dedicated members about their experience in Frankonia.</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <blockquote>"Joining Frankonia was the best decision I made on Roblox. The discipline, the community, the events - it's unlike anything else. I've learned so much and made great friends."</blockquote>
+                        <footer>— Anonymous Member A, <cite>Veteran Soldier</cite></footer>
+                    </div>
+                    <div class="testimonial-card">
+                        <blockquote>"The leadership here is top-notch. They genuinely care about the members and the quality of the simulation. Every event is well-planned and immersive."</blockquote>
+                        <footer>— Anonymous Member B, <cite>Active Participant</cite></footer>
+                    </div>
+                    <div class="testimonial-card">
+                        <blockquote>"Rank progression feels earned and rewarding. There's a clear path for those who show dedication. It motivates you to be your best."</blockquote>
+                        <footer>— Anonymous Member C, <cite>Rising Through Ranks</cite></footer>
+                    </div>
+                    <div class="testimonial-card">
+                        <blockquote>"The alternate history lore is fascinating and adds so much depth to the roleplay. It's not just a military group, it's a whole world."</blockquote>
+                        <footer>— Anonymous Member D, <cite>Lore Enthusiast</cite></footer>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- AI Recommendation Tool Section -->
-        <section class="container hidden" id="ai-tool-section">
-            <div class="section-header">
-                <h2>Find Your Place</h2>
+        <section class="content-section dark-bg" id="ai-tool">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Find Your Place</h2>
                 <div class="divider"></div>
-                <h3 class="subtitle">Answer two questions to discover which Frankonian regiment best suits your style.</h3>
-            </div>
-            <div class="ai-tool-container interactive-card">
-                <h4>Regiment Recommender</h4>
-                <div class="form-group">
-                    <label for="playstyle">I prefer roles that involve...</label>
-                    <select id="playstyle">
-                        <option value="">-- Select an Approach --</option>
-                        <option value="Direct Combat">Direct Combat & Frontline Action</option>
-                        <option value="Enforcement">Upholding Order & Discipline</option>
-                        <option value="Strategy">Politics, Law & Administration</option>
-                        <option value="Elite Guard">Protection & Elite Duties</option>
-                        <option value="Covert Ops">Stealth & Special Operations</option>
-                    </select>
+                <p class="section-subtitle">Not sure where you fit in Frankonia? Use our tool to get a personalized regiment recommendation.</p>
+                <div class="ai-tool-container">
+                    <h3>Regiment Recommender Tool</h3>
+                    <p>Answer a few questions to help us suggest a regiment that aligns with your playstyle and interests.</p>
+                    <form id="regiment-recommender-form">
+                        <div class="form-group">
+                            <label for="playstyle">What is your preferred playstyle?</label>
+                            <select id="playstyle" name="playstyle">
+                                <option value="">-- Select One --</option>
+                                <option value="combat">Direct Combat & Frontline Action</option>
+                                <option value="support">Support & Logistics</option>
+                                <option value="strategy">Strategy & Planning</option>
+                                <option value="stealth">Stealth & Reconnaissance</option>
+                                <option value="civilian">Civilian & Non-Combat Roles</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">What interests you most about Frankonia?</label>
+                            <select id="interest" name="interest">
+                                <option value="">-- Select One --</option>
+                                <option value="discipline">Military Discipline & Structure</option>
+                                <option value="lore">Alternate History Lore & Roleplay</option>
+                                <option value="community">Community & Social Interaction</option>
+                                <option value="progression">Rank Progression & Achievement</option>
+                                <option value="events">Large-Scale Events & Battles</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Get Recommendation</button>
+                        <p id="recommender-error" class="error-message" style="display: none;">Please select an option for both questions.</p>
+                    </form>
+                    <div id="recommender-result" class="result-box" style="display: none;">
+                        <h3>Your Recommended Regiment:</h3>
+                        <p id="result-text">Loading...</p>
+                        <p id="result-reasoning" class="reasoning">Based on your answers, we suggest exploring this path...</p>
+                        <a href="regiments.html" class="btn btn-secondary btn-small">Learn More About Regiments</a>
+                    </div>
+                    <p class="tool-note">Note: This is a simulated tool for guidance. Final placement depends on training, availability, and entry requirements.</p>
                 </div>
-                <div class="form-group">
-                    <label for="interest">I am most interested in...</label>
-                    <select id="interest">
-                        <option value="">-- Select an Interest --</option>
-                        <option value="Military Structure">Military Discipline & Structure</option>
-                        <option value="Roleplay">Alternate History Lore & Roleplay</option>
-                        <option value="Community">Community & Social Interaction</option>
-                        <option value="Achievement">Rank Progression & Achievement</option>
-                    </select>
-                </div>
-                <button class="btn btn-primary" id="get-recommendation-btn" style="width: 100%;">Find My Regiment</button>
-                <p id="ai-error">Please select an option for both questions.</p>
-                <div id="ai-result">
-                    <h5>Your Recommended Regiment:</h5>
-                    <h4 id="result-title">Loading...</h4>
-                    <p id="result-desc">Based on your answers, we suggest exploring this path...</p>
-                    <p id="result-reason">Reasoning placeholder</p>
-                    <a href="regiments_page.html" class="learn-more-link">Learn More About All Regiments</a>
-                </div>
-                <p class="final-note">This tool is a guide. Final placement depends on training, availability, and entry requirements.</p>
             </div>
         </section>
 
         <!-- Discord Status Section -->
-        <section class="container hidden">
-            <div class="section-header">
-                <h2>Join the Conversation</h2>
+        <section class="content-section" id="discord">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Server Status</h2>
                 <div class="divider"></div>
-                <h3 class="subtitle">Our community thrives on Discord. See who's online and enlist today.</h3>
-            </div>
-            <div class="discord-widget" id="discord-widget">
-                <div id="discord-loading">
-                    <div class="spinner"></div>
-                    <p>Loading Discord Server Status...</p>
-                </div>
-                <div id="discord-error" style="display: none;">
-                    <p>Could not load Discord widget. Please ensure the widget is enabled in your Discord server settings.</p>
-                </div>
-                <div id="discord-widget-content" style="display: none;">
-                    <div class="discord-header">
-                        <img id="discord-server-icon" src="assets/frankonia_logo.png" alt="Server Icon">
-                        <div>
-                            <h4 id="discord-server-name">Server Name</h4>
-                            <span><span class="online-dot"></span><span id="discord-online-count">N/A</span> Online</span>
-                        </div>
-                    </div>
-                    <div id="discord-member-list">
-                        <p>Loading members...</p>
-                    </div>
-                    <div class="discord-actions">
-                        <a href="#" class="btn btn-primary discord-join-link">Connect to Discord</a>
+                <p class="section-subtitle">See who's online and join our community on Discord.</p>
+                <div id="discord-widget-container" class="discord-widget">
+                    <!-- Loading State -->
+                    <div class="discord-loading">
+                        <div class="spinner"></div>
+                        <p>Loading Discord server status...</p>
                     </div>
                 </div>
+                <p class="tool-note">Live status provided by the official Discord Widget API.</p>
             </div>
         </section>
 
-        <!-- Join Us CTA Section -->
-        <section class="container join-cta hidden">
-            <h2>The Empire Awaits</h2>
-            <p>Dedication. Perseverance. Discipline. If these values resonate with you, your place is with us. Answer the call and become part of Frankonia's legacy.</p>
-            <div class="join-cta-buttons">
-                <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" class="btn btn-primary">Join Roblox Group</a>
-                <a href="#" class="btn btn-secondary discord-join-link">Join Discord Server</a>
+        <!-- Join Us Section -->
+        <section class="content-section dark-bg" id="join">
+            <div class="container text-center" data-aos="fade-up">
+                <h2 class="section-title">Enlist in the Empire</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle large-text">
+                    Become part of Frankonia's disciplined forces. We seek dedicated members ready to uphold our values and contribute to victory. Answer the call.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" target="_blank" class="btn btn-primary">Join Roblox Group</a>
+                    <a href="#discord" class="btn btn-secondary">View Discord Status</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Global Footer -->
-    <footer class="main-footer">
-        <div class="footer-seal">
-            <div class="seal-ring">
-                <div class="seal-center">
-                    <img src="assets/frankonia_logo.png" alt="Imperial Seal">
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="assets/frankonia_logo.png" alt="Small Frankonia Logo" class="footer-logo">
+                <p class="footer-motto">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Roblox Group" data-tooltip="Roblox Group"><i class="fa-solid fa-gamepad"></i></a>
+                    <a href="#" target="_blank" aria-label="Discord Server" data-tooltip="Discord Server"><i class="fa-brands fa-discord"></i></a>
                 </div>
+                <p class="copyright">© <span id="current-year"></span> The Germanic Empire of Frankonia. All Rights Reserved.</p>
+                <p class="sub-text">A Fictional Roblox Group Simulation.</p>
             </div>
         </div>
-        <p class="motto">ᴅᴇᴅɪᴄᴀᴛɪᴏɴ. ᴘᴇʀꜱᴇᴠᴇʀᴀɴᴄᴇ. ᴅɪꜱᴄɪᴘʟɪɴᴇ.</p>
-        <div class="social-links">
-            <a href="https://www.roblox.com/communities/35799705/Greater-Frankonia#!/about" target="_blank" title="Roblox Group" class="tooltip-container"><i class="fab fa-roblox"></i><span class="tooltip-text">Roblox Group</span></a>
-            <a href="#" class="discord-join-link tooltip-container" title="Discord Server"><i class="fab fa-discord"></i><span class="tooltip-text">Discord Server</span></a>
-        </div>
-        <p class="copyright">© <span id="current-year">2024</span> The Germanic Empire of Frankonia. All Rights Reserved.</p>
-        <p class="sub-text">A Fictional Roblox Group Simulation.</p>
     </footer>
 
-    <div class="cursor-glow"></div>
-    <script src="script.js" defer></script>
+    <!-- AOS (Animate on Scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
